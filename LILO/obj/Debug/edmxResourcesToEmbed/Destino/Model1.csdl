@@ -1,0 +1,2666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="virgemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__migrationhistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="bairro">
+    <Key>
+      <PropertyRef Name="BairroId" />
+    </Key>
+    <Property Name="BairroId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="CIDADEID" Type="Int32" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cidade" Relationship="Self.FK_Bairro_Cidade_CIDADEID" FromRole="bairro" ToRole="cidade" />
+    <NavigationProperty Name="cep" Relationship="Self.FK_Cep_Bairro_BAIRROID" FromRole="bairro" ToRole="cep" />
+  </EntityType>
+  <EntityType Name="balanco">
+    <Key>
+      <PropertyRef Name="BalancoId" />
+    </Key>
+    <Property Name="BalancoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="balancoproduto" Relationship="Self.FK_BalancoProduto_Balanco_BALANCOID" FromRole="balanco" ToRole="balancoproduto" />
+  </EntityType>
+  <EntityType Name="balancoproduto">
+    <Key>
+      <PropertyRef Name="BalancoProdutoId" />
+    </Key>
+    <Property Name="BalancoProdutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="BALANCOID" Type="Int32" />
+    <Property Name="PRODUTOID" Type="Int32" />
+    <Property Name="QUANTIDADECONTAGEM" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_01" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_02" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_03" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_04" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_05" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_06" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_07" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_08" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_09" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_10" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_11" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_12" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_13" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_14" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADECONTAGEM_GRADE_15" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_01" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_02" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_03" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_04" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_05" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_06" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_07" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_08" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_09" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_10" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_11" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_12" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_13" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_14" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADEMOVIMENTADA_GRADE_15" Type="Decimal" Nullable="false" />
+    <NavigationProperty Name="balanco" Relationship="Self.FK_BalancoProduto_Balanco_BALANCOID" FromRole="balancoproduto" ToRole="balanco" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_BalancoProduto_Produto_PRODUTOID" FromRole="balancoproduto" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="banco">
+    <Key>
+      <PropertyRef Name="BancoId" />
+    </Key>
+    <Property Name="BancoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="CODIGO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="QUANTIDADEDIGITOSNUMEROCONTA" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="caixa">
+    <Key>
+      <PropertyRef Name="CaixaId" />
+    </Key>
+    <Property Name="CaixaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="DATACONFERENCIA" Type="DateTime" />
+    <Property Name="DATAFECHAMENTO" Type="DateTime" />
+    <Property Name="SEGURANCAUSUARIOID" Type="Int32" />
+    <Property Name="VALOR_ABERTURA" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_FECHAMENTO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_FECHAMENTO_CARTAO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_FECHAMENTO_CHEQUE" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_FECHAMENTO_DINHEIRO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_CONFERENCIA" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_CONFERENCIA_CARTAO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_CONFERENCIA_CHEQUE" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_CONFERENCIA_DINHEIRO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_FUNDO_CAIXA" Type="Decimal" Nullable="false" />
+    <NavigationProperty Name="segurancausuario" Relationship="Self.FK_Caixa_SegurancaUsuario_SEGURANCAUSUARIOID" FromRole="caixa" ToRole="segurancausuario" />
+    <NavigationProperty Name="caixamovimento" Relationship="Self.FK_CaixaMovimento_Caixa_CAIXAID" FromRole="caixa" ToRole="caixamovimento" />
+  </EntityType>
+  <EntityType Name="caixamovimento">
+    <Key>
+      <PropertyRef Name="CaixaMovimentoId" />
+    </Key>
+    <Property Name="CaixaMovimentoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="CAIXAID" Type="Int32" />
+    <Property Name="HISTORICO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TIPOPAGAMENTORECEBIMENTO" Type="Int32" Nullable="false" />
+    <Property Name="VALOR" Type="Decimal" Nullable="false" />
+    <NavigationProperty Name="caixa" Relationship="Self.FK_CaixaMovimento_Caixa_CAIXAID" FromRole="caixamovimento" ToRole="caixa" />
+  </EntityType>
+  <EntityType Name="cep">
+    <Key>
+      <PropertyRef Name="CepId" />
+    </Key>
+    <Property Name="CepId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="BAIRROID" Type="Int32" />
+    <Property Name="CEP1" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="LOGRADOURO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="bairro" Relationship="Self.FK_Cep_Bairro_BAIRROID" FromRole="cep" ToRole="bairro" />
+  </EntityType>
+  <EntityType Name="cestncm">
+    <Key>
+      <PropertyRef Name="CESTNCMId" />
+    </Key>
+    <Property Name="CESTNCMId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="CEST" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRICAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NCM" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cfopregrasubstituicao">
+    <Key>
+      <PropertyRef Name="CFOPRegraSubstituicaoId" />
+    </Key>
+    <Property Name="CFOPRegraSubstituicaoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="CFOPENTRADA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CFOPSAIDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="cidade">
+    <Key>
+      <PropertyRef Name="CidadeId" />
+    </Key>
+    <Property Name="CidadeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CODIGOIBGE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="FAIXA_CEP_INICIAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FAIXA_CEP_FINAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="UFID" Type="Int32" />
+    <NavigationProperty Name="bairro" Relationship="Self.FK_Bairro_Cidade_CIDADEID" FromRole="cidade" ToRole="bairro" />
+    <NavigationProperty Name="uf" Relationship="Self.FK_Cidade_UF_UFID" FromRole="cidade" ToRole="uf" />
+  </EntityType>
+  <EntityType Name="classificacaofiscal">
+    <Key>
+      <PropertyRef Name="ClassificacaoFiscalId" />
+    </Key>
+    <Property Name="ClassificacaoFiscalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="ALIQUOTA" Type="Decimal" Nullable="false" />
+    <Property Name="DESCRICAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NCM" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CODIGO_ANP" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ALIQUOTA_FECP" Type="Decimal" Nullable="false" />
+    <Property Name="PIS_CST" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="COFINS_CST" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ALIQUOTA_ICMS" Type="Decimal" Nullable="false" />
+    <Property Name="CSOSNCST" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CEST" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CFOP_NF" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CFOP_NFC" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="VIGENCIA_NCM" Type="DateTime" />
+    <NavigationProperty Name="fecpexcecoes" Relationship="Self.FK_92d52a78120a4672b95529c34cdb420e" FromRole="classificacaofiscal" ToRole="fecpexcecoes" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_Produto_ClassificacaoFiscal_CLASSIFICACAOFISCALID" FromRole="classificacaofiscal" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="colecao">
+    <Key>
+      <PropertyRef Name="ColecaoId" />
+    </Key>
+    <Property Name="ColecaoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CADASTROUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+    <Property Name="SINCRONIZADO_EM" Type="DateTime" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_Produto_Colecao_COLECAOID" FromRole="colecao" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="configuracaoetiqueta">
+    <Key>
+      <PropertyRef Name="ConfiguracaoEtiquetaId" />
+    </Key>
+    <Property Name="ConfiguracaoEtiquetaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRICAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONFIGURACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ALTERACAODATA" Type="DateTime" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="configuracaogeral">
+    <Key>
+      <PropertyRef Name="ConfiguracaoGeralId" />
+    </Key>
+    <Property Name="ConfiguracaoGeralId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_BAIRRO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_CELULAR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_CELULAR_OPERADORA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_CEP" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_CNAE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_CPFCNPJ" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_COMPLEMENTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_CONTATO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_CRT" Type="Int32" Nullable="false" />
+    <Property Name="DADOSCADASTRAIS_EMAIL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_EMAIL_FINANCEIRO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_FAX" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_IE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_INSCRICAOMUNICIPAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_LOGOMARCA" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DADOSCADASTRAIS_LOGRADOURO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_MUNICIPIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_NOMEFANTASIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_NOMERAZAOSOCIAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_NUMERO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_PAIS_ID" Type="Int32" Nullable="false" />
+    <Property Name="DADOSCADASTRAIS_RESPONSAVEL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_TELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DADOSCADASTRAIS_UF" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CERTIFICADO_DIGITAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FORMATODECIMAL_QUANTIDADE" Type="Int32" Nullable="false" />
+    <Property Name="FORMATODECIMAL_MONETARIO" Type="Int32" Nullable="false" />
+    <Property Name="FORMATODECIMAL_PORCENTAGEM" Type="Int32" Nullable="false" />
+    <Property Name="PESQUISAPADRAO_REFERENCIA" Type="Boolean" Nullable="false" />
+    <Property Name="TIPORECEBIMENTO_PADRAO" Type="Int32" Nullable="false" />
+    <Property Name="TIPOPAGAMENTO_PADRAO" Type="Int32" Nullable="false" />
+    <Property Name="NFCE_ULTIMONUMERO" Type="Int32" Nullable="false" />
+    <Property Name="NFCE_AMBIENTE" Type="Int32" Nullable="false" />
+    <Property Name="NFCE_CSC" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NFCE_IDTOKEN" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NFCE_NATUREZA_OPERACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NFCE_REAJUSTE_HORARIO" Type="Int32" Nullable="false" />
+    <Property Name="NFCE_UTILIZAR_IMPRESSORA_NAO_FISCAL" Type="Boolean" Nullable="false" />
+    <Property Name="ATUALIZACAO_NOVIDADEATUAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ATUALIZACAO_NOVIDADENOVA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ATUALIZACAO_LINKDOWNLOADATUAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ATUALIZACAO_LINKDOWNLOADNOVA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ATUALIZACAO_VERSAONOVA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ATUALIZACAO_VERSAOATUAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="INTERPRETADOR_CODIGOBARRA_ATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="INTERPRETADOR_CODIGOBARRA_BLOCOA_QUANTIDADEDIGITOS" Type="Int32" Nullable="false" />
+    <Property Name="INTERPRETADOR_CODIGOBARRA_BLOCOB_PRECOPESO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="INTERPRETADOR_CODIGOBARRA_BLOCOB_QUANTIDADEDIGITOS" Type="Int32" Nullable="false" />
+    <Property Name="CONTROLESENHA" Type="Int32" Nullable="false" />
+    <Property Name="CONTROLESENHA_REINICIAR_NO_INICIO_DO_DIA" Type="Boolean" Nullable="false" />
+    <Property Name="CONTROLESENHA_ULTIMA_ALTERACAO" Type="DateTime" Nullable="false" />
+    <Property Name="CONTROLESENHA_ULTIMA_ALTERACAO_USUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONTROLESENHA_UTILIZAR_CONTROLE" Type="Boolean" Nullable="false" />
+    <Property Name="CONTROLESENHA_ULTIMO_REINICIO_SENHA" Type="DateTime" Nullable="false" />
+    <Property Name="JUROS_DINHEIRO_TIPO" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_DINHEIRO_TAXA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_DINHEIRO_MULTA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_CARTAO_TIPO" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_CARTAO_TAXA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_CARTAO_MULTA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_CHEQUE_TIPO" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_CHEQUE_TAXA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_CHEQUE_MULTA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_DUPLICATA_TIPO" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_DUPLICATA_TAXA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_DUPLICATA_MULTA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_PROMISSORIA_TIPO" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_PROMISSORIA_TAXA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_PROMISSORIA_MULTA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_BOLETO_TIPO" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_BOLETO_TAXA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_BOLETO_MULTA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_ULTIMAATUALIZACAO" Type="DateTime" />
+    <Property Name="PDV_TIPODESCONTO" Type="Int32" />
+    <Property Name="PDV_MENSAGEMFINALIZACAOVENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="INTERPRETADOR_CODIGOBARRA_BLOCOB_CONVERTERPRECOPARAPESO" Type="Boolean" />
+    <Property Name="ULTIMO_BACKUP" Type="DateTime" />
+    <Property Name="UTILIZARDESCRICAORESUMIDANANFCE" Type="Boolean" Nullable="false" />
+    <Property Name="ULTIMO_SINCRONIZACAO_PROJECTWEB_PRODUTO" Type="DateTime" />
+    <Property Name="ULTIMO_SINCRONIZACAO_PROJECTWEB_NOTAFISCAL" Type="DateTime" />
+    <Property Name="OBSERVACAO_IMPRESSAO_CONSIGNADO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="OBSERVACAO_IMPRESSAO_TROCA_DEVOLUCAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="OBSERVACAO_IMPRESSAO_VENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NOVAVENDA_AGRUPARPRODUTOSDEMESMOVALOR" Type="Boolean" Nullable="false" />
+    <Property Name="NOVAVENDA_TRABALHAR_COM_PREVENDA" Type="Boolean" Nullable="false" />
+    <Property Name="ABRIR_NOVAVENDA_AO_FINALIZAR" Type="Boolean" Nullable="false" />
+    <Property Name="JUROS_DINHEIRO_CARENCIA" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_CARTAO_CARENCIA" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_CHEQUE_CARENCIA" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_DUPLICATA_CARENCIA" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_PROMISSORIA_CARENCIA" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_BOLETO_CARENCIA" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_CARTEIRA_TIPO" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_CARTEIRA_TAXA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_CARTEIRA_MULTA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_CARTEIRA_CARENCIA" Type="Int32" Nullable="false" />
+    <Property Name="NFCE_NUMERO_SERIE" Type="Int32" Nullable="false" />
+    <Property Name="NUMERACAO_PREVENDA_TIPO" Type="Int32" Nullable="false" />
+    <Property Name="NF_ULTIMONUMERO" Type="Int32" Nullable="false" />
+    <Property Name="NF_DanfeModelo" Type="Int32" Nullable="false" />
+    <Property Name="NF_CREDITO_ALIQUOTA" Type="Decimal" Nullable="false" />
+    <Property Name="CRT" Type="Int32" Nullable="false" />
+    <Property Name="NF_CREDITO_CFOPs" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONTRATO_ISSOLICITAR" Type="Boolean" />
+    <Property Name="FORMATODECIMAL_QUANTIDADE_COMPRA" Type="Int32" Nullable="false" />
+    <Property Name="FORMATODECIMAL_MONETARIO_COMPRA" Type="Int32" Nullable="false" />
+    <Property Name="FORMATODECIMAL_PORCENTAGEM_COMPRA" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_VALETICKET_TIPO" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_VALETICKET_TAXA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_VALETICKET_MULTA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_VALETICKET_CARENCIA" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_CARTAODEBITO_TIPO" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_CARTAODEBITO_TAXA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_CARTAODEBITO_MULTA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_CARTAODEBITO_CARENCIA" Type="Int32" Nullable="false" />
+    <Property Name="CFOP_PADRAO_SAIDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="LIMITE_RESULTADO_CONSULTAS" Type="Int32" />
+    <Property Name="PROTOCOLOTRANSMISSAO" Type="Int32" Nullable="false" />
+    <Property Name="CONTADOR_EMAILS" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONTADOR_ULTIMOENVIOMOVIMENTACAO" Type="DateTime" />
+    <Property Name="COMISSAO_IS_ATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="COMISSAO_GERAL_MOEDA" Type="Decimal" Nullable="false" />
+    <Property Name="COMISSAO_GERAL_PORCENTAGEM" Type="Decimal" Nullable="false" />
+    <Property Name="COMISSAO_DIA_FECHAMENTO" Type="Int32" Nullable="false" />
+    <Property Name="COMISSAO_ULTIMOENVIORELATORIOS" Type="DateTime" />
+    <Property Name="WEB_TOKEN" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="WEB_TOKEN_DATAEXPIRACAO" Type="DateTime" />
+    <Property Name="ENVIAR_NFE_EMAIL" Type="Boolean" Nullable="false" />
+    <Property Name="ENVIAR_NFCE_EMAIL" Type="Boolean" Nullable="false" />
+    <Property Name="CREDIARIO_TIPO" Type="Int32" Nullable="false" />
+    <Property Name="CREDIARIO_TAXA" Type="Decimal" Nullable="false" />
+    <Property Name="CREDIARIO_MULTA" Type="Decimal" Nullable="false" />
+    <Property Name="CREDIARIO_CARENCIA" Type="Int32" Nullable="false" />
+    <Property Name="CREDIARIO_ACRECIMOVALOR" Type="Decimal" Nullable="false" />
+    <Property Name="CREDIARIO_ACRECIMOPORCENTAGEM" Type="Decimal" Nullable="false" />
+    <Property Name="CREDIARIO_PARCELAMENTO_MAXIMO" Type="Decimal" Nullable="false" />
+    <Property Name="CREDIARIO_VALIDADE" Type="Decimal" Nullable="false" />
+    <Property Name="CREDIARIO_ULTIMAATUALIZACAO" Type="DateTime" />
+    <Property Name="CREDIARIO_INSTRUCAO_CARNE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CREDIARIO_OPCAO_PRIMEIRA_PARCELA" Type="Int32" Nullable="false" />
+    <Property Name="CREDIARIO_CONFIRMACAR_DADOS" Type="Int32" Nullable="false" />
+    <Property Name="PEDIDO_NUMERO_COPIAS" Type="Int32" Nullable="false" />
+    <Property Name="ISMULTILOJA" Type="Boolean" Nullable="false" />
+    <Property Name="ISPRORROGARBLOQUEIO" Type="Boolean" Nullable="false" />
+    <Property Name="PRIMEIRO_LEMBRETE_FATURA" Type="Boolean" Nullable="false" />
+    <Property Name="SEGUNDO_LEMBRETE_FATURA" Type="Boolean" Nullable="false" />
+    <Property Name="TERCEIRO_LEMBRETE_FATURA" Type="Boolean" Nullable="false" />
+    <Property Name="ALIQUOTA_PIS" Type="Decimal" Nullable="false" />
+    <Property Name="ALIQUOTA_COFINS" Type="Decimal" Nullable="false" />
+    <Property Name="ALIQUOTA_ICMS" Type="Decimal" Nullable="false" />
+    <Property Name="CFOP_NFC" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CFOP_NF" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TOKEN_DEOLHONOIMPOSTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CST_NFC" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="COD_BENEFICIO_FISCAL_NFC" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CST_NF_CONS_FINAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="COD_BENEFICIO_FISCAL_NF_CONS_FINAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CST_NF_CONS_NAO_FINAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="COD_BENEFICIO_FISCAL_NF_CONS_NAO_FINAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DIAS_VENCIMENTO_CERTIFICADO" Type="Int32" Nullable="false" />
+    <Property Name="XML_EXTRAIR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="XML_MESES_MANTER" Type="Int32" />
+    <Property Name="CST_COFINS" Type="Int32" />
+    <Property Name="CST_PIS" Type="Int32" />
+    <Property Name="EMAIL_SERVIDORSMTP" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_USUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_SENHA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_PORTA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL_CRIPTOGRAFIA" Type="Int32" Nullable="false" />
+    <Property Name="EMAIL_AUTENTICARSSL" Type="Boolean" Nullable="false" />
+    <Property Name="MOSTRAR_UNIDADE" Type="Boolean" Nullable="false" />
+    <Property Name="DATAPRORROGARBLOQUEIOS" Type="DateTime" />
+    <Property Name="DATABLOQUEIOS" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DIASTOLERANCIA" Type="Int32" />
+    <Property Name="DATAATUALIZACAO" Type="DateTime" />
+    <Property Name="EXIBIR_NA_IMPRESSAO" Type="Int32" Nullable="false" />
+    <Property Name="ULTIMOMDELETELOG" Type="DateTime" Nullable="false" />
+    <Property Name="DIASDELETARLOG" Type="Int32" Nullable="false" />
+    <Property Name="NUMERO_COBRANCA_CARTAODECREDITO" Type="Int32" Nullable="false" />
+    <Property Name="NUMERO_COBRANCA_PROMISSORIA" Type="Int32" Nullable="false" />
+    <Property Name="NUMERO_COBRANCA_TRANSFERENCIA" Type="Int32" Nullable="false" />
+    <Property Name="NUMERO_COBRANCA_CARTEIRA" Type="Int32" Nullable="false" />
+    <Property Name="NUMERO_COBRANCA_CHEQUE" Type="Int32" Nullable="false" />
+    <Property Name="NUMERO_COBRANCA_CREDIARIO" Type="Int32" Nullable="false" />
+    <Property Name="NUMERO_COBRANCA_DUPLICATA" Type="Int32" Nullable="false" />
+    <Property Name="VALORTOTALPROMISSORIA" Type="Boolean" Nullable="false" />
+    <Property Name="NUMERO_COBRANCA_BOLETO" Type="Int32" Nullable="false" />
+    <Property Name="ISIMPRESSAOPARCELASNOTA" Type="Boolean" Nullable="false" />
+    <Property Name="DESABILITARGTIN" Type="Boolean" Nullable="false" />
+    <Property Name="FRETE_PROPORCIONAL" Type="Boolean" Nullable="false" />
+    <Property Name="ISIMAGEMPEDIDO" Type="Boolean" Nullable="false" />
+    <Property Name="ISVALORATACADO" Type="Boolean" Nullable="false" />
+    <Property Name="UTILIZAR_CODIGO_EAN13" Type="Boolean" Nullable="false" />
+    <Property Name="HUB_ESTOQUEENVIAR" Type="DateTime" />
+    <Property Name="HUB_PRODUTOENVIAR" Type="DateTime" />
+    <Property Name="HUB_PRODUTORECEBER" Type="DateTime" />
+    <Property Name="HUB_GRADERECEBER" Type="DateTime" />
+    <Property Name="HUB_GRADEENVIAR" Type="DateTime" />
+    <Property Name="HUB_GRUPOENVIAR" Type="DateTime" />
+    <Property Name="HUB_PEDIDORECEBER" Type="DateTime" />
+    <Property Name="HUB_PEDIDOENVIAR" Type="DateTime" />
+    <Property Name="HUB_PESSOAENVIAR" Type="DateTime" />
+    <Property Name="HUB_PESSOARECEBER" Type="DateTime" />
+    <Property Name="TICKET_MEDIO_COMPRA" Type="Boolean" Nullable="false" />
+    <Property Name="API_URL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="API_CODE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="VINCULARSUBGRUPOCOMGRUPO" Type="Boolean" Nullable="false" />
+    <Property Name="ENVIAR_CATEGORIA" Type="Boolean" Nullable="false" />
+    <Property Name="ENVIAR_PRODUTO" Type="Boolean" Nullable="false" />
+    <Property Name="RECEBER_PRODUTO" Type="Boolean" Nullable="false" />
+    <Property Name="ENVIAR_CLIENTE" Type="Boolean" Nullable="false" />
+    <Property Name="RECEBER_CLIENTE" Type="Boolean" Nullable="false" />
+    <Property Name="RECEBER_PEDIDO" Type="Boolean" Nullable="false" />
+    <Property Name="ULTIMASINCRONIZACAO_HUB" Type="DateTime" />
+    <Property Name="OBSERVACAO_IMPRESSAO_NOTA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="UTILIZAR_NOVA_TELA_BUSCA" Type="Boolean" Nullable="false" />
+    <Property Name="UTILIZAR_CODIGOPRIMARIO_CONDICIONAL" Type="Boolean" Nullable="false" />
+    <Property Name="CONDICIONAL_MOSTRAR_UNIDADE" Type="Boolean" Nullable="false" />
+    <Property Name="CONDICIONAL_NUMERO_COPIAS" Type="Int32" Nullable="false" />
+    <Property Name="UTILIZAR_CUSTO_MEDIO_COMPRA" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="configuracaopagamento">
+    <Key>
+      <PropertyRef Name="ConfiguracaoPagamentoId" />
+    </Key>
+    <Property Name="ConfiguracaoPagamentoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TIPO_PAGAMENTO_CARTAODECREDITO" Type="Int32" Nullable="false" />
+    <Property Name="TIPO_PAGAMENTO_PROMISSORIA" Type="Int32" Nullable="false" />
+    <Property Name="TIPO_PAGAMENTO_TRANSFERENCIA" Type="Int32" Nullable="false" />
+    <Property Name="TIPO_PAGAMENTO_CARTEIRA" Type="Int32" Nullable="false" />
+    <Property Name="TIPO_PAGAMENTO_CHEQUE" Type="Int32" Nullable="false" />
+    <Property Name="TIPO_PAGAMENTO_CREDIARIO" Type="Int32" Nullable="false" />
+    <Property Name="TIPO_PAGAMENTO_DUPLICATA" Type="Int32" Nullable="false" />
+    <Property Name="TIPO_PAGAMENTO_BOLETO" Type="Int32" Nullable="false" />
+    <Property Name="TIPO_PAGAMENTO_DINHEIRO" Type="Int32" Nullable="false" />
+    <Property Name="TIPO_PAGAMENTO_DEBITO" Type="Int32" Nullable="false" />
+    <Property Name="TIPO_PAGAMENTO_TICKET" Type="Int32" Nullable="false" />
+    <Property Name="TIPO_PAGAMENTO_CREDITO" Type="Int32" Nullable="false" />
+    <Property Name="UTILIZARCONFIGURACAOPAGAMENTO" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="contaspagarreceberparcela">
+    <Key>
+      <PropertyRef Name="ContasPagarReceberParcelaId" />
+    </Key>
+    <Property Name="ContasPagarReceberParcelaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="Cheque_BancoID" Type="Int32" Nullable="false" />
+    <Property Name="Cheque_Agencia" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="Cheque_Conta" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="Cheque_Numero" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="Cheque_Emitente" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATALIQUIDACAO" Type="DateTime" />
+    <Property Name="DATABAIXA" Type="DateTime" />
+    <Property Name="DOCUMENTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ISLIQUIDADO" Type="Boolean" Nullable="false" />
+    <Property Name="OBSERVACOES" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="PEDIDOID" Type="Int32" />
+    <Property Name="PESSOAID" Type="Int32" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <Property Name="TIPOCONTA" Type="Int32" Nullable="false" />
+    <Property Name="TIPOPAGAMENTORECEBIMENTO" Type="Int32" Nullable="false" />
+    <Property Name="VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_ACRESCIMO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_DESCONTO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_JUROS" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_MULTA" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_PAGO" Type="Decimal" Nullable="false" />
+    <Property Name="VENCIMENTO" Type="DateTime" Nullable="false" />
+    <Property Name="VALOR_TROCO" Type="Decimal" Nullable="false" />
+    <Property Name="CREDIARIOID" Type="Int32" />
+    <Property Name="ISAGRUPADA" Type="Boolean" Nullable="false" />
+    <Property Name="PARCELADESTINO" Type="Int32" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="TIPOORIGEMPARCELA" Type="Int32" />
+    <NavigationProperty Name="crediario" Relationship="Self.FK_ContasPagarReceberParcela_Crediario_CREDIARIOID" FromRole="contaspagarreceberparcela" ToRole="crediario" />
+    <NavigationProperty Name="pedido" Relationship="Self.FK_ContasPagarReceberParcela_Pedido_PEDIDOID" FromRole="contaspagarreceberparcela" ToRole="pedido" />
+    <NavigationProperty Name="pessoa" Relationship="Self.FK_ContasPagarReceberParcela_Pessoa_PESSOAID" FromRole="contaspagarreceberparcela" ToRole="pessoa" />
+  </EntityType>
+  <EntityType Name="crediario">
+    <Key>
+      <PropertyRef Name="CrediarioId" />
+    </Key>
+    <Property Name="CrediarioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="JUROS_TIPO" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_TAXA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_MULTA" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_CARENCIA" Type="Int32" Nullable="false" />
+    <Property Name="JUROS_ACRESCIMOVALOR" Type="Decimal" Nullable="false" />
+    <Property Name="JUROS_ACRESCIMOPORCENTAGEM" Type="Decimal" Nullable="false" />
+    <Property Name="PESSOAID" Type="Int32" Nullable="false" />
+    <Property Name="PARCELAMENTO_MAXIMO" Type="Int32" Nullable="false" />
+    <Property Name="VENDEDORID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="contaspagarreceberparcela" Relationship="Self.FK_ContasPagarReceberParcela_Crediario_CREDIARIOID" FromRole="crediario" ToRole="contaspagarreceberparcela" />
+    <NavigationProperty Name="pessoa" Relationship="Self.FK_Crediario_Pessoa_PESSOAID" FromRole="crediario" ToRole="pessoa" />
+    <NavigationProperty Name="pessoa1" Relationship="Self.FK_Crediario_Pessoa_VENDEDORID" FromRole="crediario" ToRole="pessoa" />
+  </EntityType>
+  <EntityType Name="departamento">
+    <Key>
+      <PropertyRef Name="DepartamentoId" />
+    </Key>
+    <Property Name="DepartamentoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CADASTROUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+    <Property Name="SINCRONIZADO_EM" Type="DateTime" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_Produto_Departamento_DEPARTAMENTOID" FromRole="departamento" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="estoqueproduto">
+    <Key>
+      <PropertyRef Name="EstoqueProdutoId" />
+    </Key>
+    <Property Name="EstoqueProdutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ESTOQUEATUAL" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_01" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_02" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_03" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_04" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_05" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_06" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_07" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_08" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_09" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_10" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_11" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_12" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_13" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_14" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_15" Type="Decimal" Nullable="false" />
+    <Property Name="ISUTILIZAGRADE" Type="Boolean" Nullable="false" />
+    <Property Name="PRODUTOID" Type="Int32" />
+    <Property Name="GRADE_REFERENCIA_01" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_02" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_03" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_04" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_05" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_06" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_07" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_08" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_09" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_10" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_11" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_12" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_13" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_14" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_15" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_01" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_02" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_03" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_04" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_05" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_06" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_07" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_08" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_09" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_10" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_11" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_12" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_13" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_14" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_MINIMA_15" Type="Decimal" Nullable="false" />
+    <Property Name="HUB_ID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_EstoqueProduto_Produto_PRODUTOID" FromRole="estoqueproduto" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="estoqueprodutomovimento">
+    <Key>
+      <PropertyRef Name="EstoqueProdutoMovimentoId" />
+    </Key>
+    <Property Name="EstoqueProdutoMovimentoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ESTOQUEATUAL" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_01" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_02" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_03" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_04" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_05" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_06" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_07" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_08" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_09" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_10" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_11" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_12" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_13" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_14" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_15" Type="Decimal" Nullable="false" />
+    <Property Name="PESSOAID" Type="Int32" />
+    <Property Name="PRODUTOID" Type="Int32" />
+    <Property Name="ORIGEMMOVIMENTO" Type="Int32" Nullable="false" />
+    <Property Name="GRADE_REFERENCIA_01" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_02" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_03" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_04" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_05" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_06" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_07" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_08" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_09" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_10" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_11" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_12" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_13" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_14" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADE_REFERENCIA_15" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="OBSERVACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="pessoa" Relationship="Self.FK_EstoqueProdutoMovimento_Pessoa_PESSOAID" FromRole="estoqueprodutomovimento" ToRole="pessoa" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_EstoqueProdutoMovimento_Produto_PRODUTOID" FromRole="estoqueprodutomovimento" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="fabricante">
+    <Key>
+      <PropertyRef Name="FabricanteId" />
+    </Key>
+    <Property Name="FabricanteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CADASTROUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+    <Property Name="SINCRONIZADO_EM" Type="DateTime" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_Produto_Fabricante_FABRICANTEID" FromRole="fabricante" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="fecpexcecoes">
+    <Key>
+      <PropertyRef Name="FECPExcecoesId" />
+    </Key>
+    <Property Name="FECPExcecoesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="CLASSIFICACAOFISCAL_ID" Type="Int32" />
+    <Property Name="UF_ID" Type="Int32" />
+    <Property Name="ALIQUOTA" Type="Decimal" Nullable="false" />
+    <Property Name="ALIQUOTA_ICMS" Type="Decimal" Nullable="false" />
+    <NavigationProperty Name="classificacaofiscal" Relationship="Self.FK_92d52a78120a4672b95529c34cdb420e" FromRole="fecpexcecoes" ToRole="classificacaofiscal" />
+  </EntityType>
+  <EntityType Name="formarecebimento">
+    <Key>
+      <PropertyRef Name="FormaRecebimentoId" />
+    </Key>
+    <Property Name="FormaRecebimentoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ISDINHEIRO" Type="Boolean" Nullable="false" />
+    <Property Name="DINHEIRO_ORDEM" Type="Int32" Nullable="false" />
+    <Property Name="ISCHEQUERECEBIDO" Type="Boolean" Nullable="false" />
+    <Property Name="CHEQUERECEBIDO_ORDEM" Type="Int32" Nullable="false" />
+    <Property Name="ISCARTAOCREDITO" Type="Boolean" Nullable="false" />
+    <Property Name="CARTAOCREDITO_ORDEM" Type="Int32" Nullable="false" />
+    <Property Name="ISCARTAODEBITO" Type="Boolean" Nullable="false" />
+    <Property Name="CARTAODEBITO_ORDEM" Type="Int32" Nullable="false" />
+    <Property Name="ISPROMISSORIA" Type="Boolean" Nullable="false" />
+    <Property Name="PROMISSORIA_ORDEM" Type="Int32" Nullable="false" />
+    <Property Name="ISDUPLICATA" Type="Boolean" Nullable="false" />
+    <Property Name="DUPLICATA_ORDEM" Type="Int32" Nullable="false" />
+    <Property Name="ISCREDITO" Type="Boolean" Nullable="false" />
+    <Property Name="CREDITO_ORDEM" Type="Int32" Nullable="false" />
+    <Property Name="ISTRANSFERENCIA" Type="Boolean" Nullable="false" />
+    <Property Name="TRANSFERENCIA_ORDEM" Type="Int32" Nullable="false" />
+    <Property Name="ISBOLETO" Type="Boolean" Nullable="false" />
+    <Property Name="BOLETO_ORDEM" Type="Int32" Nullable="false" />
+    <Property Name="ISVALETICKET" Type="Boolean" Nullable="false" />
+    <Property Name="VALETICKET_ORDEM" Type="Int32" Nullable="false" />
+    <Property Name="ISCARTEIRA" Type="Boolean" Nullable="false" />
+    <Property Name="CARTEIRA_ORDEM" Type="Int32" Nullable="false" />
+    <Property Name="ISCREDIARIO" Type="Boolean" Nullable="false" />
+    <Property Name="CREDIARIO_ORDEM" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="grade">
+    <Key>
+      <PropertyRef Name="GradeId" />
+    </Key>
+    <Property Name="GradeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="OBSERVACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_01" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_01_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_02" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_02_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_03" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_03_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_04" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_04_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_05" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_05_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_06" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_06_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_07" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_07_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_08" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_08_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_09" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_09_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_10" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_10_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_11" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_11_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_12" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_12_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_13" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_13_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_14" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_14_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_15" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_15_LEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_01_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_02_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_03_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_04_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_05_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_06_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_07_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_08_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_09_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_10_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_11_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_12_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_13_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_14_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TAMANHO_15_REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CADASTROUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+    <Property Name="SINCRONIZADO_EM" Type="DateTime" />
+    <Property Name="HUB_ID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_Produto_Grade_GRADEID" FromRole="grade" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="grupo">
+    <Key>
+      <PropertyRef Name="GrupoId" />
+    </Key>
+    <Property Name="GrupoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CADASTROUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+    <Property Name="SINCRONIZADO_EM" Type="DateTime" />
+    <Property Name="HUB_ID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_Produto_Grupo_GRUPOID" FromRole="grupo" ToRole="produto" />
+    <NavigationProperty Name="subgrupo" Relationship="Self.FK_SubGrupo_Grupo_GRUPOID" FromRole="grupo" ToRole="subgrupo" />
+  </EntityType>
+  <EntityType Name="imagemproduto">
+    <Key>
+      <PropertyRef Name="ImagemProdutoId" />
+    </Key>
+    <Property Name="ImagemProdutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProdutoId" Type="Int32" Nullable="false" />
+    <Property Name="IMAGEM" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="IMAGEM_REDUZIDA" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="IMAGEM_MD5" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CADASTROUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+    <Property Name="SINCRONIZADO_EM" Type="DateTime" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_ImagemProduto_Produto_ProdutoId" FromRole="imagemproduto" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="log">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DataCadastro" Type="DateTime" Nullable="false" />
+    <Property Name="Acao" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="Query" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Name="IDALTERADO" Type="Int32" Nullable="false" />
+    <Property Name="TabelaAlvo" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="IDUSUARIO" Type="Int32" Nullable="false" />
+    <Property Name="USUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="EMPRESAID" Type="Int32" Nullable="false" />
+    <Property Name="COMPUTADOR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="IPCOMPUTADOR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="marca">
+    <Key>
+      <PropertyRef Name="MarcaId" />
+    </Key>
+    <Property Name="MarcaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CADASTROUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+    <Property Name="SINCRONIZADO_EM" Type="DateTime" />
+    <Property Name="HUB_ID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_Produto_Marca_MARCAID" FromRole="marca" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="movimentodecontas">
+    <Key>
+      <PropertyRef Name="MovimentoDeContasId" />
+    </Key>
+    <Property Name="MovimentoDeContasId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="HISTORICO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TIPOPAGAMENTORECEBIMENTO" Type="Int32" Nullable="false" />
+    <Property Name="VALOR" Type="Decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="notafiscal">
+    <Key>
+      <PropertyRef Name="NotaFiscalId" />
+    </Key>
+    <Property Name="NotaFiscalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="MODELONOTA" Type="Int32" Nullable="false" />
+    <Property Name="PESSOAID" Type="Int32" />
+    <Property Name="VENDEDORID" Type="Int32" />
+    <Property Name="TRANSPORTADORAID" Type="Int32" />
+    <Property Name="FRETE_VALOR" Type="Decimal" />
+    <Property Name="FRETE_TIPO" Type="Int32" />
+    <Property Name="SEGURO_VALOR" Type="Decimal" />
+    <Property Name="OUTRASDESPESASACESSORIAS_VALOR" Type="Decimal" />
+    <Property Name="INCLUIRFRETESEGUROOUTRASDESPESAS_NO_IMPOSTO" Type="Boolean" />
+    <Property Name="NATUREZADEOPERACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NF_STATUS" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NF_ULTIMAMENSAGEM" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NF_RECIBO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NF_CHAVEACESSO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NF_NUMERO" Type="Int32" />
+    <Property Name="NF_PROTOCOLO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NF_XML" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NF_TENTATIVA_TRANSMISSAO" Type="Int32" Nullable="false" />
+    <Property Name="NF_CONTINGENCIA_XML" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NF_CONTINGENCIA_DATA" Type="DateTime" />
+    <Property Name="VALOR_TOTAL" Type="Decimal" Nullable="false" />
+    <Property Name="OBSERVACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NF_TIPO" Type="Int32" Nullable="false" />
+    <Property Name="DATAFISCAL" Type="DateTime" />
+    <Property Name="NF_FINALIDADE" Type="Int32" />
+    <Property Name="NF_CHAVEDEACESSOREFERENCIADAS" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="PESO_BRUTO" Type="Decimal" />
+    <Property Name="PESO_LIQUIDO" Type="Decimal" />
+    <Property Name="ESPECIEVOLUMES" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="MARCAVOLUMES" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NUMEROVOLUMES" Type="Decimal" />
+    <Property Name="QUANTIDADEVOLUMES" Type="Decimal" />
+    <Property Name="DATA_ULTIMA_SINCRONIZACAO_PEDIDOWEB" Type="DateTime" />
+    <NavigationProperty Name="notafiscal_cartacorrecao" Relationship="Self.FK_NotaFiscal_CartaCorrecao_NotaFiscal_NOTAFISCALID" FromRole="notafiscal" ToRole="notafiscal_cartacorrecao" />
+    <NavigationProperty Name="pessoa" Relationship="Self.FK_NotaFiscal_Pessoa_PESSOAID" FromRole="notafiscal" ToRole="pessoa" />
+    <NavigationProperty Name="pessoa1" Relationship="Self.FK_NotaFiscal_Pessoa_TRANSPORTADORAID" FromRole="notafiscal" ToRole="pessoa" />
+    <NavigationProperty Name="pessoa2" Relationship="Self.FK_NotaFiscal_Pessoa_VENDEDORID" FromRole="notafiscal" ToRole="pessoa" />
+    <NavigationProperty Name="notafiscalproduto" Relationship="Self.FK_NotaFiscalProduto_NotaFiscal_NOTAFISCALID" FromRole="notafiscal" ToRole="notafiscalproduto" />
+  </EntityType>
+  <EntityType Name="notafiscal_cartacorrecao">
+    <Key>
+      <PropertyRef Name="NotaFiscal_CartaCorrecaoId" />
+    </Key>
+    <Property Name="NotaFiscal_CartaCorrecaoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="XML" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ULTIMAMENSAGEM" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CORRECAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NOTAFISCALID" Type="Int32" />
+    <NavigationProperty Name="notafiscal" Relationship="Self.FK_NotaFiscal_CartaCorrecao_NotaFiscal_NOTAFISCALID" FromRole="notafiscal_cartacorrecao" ToRole="notafiscal" />
+  </EntityType>
+  <EntityType Name="notafiscal_pedido">
+    <Key>
+      <PropertyRef Name="NotaFiscal_PedidoId" />
+    </Key>
+    <Property Name="NotaFiscal_PedidoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="NOTAFISCALID" Type="Int32" Nullable="false" />
+    <Property Name="PEDIDOID" Type="Int32" Nullable="false" />
+    <Property Name="PEDIDOVALOR" Type="Decimal" Nullable="false" />
+    <Property Name="PEDIDODATA" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="notafiscalproduto">
+    <Key>
+      <PropertyRef Name="NotaFiscalProdutoId" />
+    </Key>
+    <Property Name="NotaFiscalProdutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="GRADELEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADENUMERO" Type="Int32" Nullable="false" />
+    <Property Name="NOTAFISCALID" Type="Int32" />
+    <Property Name="PRODUTOID" Type="Int32" />
+    <Property Name="DESCRICAOPRODUTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="QUANTIDADE" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_UNITARIO" Type="Decimal" Nullable="false" />
+    <Property Name="DESCONTO_VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="DESCONTO_PORCENTAGEM" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_TOTAL" Type="Decimal" Nullable="false" />
+    <Property Name="SUBTOTAL" Type="Decimal" Nullable="false" />
+    <Property Name="CFOP" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NCM" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ORIGEMMERCADORIA" Type="Int32" />
+    <Property Name="CSOSNCST" Type="Int32" />
+    <Property Name="ICMS_BASECALCULO" Type="Decimal" Nullable="false" />
+    <Property Name="ICMS_ALIQUOTA" Type="Decimal" Nullable="false" />
+    <Property Name="ICMS_VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="ICMS_DIFAL" Type="Decimal" Nullable="false" />
+    <Property Name="ICMSST_BASECALCULO" Type="Decimal" Nullable="false" />
+    <Property Name="ICMSST_ALIQUOTA" Type="Decimal" Nullable="false" />
+    <Property Name="ICMSST_VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="ICMSST_MVA" Type="Decimal" Nullable="false" />
+    <Property Name="IPI_ALIQUOTA" Type="Decimal" Nullable="false" />
+    <Property Name="IPI_VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="IPI_CST" Type="Int32" />
+    <Property Name="PIS_CST" Type="Int32" />
+    <Property Name="PIS_ALIQUOTA" Type="Decimal" Nullable="false" />
+    <Property Name="PIS_VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="PISST_ALIQUOTA" Type="Decimal" Nullable="false" />
+    <Property Name="PISST_VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="COFINS_CST" Type="Int32" />
+    <Property Name="COFINS_ALIQUOTA" Type="Decimal" Nullable="false" />
+    <Property Name="COFINS_VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="COFINSST_ALIQUOTA" Type="Decimal" Nullable="false" />
+    <Property Name="COFINSST_VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="CREDITO_ALIQUOTA" Type="Decimal" Nullable="false" />
+    <Property Name="CREDITO_VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="OBSERVACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="IPI_BASECALCULO" Type="Decimal" Nullable="false" />
+    <Property Name="PIS_BASECALCULO" Type="Decimal" Nullable="false" />
+    <Property Name="PISST_BASECALCULO" Type="Decimal" Nullable="false" />
+    <Property Name="COFINS_BASECALCULO" Type="Decimal" Nullable="false" />
+    <Property Name="COFINSST_BASECALCULO" Type="Decimal" Nullable="false" />
+    <Property Name="IPI_CODIGOENQUADRAMENTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FCPST_ALIQUOTA" Type="Decimal" Nullable="false" />
+    <Property Name="FCPST_VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="ZERARBASECALCULOICMSST" Type="Boolean" />
+    <Property Name="FCP_ALIQUOTA" Type="Decimal" Nullable="false" />
+    <Property Name="FCP_VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="REDUCAO_BC_ICMS" Type="Decimal" Nullable="false" />
+    <Property Name="REDUCAO_BC_ICMSST" Type="Decimal" Nullable="false" />
+    <Property Name="COD_BENEFICIO_FISCAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="MODBC_ICMS" Type="Int32" />
+    <Property Name="MODBC_ICMSST" Type="Int32" />
+    <Property Name="ICMS_DIFERIMENTO_PORCENTAGEM" Type="Decimal" />
+    <Property Name="ICMS_DIFERIMENTO_VALOR" Type="Decimal" />
+    <Property Name="ICMS_DIFERIMENTO_SUBTRAIDO" Type="Decimal" />
+    <Property Name="NUMEROPEDIDOCOMPRA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="notafiscal" Relationship="Self.FK_NotaFiscalProduto_NotaFiscal_NOTAFISCALID" FromRole="notafiscalproduto" ToRole="notafiscal" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_NotaFiscalProduto_Produto_PRODUTOID" FromRole="notafiscalproduto" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="pais">
+    <Key>
+      <PropertyRef Name="PaisId" />
+    </Key>
+    <Property Name="PaisId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CODIGOPAIS" Type="Int32" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="pedido">
+    <Key>
+      <PropertyRef Name="PedidoId" />
+    </Key>
+    <Property Name="PedidoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="CLIENTEID" Type="Int32" />
+    <Property Name="CONDICAODEPAGAMENTORECEBIMENTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NFCE_STATUS" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NFCE_ULTIMAMENSAGEM" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NFCE_RECIBO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NFCE_CHAVEACESSO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NFCE_PROTOCOLO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NFCE_XML" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="OBSERVACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="VALOR_AVISTA" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_APRAZO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_TOTAL" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_TOTAL_CUSTO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_TOTAL_MARGEMLUCRO_PORCENTAGEM" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_TOTAL_MARGEMLUCRO_VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="VENDEDORID" Type="Int32" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <Property Name="NFCE_NUMERO" Type="Int32" />
+    <Property Name="SENHA" Type="Int32" Nullable="false" />
+    <Property Name="OBSERVACAO_INCLUIR_PEDIDO" Type="Boolean" Nullable="false" />
+    <Property Name="OBSERVACAO_INCLUIR_NOTAFISCAL" Type="Boolean" Nullable="false" />
+    <Property Name="NFCE_TENTATIVA_TRANSMISSAO" Type="Int32" Nullable="false" />
+    <Property Name="NFCE_CONTINGENCIA_XML" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FRETE" Type="Decimal" Nullable="false" />
+    <Property Name="REAJUSTAR_VALOR_DE_CUSTO_VENDA" Type="Int32" />
+    <Property Name="DATA_ULTIMA_SINCRONIZACAO_PEDIDOWEB" Type="DateTime" />
+    <Property Name="NFCE_CONTINGENCIA_DATA" Type="DateTime" />
+    <Property Name="DATAFISCAL" Type="DateTime" />
+    <Property Name="NUMERO_PREVENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="VALOR_TOTAL_COMISSAO" Type="Decimal" Nullable="false" />
+    <Property Name="ISINDICARCONSUMIDORNFC" Type="Boolean" Nullable="false" />
+    <Property Name="ISDELETADO" Type="Boolean" Nullable="false" />
+    <Property Name="ORIGINADO_DE" Type="Int32" />
+    <Property Name="STATUSDESCRICAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="VALOR_FRETE" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_ACRESCIMO" Type="Decimal" Nullable="false" />
+    <Property Name="HUB_ID" Type="Int64" Nullable="false" />
+    <Property Name="PEDIDOAPI" Type="Boolean" Nullable="false" />
+    <Property Name="CondicionalPrimaryId" Type="Int32" Nullable="false" />
+    <Property Name="VALOR_TOTAL_DEVOLUCAO" Type="Decimal" Nullable="false" />
+    <NavigationProperty Name="contaspagarreceberparcela" Relationship="Self.FK_ContasPagarReceberParcela_Pedido_PEDIDOID" FromRole="pedido" ToRole="contaspagarreceberparcela" />
+    <NavigationProperty Name="pessoa" Relationship="Self.FK_Pedido_Pessoa_CLIENTEID" FromRole="pedido" ToRole="pessoa" />
+    <NavigationProperty Name="pessoa1" Relationship="Self.FK_Pedido_Pessoa_VENDEDORID" FromRole="pedido" ToRole="pessoa" />
+    <NavigationProperty Name="pedidoproduto" Relationship="Self.FK_PedidoProduto_Pedido_PEDIDOID" FromRole="pedido" ToRole="pedidoproduto" />
+  </EntityType>
+  <EntityType Name="pedidoproduto">
+    <Key>
+      <PropertyRef Name="PedidoProdutoId" />
+    </Key>
+    <Property Name="PedidoProdutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="GRADELEGENDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="GRADENUMERO" Type="Int32" Nullable="false" />
+    <Property Name="PEDIDOID" Type="Int32" />
+    <Property Name="PRODUTOID" Type="Int32" />
+    <Property Name="QUANTIDADE" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_COMISSAO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_COMPRA" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_CUSTO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_DESCONTO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_DESCONTO_PORCENTAGEM" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_VENDA_ATACADO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_VENDA_ATACADO_MARGEMLUCRO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_VENDA_VAREJO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_VENDA_VAREJO_MARGEMLUCRO" Type="Decimal" Nullable="false" />
+    <Property Name="FATOR" Type="Decimal" />
+    <Property Name="OBSERVACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="QUANTIDADE_DEVOLVIDA" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_ACRESCIMO" Type="Decimal" Nullable="false" />
+    <Property Name="HUB_ID" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="pedido" Relationship="Self.FK_PedidoProduto_Pedido_PEDIDOID" FromRole="pedidoproduto" ToRole="pedido" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_PedidoProduto_Produto_PRODUTOID" FromRole="pedidoproduto" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="pessoa">
+    <Key>
+      <PropertyRef Name="PessoaId" />
+    </Key>
+    <Property Name="PessoaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ALERTAR" Type="Boolean" Nullable="false" />
+    <Property Name="APELIDO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="BAIRRO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="BAIRROCOBRANCA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="BAIRROENTREGA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="BLOQUEADO" Type="Boolean" Nullable="false" />
+    <Property Name="CADASTROCOMPLETO" Type="Boolean" Nullable="false" />
+    <Property Name="CELULAR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CELULAROPERADORA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CEP" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CEPCOBRANCA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CEPENTREGA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="COMPLEMENTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="COMPLEMENTOCOBRANCA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="COMPLEMENTOENTREGA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGEBAIRRO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGECARGO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGECELULAR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGECELULAROPERADORA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGECEP" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGECOMPLEMENTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGECPF" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGEDATACONTRATACAO" Type="DateTime" />
+    <Property Name="CONJUGEDATANASCIMENTO" Type="DateTime" />
+    <Property Name="CONJUGEFAX" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGELOGRADOURO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGEMUNICIPIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGENOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGENUMERO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGEOBSERVACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGERG" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGESALARIO" Type="Decimal" Nullable="false" />
+    <Property Name="CONJUGETELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGETEMPOTRABALHO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONJUGEUFID" Type="Int32" Nullable="false" />
+    <Property Name="CONJUGUEPAIS_ID" Type="Int32" Nullable="false" />
+    <Property Name="CONSUMIDORFINAL" Type="Int32" Nullable="false" />
+    <Property Name="CONTATO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CONTRIBUINTE" Type="Int32" Nullable="false" />
+    <Property Name="CPFCNPJ" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CRT" Type="Int32" Nullable="false" />
+    <Property Name="CTPS" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATAADMISSAO" Type="DateTime" />
+    <Property Name="DATACADASTRO" Type="DateTime" />
+    <Property Name="DATANASCIMENTO" Type="DateTime" />
+    <Property Name="DATAULTIMAALTERACAO" Type="DateTime" />
+    <Property Name="DESCONTOMAXIMOPERMITIDO" Type="Decimal" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="EMAILFINANCEIRO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ENDERECOCOBRANCA_USARPRINCIPAL" Type="Boolean" Nullable="false" />
+    <Property Name="ENDERECOENTREGA_USARPRINCIPAL" Type="Boolean" Nullable="false" />
+    <Property Name="ESTADOCIVIL" Type="Int32" Nullable="false" />
+    <Property Name="EXIBEOBSERVACAO" Type="Boolean" Nullable="false" />
+    <Property Name="FAMILIARESBAIRRO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FAMILIARESCEP" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FAMILIARESCOMPLEMENTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FAMILIARESLOGRADOURO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FAMILIARESMUNICIPIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FAMILIARESNOMEMAE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FAMILIARESNOMEPAI" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FAMILIARESNUMERO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FAMILIARESOBSERVACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FAMILIARESPAIS_ID" Type="Int32" Nullable="false" />
+    <Property Name="FAMILIARESTELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FAMILIARESUFID" Type="Int32" Nullable="false" />
+    <Property Name="FAX" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FISJUR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FORMAPAGAMENTORECEBIMENTO" Type="Int32" Nullable="false" />
+    <Property Name="FUNCAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="IMAGEM" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="INSCRICAOMUNICIPAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ISCASAPROPRIA" Type="Boolean" Nullable="false" />
+    <Property Name="ISCLIENTE" Type="Boolean" Nullable="false" />
+    <Property Name="ISFORNECEDOR" Type="Boolean" Nullable="false" />
+    <Property Name="ISFUNCIONARIO" Type="Boolean" Nullable="false" />
+    <Property Name="ISTRANSPORTADORA" Type="Boolean" Nullable="false" />
+    <Property Name="ISVENDEDOR" Type="Boolean" Nullable="false" />
+    <Property Name="LIMITECREDITO" Type="Decimal" Nullable="false" />
+    <Property Name="LOGRADOURO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="LOGRADOUROCOBRANCA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="LOGRADOUROENTREGA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="METAPORPEDIDOFATURAMENTO" Type="Int32" Nullable="false" />
+    <Property Name="METAVALORVENDA" Type="Decimal" Nullable="false" />
+    <Property Name="MOTIVOBLOQUEIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="MUNICIPIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="MUNICIPIOCOBRANCA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="MUNICIPIOENTREGA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NATURALIDADE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NOMEFANTASIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NOMERAZAOSOCIAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NUMERO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NUMEROCOBRANCA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="NUMEROENTREGA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="OBSERVACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ORGAOEXPEDIDOR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="PAIS_ID" Type="Int32" Nullable="false" />
+    <Property Name="PAISCOBRANCA_ID" Type="Int32" Nullable="false" />
+    <Property Name="PAISENTREGA_ID" Type="Int32" Nullable="false" />
+    <Property Name="REFERENCIACOMERCIAL1CELULAR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL1CELULAROPERADORA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL1NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL1TELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL2CELULAR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL2CELULAROPERADORA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL2NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL2TELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL3CELULAR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL3CELULAROPERADORA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL3NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL3TELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL4CELULAR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL4CELULAROPERADORA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL4NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL4TELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL5CELULAR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL5CELULAROPERADORA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL5NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL5TELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL6CELULAR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL6CELULAROPERADORA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL6NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL6TELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL7CELULAR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL7CELULAROPERADORA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL7NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL7TELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL8CELULAR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL8CELULAROPERADORA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL8NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL8TELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL9CELULAR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL9CELULAROPERADORA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL9NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL9TELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL10CELULAR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL10CELULAROPERADORA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL10NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="REFERENCIACOMERCIAL10TELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="RGIE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="SALARIO" Type="Decimal" Nullable="false" />
+    <Property Name="SEXO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="SITUACAOCIVIL" Type="Int32" Nullable="false" />
+    <Property Name="TAXAENTREGA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TELEMARKETINGNAOLIGAR" Type="Boolean" Nullable="false" />
+    <Property Name="TELEMARKETINGRECORRENCIA" Type="Int32" Nullable="false" />
+    <Property Name="TIPO" Type="Int32" Nullable="false" />
+    <Property Name="TIPOEMAILPARAENVIARNFE" Type="Int32" Nullable="false" />
+    <Property Name="TIPOPAGAMENTORECEBIMENTO" Type="Int32" Nullable="false" />
+    <Property Name="TRABALHOBAIRRO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TRABALHOCARGO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TRABALHOCELULAR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TRABALHOCELULAROPERADORA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TRABALHOCEP" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TRABALHOCOMPLEMENTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TRABALHODATACONTRATACAO" Type="DateTime" />
+    <Property Name="TRABALHOFAX" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TRABALHOLOCAL" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TRABALHOLOGRADOURO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TRABALHOMUNICIPIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TRABALHONUMERO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TRABALHOOBSERVACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TRABALHOPAIS_ID" Type="Int32" Nullable="false" />
+    <Property Name="TRABALHOSALARIO" Type="Decimal" Nullable="false" />
+    <Property Name="TRABALHOTELEFONE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TRABALHOTEMPOTRABALHO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TRABALHOUFID" Type="Int32" Nullable="false" />
+    <Property Name="TRANSPORTADORAID" Type="Int32" />
+    <Property Name="UF" Type="Int32" Nullable="false" />
+    <Property Name="UFCOBRANCA" Type="Int32" Nullable="false" />
+    <Property Name="UFENTREGA" Type="Int32" Nullable="false" />
+    <Property Name="VENDEDORID" Type="Int32" />
+    <Property Name="CADASTROUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+    <Property Name="MOTIVOAPOSENTADORIA" Type="Int32" />
+    <Property Name="NUMEROBENEFICIOAPOSENTADORIA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="SINCRONIZADO_EM" Type="DateTime" />
+    <Property Name="VALORBENEFICIOAPOSENTADORIA" Type="Decimal" Nullable="false" />
+    <Property Name="FAMILIARESDATANASCIMENTOFILHO01" Type="DateTime" />
+    <Property Name="FAMILIARESDATANASCIMENTOFILHO02" Type="DateTime" />
+    <Property Name="FAMILIARESDATANASCIMENTOFILHO03" Type="DateTime" />
+    <Property Name="FAMILIARESDATANASCIMENTOFILHO04" Type="DateTime" />
+    <Property Name="FAMILIARESNOMEFILHO01" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FAMILIARESNOMEFILHO02" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FAMILIARESNOMEFILHO03" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="FAMILIARESNOMEFILHO04" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ISISCRICAOESTADUAL" Type="Boolean" Nullable="false" />
+    <Property Name="HUB_ID" Type="Int64" Nullable="false" />
+    <Property Name="ISPRODUTORRURAL" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="contaspagarreceberparcela" Relationship="Self.FK_ContasPagarReceberParcela_Pessoa_PESSOAID" FromRole="pessoa" ToRole="contaspagarreceberparcela" />
+    <NavigationProperty Name="crediario" Relationship="Self.FK_Crediario_Pessoa_PESSOAID" FromRole="pessoa" ToRole="crediario" />
+    <NavigationProperty Name="crediario1" Relationship="Self.FK_Crediario_Pessoa_VENDEDORID" FromRole="pessoa" ToRole="crediario" />
+    <NavigationProperty Name="estoqueprodutomovimento" Relationship="Self.FK_EstoqueProdutoMovimento_Pessoa_PESSOAID" FromRole="pessoa" ToRole="estoqueprodutomovimento" />
+    <NavigationProperty Name="notafiscal" Relationship="Self.FK_NotaFiscal_Pessoa_PESSOAID" FromRole="pessoa" ToRole="notafiscal" />
+    <NavigationProperty Name="notafiscal1" Relationship="Self.FK_NotaFiscal_Pessoa_TRANSPORTADORAID" FromRole="pessoa" ToRole="notafiscal" />
+    <NavigationProperty Name="notafiscal2" Relationship="Self.FK_NotaFiscal_Pessoa_VENDEDORID" FromRole="pessoa" ToRole="notafiscal" />
+    <NavigationProperty Name="pedido" Relationship="Self.FK_Pedido_Pessoa_CLIENTEID" FromRole="pessoa" ToRole="pedido" />
+    <NavigationProperty Name="pedido1" Relationship="Self.FK_Pedido_Pessoa_VENDEDORID" FromRole="pessoa" ToRole="pedido" />
+    <NavigationProperty Name="pessoa1" Relationship="Self.FK_Pessoa_Pessoa_TRANSPORTADORAID" FromRole="pessoa" ToRole="pessoa1" />
+    <NavigationProperty Name="pessoa2" Relationship="Self.FK_Pessoa_Pessoa_TRANSPORTADORAID" FromRole="pessoa1" ToRole="pessoa" />
+    <NavigationProperty Name="pessoa11" Relationship="Self.FK_Pessoa_Pessoa_VENDEDORID" FromRole="pessoa" ToRole="pessoa1" />
+    <NavigationProperty Name="pessoa3" Relationship="Self.FK_Pessoa_Pessoa_VENDEDORID" FromRole="pessoa1" ToRole="pessoa" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_Produto_Pessoa_FORNECEDORID" FromRole="pessoa" ToRole="produto" />
+    <NavigationProperty Name="segurancausuario" Relationship="Self.FK_SegurancaUsuario_Pessoa_CLIENTEID" FromRole="pessoa" ToRole="segurancausuario" />
+    <NavigationProperty Name="segurancausuario1" Relationship="Self.FK_SegurancaUsuario_Pessoa_FUNCIONARIOID" FromRole="pessoa" ToRole="segurancausuario" />
+  </EntityType>
+  <EntityType Name="produto">
+    <Key>
+      <PropertyRef Name="ProdutoId" />
+    </Key>
+    <Property Name="ProdutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="CFOP" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CLASSIFICACAOFISCALID" Type="Int32" />
+    <Property Name="COLECAOID" Type="Int32" />
+    <Property Name="COR" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="DESCRICAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRICAORESUMIDA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DEPARTAMENTOID" Type="Int32" />
+    <Property Name="ESTOQUEMINIMO" Type="Decimal" Nullable="false" />
+    <Property Name="FABRICANTEID" Type="Int32" />
+    <Property Name="FORNECEDORID" Type="Int32" />
+    <Property Name="GRADEID" Type="Int32" />
+    <Property Name="GRUPOID" Type="Int32" />
+    <Property Name="IMAGEM" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="MARCAID" Type="Int32" />
+    <Property Name="NCM" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="TIPOMERCADORIA" Type="Int32" Nullable="false" />
+    <Property Name="UNIDADEID" Type="Int32" />
+    <Property Name="VALOR_COMISSAO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_COMPRA" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_CUSTO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_VENDA_ATACADO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_VENDA_ATACADO_MARGEMLUCRO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_VENDA_VAREJO" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_VENDA_VAREJO_MARGEMLUCRO" Type="Decimal" Nullable="false" />
+    <Property Name="SubGrupo_SubGrupoId" Type="Int32" />
+    <Property Name="DESATIVARAUTOINSERCAO" Type="Boolean" Nullable="false" />
+    <Property Name="UNIDADE_BALANCA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CSOSNCST" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CEST" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="COFINSCST" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="PISCST" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="VALOR_CUSTO_OPERACIONAL" Type="Decimal" Nullable="false" />
+    <Property Name="DESCONTO_VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="DESCONTO_QUANDO" Type="Int32" Nullable="false" />
+    <Property Name="DESCONTO_QUANTIDADE" Type="Decimal" Nullable="false" />
+    <Property Name="VALIDADE" Type="Int32" />
+    <Property Name="EXPORTAR_BALANCA" Type="Boolean" />
+    <Property Name="REFERENCIAPRODUTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CODIGOCOMDESCRICAOANP" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CADASTROUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+    <Property Name="SINCRONIZADO_EM" Type="DateTime" />
+    <Property Name="SKU" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ISDELETADO" Type="Boolean" Nullable="false" />
+    <Property Name="ISWEBSEND" Type="Boolean" Nullable="false" />
+    <Property Name="IMAGEM_MD5" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="IMAGEM_REDUZIDA" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="PRODUTOID_UNIFICADO" Type="Int32" />
+    <Property Name="DESCONTOMAXIMOPERMITIDO" Type="Decimal" Nullable="false" />
+    <Property Name="REFERENCIAPADRAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="UTILIZARKITCOMPOSICAO" Type="Boolean" Nullable="false" />
+    <Property Name="ADICIONARITENSINDIVIDUALMENTE" Type="Boolean" Nullable="false" />
+    <Property Name="UTILIZALEITURAPESOBALANCA" Type="Boolean" />
+    <Property Name="ESTOQUEPRODUTO" Type="Decimal" Nullable="false" />
+    <Property Name="ISISENTOACRESCIMO" Type="Boolean" />
+    <Property Name="PRODUTO_FRAGMENTACAO" Type="Int32" />
+    <Property Name="QUANTIDADE_FRAGMENTACAO" Type="Decimal" />
+    <Property Name="HUB_ID" Type="Int64" Nullable="false" />
+    <Property Name="VALOR_VENDA_SITE" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR_VENDA_SITE_MARGEMLUCRO" Type="Decimal" Nullable="false" />
+    <Property Name="DESCRICAOPRODUTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="PESOPRODUTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ALTURAPRODUTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="LARGURAPRODUTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="COMPRIMENTOPRODUTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="EXIBIRSELODESTAQUE" Type="Int32" Nullable="false" />
+    <Property Name="EXIBIRSELOLANÇAMENTO" Type="Int32" Nullable="false" />
+    <Property Name="EXIBIRSELOADICIONAL" Type="Int32" Nullable="false" />
+    <Property Name="REAJUSTAR_VALOR_VENDA" Type="Boolean" Nullable="false" />
+    <Property Name="PRECO_PROMOCAO" Type="Decimal" Nullable="false" />
+    <Property Name="PERIODO_PROMOCAO_DE" Type="DateTime" />
+    <Property Name="PERIODO_PROMOCAO_ATE" Type="DateTime" />
+    <NavigationProperty Name="balancoproduto" Relationship="Self.FK_BalancoProduto_Produto_PRODUTOID" FromRole="produto" ToRole="balancoproduto" />
+    <NavigationProperty Name="classificacaofiscal" Relationship="Self.FK_Produto_ClassificacaoFiscal_CLASSIFICACAOFISCALID" FromRole="produto" ToRole="classificacaofiscal" />
+    <NavigationProperty Name="colecao" Relationship="Self.FK_Produto_Colecao_COLECAOID" FromRole="produto" ToRole="colecao" />
+    <NavigationProperty Name="departamento" Relationship="Self.FK_Produto_Departamento_DEPARTAMENTOID" FromRole="produto" ToRole="departamento" />
+    <NavigationProperty Name="estoqueproduto1" Relationship="Self.FK_EstoqueProduto_Produto_PRODUTOID" FromRole="produto" ToRole="estoqueproduto" />
+    <NavigationProperty Name="estoqueprodutomovimento" Relationship="Self.FK_EstoqueProdutoMovimento_Produto_PRODUTOID" FromRole="produto" ToRole="estoqueprodutomovimento" />
+    <NavigationProperty Name="fabricante" Relationship="Self.FK_Produto_Fabricante_FABRICANTEID" FromRole="produto" ToRole="fabricante" />
+    <NavigationProperty Name="grade" Relationship="Self.FK_Produto_Grade_GRADEID" FromRole="produto" ToRole="grade" />
+    <NavigationProperty Name="grupo" Relationship="Self.FK_Produto_Grupo_GRUPOID" FromRole="produto" ToRole="grupo" />
+    <NavigationProperty Name="imagemproduto" Relationship="Self.FK_ImagemProduto_Produto_ProdutoId" FromRole="produto" ToRole="imagemproduto" />
+    <NavigationProperty Name="marca" Relationship="Self.FK_Produto_Marca_MARCAID" FromRole="produto" ToRole="marca" />
+    <NavigationProperty Name="notafiscalproduto" Relationship="Self.FK_NotaFiscalProduto_Produto_PRODUTOID" FromRole="produto" ToRole="notafiscalproduto" />
+    <NavigationProperty Name="pedidoproduto" Relationship="Self.FK_PedidoProduto_Produto_PRODUTOID" FromRole="produto" ToRole="pedidoproduto" />
+    <NavigationProperty Name="pessoa" Relationship="Self.FK_Produto_Pessoa_FORNECEDORID" FromRole="produto" ToRole="pessoa" />
+    <NavigationProperty Name="subgrupo" Relationship="Self.FK_Produto_SubGrupo_SubGrupo_SubGrupoId" FromRole="produto" ToRole="subgrupo" />
+    <NavigationProperty Name="unidade" Relationship="Self.FK_Produto_Unidade_UNIDADEID" FromRole="produto" ToRole="unidade" />
+    <NavigationProperty Name="transferenciaestoqueproduto" Relationship="Self.FK_TransferenciaEstoqueProduto_Produto_PRODUTOID" FromRole="produto" ToRole="transferenciaestoqueproduto" />
+  </EntityType>
+  <EntityType Name="produtokitcomposicao">
+    <Key>
+      <PropertyRef Name="KITCOMPOSICAO" />
+    </Key>
+    <Property Name="KITCOMPOSICAO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUTOID" Type="Int32" Nullable="false" />
+    <Property Name="PRODUTOKIT" Type="Int32" Nullable="false" />
+    <Property Name="QUANTIDADE" Type="Decimal" Nullable="false" />
+    <Property Name="VALOR" Type="Decimal" Nullable="false" />
+    <Property Name="CUSTO" Type="Decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="referencia">
+    <Key>
+      <PropertyRef Name="ReferenciaId" />
+    </Key>
+    <Property Name="ReferenciaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="REFERENCIA1" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ISPADRAO" Type="Boolean" Nullable="false" />
+    <Property Name="PRODUTOID" Type="Int32" Nullable="false" />
+    <Property Name="CADASTROUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="regracomissao">
+    <Key>
+      <PropertyRef Name="RegraComissaoId" />
+    </Key>
+    <Property Name="RegraComissaoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATA_INICIO" Type="DateTime" Nullable="false" />
+    <Property Name="DATA_FIM" Type="DateTime" />
+    <Property Name="ATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="TIPO_COMISSAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="COMISSAO_MOEDA" Type="Decimal" Nullable="false" />
+    <Property Name="COMISSAO_PORCENTAGEM" Type="Decimal" Nullable="false" />
+    <Property Name="NOME_REGRA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="PRIORIDADE" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="regracomissaocolecao" Relationship="Self.FK_RegraComissaoColecao_RegraComissao_RegraComissaoId" FromRole="regracomissao" ToRole="regracomissaocolecao" />
+    <NavigationProperty Name="regracomissaofornecedor" Relationship="Self.FK_RegraComissaoFornecedor_RegraComissao_RegraComissaoId" FromRole="regracomissao" ToRole="regracomissaofornecedor" />
+    <NavigationProperty Name="regracomissaogrupo" Relationship="Self.FK_RegraComissaoGrupo_RegraComissao_RegraComissaoId" FromRole="regracomissao" ToRole="regracomissaogrupo" />
+    <NavigationProperty Name="regracomissaomarca" Relationship="Self.FK_RegraComissaoMarca_RegraComissao_RegraComissaoId" FromRole="regracomissao" ToRole="regracomissaomarca" />
+    <NavigationProperty Name="regracomissaoproduto" Relationship="Self.FK_RegraComissaoProduto_RegraComissao_RegraComissaoId" FromRole="regracomissao" ToRole="regracomissaoproduto" />
+  </EntityType>
+  <EntityType Name="regracomissaocolecao">
+    <Key>
+      <PropertyRef Name="RegraComissaoColecaoId" />
+    </Key>
+    <Property Name="RegraComissaoColecaoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="RegraComissaoId" Type="Int32" Nullable="false" />
+    <Property Name="COLECAOID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="regracomissao" Relationship="Self.FK_RegraComissaoColecao_RegraComissao_RegraComissaoId" FromRole="regracomissaocolecao" ToRole="regracomissao" />
+  </EntityType>
+  <EntityType Name="regracomissaofornecedor">
+    <Key>
+      <PropertyRef Name="RegraComissaoFornecedorId" />
+    </Key>
+    <Property Name="RegraComissaoFornecedorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="RegraComissaoId" Type="Int32" Nullable="false" />
+    <Property Name="FORNECEDORID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="regracomissao" Relationship="Self.FK_RegraComissaoFornecedor_RegraComissao_RegraComissaoId" FromRole="regracomissaofornecedor" ToRole="regracomissao" />
+  </EntityType>
+  <EntityType Name="regracomissaogrupo">
+    <Key>
+      <PropertyRef Name="RegraComissaoGrupoId" />
+    </Key>
+    <Property Name="RegraComissaoGrupoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="RegraComissaoId" Type="Int32" Nullable="false" />
+    <Property Name="GRUPOID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="regracomissao" Relationship="Self.FK_RegraComissaoGrupo_RegraComissao_RegraComissaoId" FromRole="regracomissaogrupo" ToRole="regracomissao" />
+  </EntityType>
+  <EntityType Name="regracomissaomarca">
+    <Key>
+      <PropertyRef Name="RegraComissaoMarcaId" />
+    </Key>
+    <Property Name="RegraComissaoMarcaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="RegraComissaoId" Type="Int32" Nullable="false" />
+    <Property Name="MARCAID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="regracomissao" Relationship="Self.FK_RegraComissaoMarca_RegraComissao_RegraComissaoId" FromRole="regracomissaomarca" ToRole="regracomissao" />
+  </EntityType>
+  <EntityType Name="regracomissaoproduto">
+    <Key>
+      <PropertyRef Name="RegraComissaoProdutoId" />
+    </Key>
+    <Property Name="RegraComissaoProdutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="RegraComissaoId" Type="Int32" Nullable="false" />
+    <Property Name="PRODUTOID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="regracomissao" Relationship="Self.FK_RegraComissaoProduto_RegraComissao_RegraComissaoId" FromRole="regracomissaoproduto" ToRole="regracomissao" />
+  </EntityType>
+  <EntityType Name="segurancaperfil">
+    <Key>
+      <PropertyRef Name="SegurancaPerfilId" />
+    </Key>
+    <Property Name="SegurancaPerfilId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="segurancaperfilpermissao" Relationship="Self.FK_SegurancaPerfilPermissao_SegurancaPerfil_PERFILID" FromRole="segurancaperfil" ToRole="segurancaperfilpermissao" />
+    <NavigationProperty Name="segurancausuario" Relationship="Self.FK_SegurancaUsuario_SegurancaPerfil_PERFILID" FromRole="segurancaperfil" ToRole="segurancausuario" />
+  </EntityType>
+  <EntityType Name="segurancaperfilpermissao">
+    <Key>
+      <PropertyRef Name="SegurancaPerfilPermissaoId" />
+    </Key>
+    <Property Name="SegurancaPerfilPermissaoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="PERMISSAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="PERFILID" Type="Int32" />
+    <NavigationProperty Name="segurancaperfil" Relationship="Self.FK_SegurancaPerfilPermissao_SegurancaPerfil_PERFILID" FromRole="segurancaperfilpermissao" ToRole="segurancaperfil" />
+  </EntityType>
+  <EntityType Name="segurancausuario">
+    <Key>
+      <PropertyRef Name="SegurancaUsuarioId" />
+    </Key>
+    <Property Name="SegurancaUsuarioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CLIENTEID" Type="Int32" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="EMAILCONFIGURACAO" Type="Int32" Nullable="false" />
+    <Property Name="FUNCIONARIOID" Type="Int32" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="PERFILID" Type="Int32" />
+    <Property Name="SENHA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="USUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ISPESQUISASATIFACAO" Type="Boolean" Nullable="false" />
+    <Property Name="UTILIZADESCONTOMAXIMOPERMITIDO" Type="Boolean" Nullable="false" />
+    <Property Name="DESCONTOMAXIMOPERMITIDO" Type="Decimal" Nullable="false" />
+    <NavigationProperty Name="caixa" Relationship="Self.FK_Caixa_SegurancaUsuario_SEGURANCAUSUARIOID" FromRole="segurancausuario" ToRole="caixa" />
+    <NavigationProperty Name="pessoa" Relationship="Self.FK_SegurancaUsuario_Pessoa_CLIENTEID" FromRole="segurancausuario" ToRole="pessoa" />
+    <NavigationProperty Name="pessoa1" Relationship="Self.FK_SegurancaUsuario_Pessoa_FUNCIONARIOID" FromRole="segurancausuario" ToRole="pessoa" />
+    <NavigationProperty Name="segurancaperfil" Relationship="Self.FK_SegurancaUsuario_SegurancaPerfil_PERFILID" FromRole="segurancausuario" ToRole="segurancaperfil" />
+  </EntityType>
+  <EntityType Name="setor">
+    <Key>
+      <PropertyRef Name="SetorId" />
+    </Key>
+    <Property Name="SetorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CADASTROUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+    <Property Name="SINCRONIZADO_EM" Type="DateTime" />
+    <NavigationProperty Name="setorproduto" Relationship="Self.FK_SetorProduto_Setor_SETORID" FromRole="setor" ToRole="setorproduto" />
+  </EntityType>
+  <EntityType Name="setorproduto">
+    <Key>
+      <PropertyRef Name="SetorProdutoId" />
+    </Key>
+    <Property Name="SetorProdutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="PRODUTO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="QUANTIDADE" Type="Decimal" Nullable="false" />
+    <Property Name="SETORID" Type="Int32" />
+    <NavigationProperty Name="setor" Relationship="Self.FK_SetorProduto_Setor_SETORID" FromRole="setorproduto" ToRole="setor" />
+  </EntityType>
+  <EntityType Name="sincronizacao">
+    <Key>
+      <PropertyRef Name="SincronizacaoId" />
+    </Key>
+    <Property Name="SincronizacaoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ATLCOLECAO" Type="Boolean" Nullable="false" />
+    <Property Name="ATLDEPARTAMENTO" Type="Boolean" Nullable="false" />
+    <Property Name="ATLFABRICANTE" Type="Boolean" Nullable="false" />
+    <Property Name="ATLGRADE" Type="Boolean" Nullable="false" />
+    <Property Name="ATLGRUPO" Type="Boolean" Nullable="false" />
+    <Property Name="ATLMARCA" Type="Boolean" Nullable="false" />
+    <Property Name="ATLPESSOA" Type="Boolean" Nullable="false" />
+    <Property Name="ATLPRODUTO" Type="Boolean" Nullable="false" />
+    <Property Name="ATLSETOR" Type="Boolean" Nullable="false" />
+    <Property Name="ATLUNIDADE" Type="Boolean" Nullable="false" />
+    <Property Name="COLECAO_RECEBIDO_EM" Type="DateTime" />
+    <Property Name="DEPARTAMENTO_RECEBIDO_EM" Type="DateTime" />
+    <Property Name="FABRICANTE_RECEBIDO_EM" Type="DateTime" />
+    <Property Name="GRUPO_RECEBIDO_EM" Type="DateTime" />
+    <Property Name="MARCA_RECEBIDO_EM" Type="DateTime" />
+    <Property Name="SETOR_RECEBIDO_EM" Type="DateTime" />
+    <Property Name="UNIDADE_RECEBIDO_EM" Type="DateTime" />
+    <Property Name="GRADE_RECEBIDO_EM" Type="DateTime" />
+    <Property Name="PESSOA_RECEBIDO_EM" Type="DateTime" />
+    <Property Name="PRODUTO_RECEBIDO_EM" Type="DateTime" />
+    <Property Name="ATLTRANSFERENCIA" Type="Boolean" Nullable="false" />
+    <Property Name="TRANSFERENCIA_RECEBIDO_EM" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="subgrupo">
+    <Key>
+      <PropertyRef Name="SubGrupoId" />
+    </Key>
+    <Property Name="SubGrupoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="GRUPOID" Type="Int32" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CADASTROUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="grupo" Relationship="Self.FK_SubGrupo_Grupo_GRUPOID" FromRole="subgrupo" ToRole="grupo" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_Produto_SubGrupo_SubGrupo_SubGrupoId" FromRole="subgrupo" ToRole="produto" />
+  </EntityType>
+  <EntityType Name="transferenciaestoque">
+    <Key>
+      <PropertyRef Name="TransferenciaEstoqueId" />
+    </Key>
+    <Property Name="TransferenciaEstoqueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="DESCRICAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DESTINO" Type="Int32" Nullable="false" />
+    <Property Name="OBSERVACAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="ORIGEM" Type="Int32" Nullable="false" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+    <Property Name="SINCRONIZADO_EM" Type="DateTime" />
+    <Property Name="ISDELETADO" Type="Boolean" Nullable="false" />
+    <Property Name="ISPENDENTE" Type="Boolean" Nullable="false" />
+    <Property Name="VINCULO_WEBKEY" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="transferenciaestoqueproduto" Relationship="Self.FK_bfe132b4ca864b418cf7252c20c64040" FromRole="transferenciaestoque" ToRole="transferenciaestoqueproduto" />
+  </EntityType>
+  <EntityType Name="transferenciaestoqueproduto">
+    <Key>
+      <PropertyRef Name="TransferenciaEstoqueProdutoId" />
+    </Key>
+    <Property Name="TransferenciaEstoqueProdutoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="QUANTIDADE_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_01_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_02_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_03_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_04_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_05_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_06_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_07_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_08_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_09_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_10_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_11_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_12_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_13_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_14_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_15_ENVIADA" Type="Decimal" Nullable="false" />
+    <Property Name="QUANTIDADE_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_01_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_02_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_03_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_04_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_05_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_06_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_07_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_08_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_09_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_10_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_11_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_12_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_13_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_14_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="GRADE_QUANTIDADE_15_RECEBIDA" Type="Decimal" Nullable="false" />
+    <Property Name="SITUACAO" Type="Int32" Nullable="false" />
+    <Property Name="PRODUTOID" Type="Int32" Nullable="false" />
+    <Property Name="TRANSFERENCIAESTOQUEID" Type="Int32" Nullable="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+    <Property Name="SINCRONIZADO_EM" Type="DateTime" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_TransferenciaEstoqueProduto_Produto_PRODUTOID" FromRole="transferenciaestoqueproduto" ToRole="produto" />
+    <NavigationProperty Name="transferenciaestoque" Relationship="Self.FK_bfe132b4ca864b418cf7252c20c64040" FromRole="transferenciaestoqueproduto" ToRole="transferenciaestoque" />
+  </EntityType>
+  <EntityType Name="uf">
+    <Key>
+      <PropertyRef Name="UFId" />
+    </Key>
+    <Property Name="UFId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CODIGOIBGE" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="SIGLA" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cidade" Relationship="Self.FK_Cidade_UF_UFID" FromRole="uf" ToRole="cidade" />
+  </EntityType>
+  <EntityType Name="unidade">
+    <Key>
+      <PropertyRef Name="UnidadeId" />
+    </Key>
+    <Property Name="UnidadeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ALTERACAODATA" Type="DateTime" Nullable="false" />
+    <Property Name="ALTERACAOUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DATACADASTRO" Type="DateTime" Nullable="false" />
+    <Property Name="ISATIVO" Type="Boolean" Nullable="false" />
+    <Property Name="NOME" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRICAO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="CADASTROUSUARIO" Type="String" MaxLength="1073741823" FixedLength="false" Unicode="false" />
+    <Property Name="WEB_KEY" Type="Int64" Nullable="false" />
+    <Property Name="SINCRONIZADO_EM" Type="DateTime" />
+    <NavigationProperty Name="produto" Relationship="Self.FK_Produto_Unidade_UNIDADEID" FromRole="unidade" ToRole="produto" />
+  </EntityType>
+  <Association Name="FK_Bairro_Cidade_CIDADEID">
+    <End Role="cidade" Type="Self.cidade" Multiplicity="0..1" />
+    <End Role="bairro" Type="Self.bairro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cidade">
+        <PropertyRef Name="CidadeId" />
+      </Principal>
+      <Dependent Role="bairro">
+        <PropertyRef Name="CIDADEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cep_Bairro_BAIRROID">
+    <End Role="bairro" Type="Self.bairro" Multiplicity="0..1" />
+    <End Role="cep" Type="Self.cep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bairro">
+        <PropertyRef Name="BairroId" />
+      </Principal>
+      <Dependent Role="cep">
+        <PropertyRef Name="BAIRROID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BalancoProduto_Balanco_BALANCOID">
+    <End Role="balanco" Type="Self.balanco" Multiplicity="0..1" />
+    <End Role="balancoproduto" Type="Self.balancoproduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="balanco">
+        <PropertyRef Name="BalancoId" />
+      </Principal>
+      <Dependent Role="balancoproduto">
+        <PropertyRef Name="BALANCOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BalancoProduto_Produto_PRODUTOID">
+    <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+    <End Role="balancoproduto" Type="Self.balancoproduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="produto">
+        <PropertyRef Name="ProdutoId" />
+      </Principal>
+      <Dependent Role="balancoproduto">
+        <PropertyRef Name="PRODUTOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Caixa_SegurancaUsuario_SEGURANCAUSUARIOID">
+    <End Role="segurancausuario" Type="Self.segurancausuario" Multiplicity="0..1" />
+    <End Role="caixa" Type="Self.caixa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="segurancausuario">
+        <PropertyRef Name="SegurancaUsuarioId" />
+      </Principal>
+      <Dependent Role="caixa">
+        <PropertyRef Name="SEGURANCAUSUARIOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CaixaMovimento_Caixa_CAIXAID">
+    <End Role="caixa" Type="Self.caixa" Multiplicity="0..1" />
+    <End Role="caixamovimento" Type="Self.caixamovimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="caixa">
+        <PropertyRef Name="CaixaId" />
+      </Principal>
+      <Dependent Role="caixamovimento">
+        <PropertyRef Name="CAIXAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cidade_UF_UFID">
+    <End Role="uf" Type="Self.uf" Multiplicity="0..1" />
+    <End Role="cidade" Type="Self.cidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="uf">
+        <PropertyRef Name="UFId" />
+      </Principal>
+      <Dependent Role="cidade">
+        <PropertyRef Name="UFID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_92d52a78120a4672b95529c34cdb420e">
+    <End Role="classificacaofiscal" Type="Self.classificacaofiscal" Multiplicity="0..1" />
+    <End Role="fecpexcecoes" Type="Self.fecpexcecoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="classificacaofiscal">
+        <PropertyRef Name="ClassificacaoFiscalId" />
+      </Principal>
+      <Dependent Role="fecpexcecoes">
+        <PropertyRef Name="CLASSIFICACAOFISCAL_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Produto_ClassificacaoFiscal_CLASSIFICACAOFISCALID">
+    <End Role="classificacaofiscal" Type="Self.classificacaofiscal" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="classificacaofiscal">
+        <PropertyRef Name="ClassificacaoFiscalId" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="CLASSIFICACAOFISCALID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Produto_Colecao_COLECAOID">
+    <End Role="colecao" Type="Self.colecao" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="colecao">
+        <PropertyRef Name="ColecaoId" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="COLECAOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContasPagarReceberParcela_Crediario_CREDIARIOID">
+    <End Role="crediario" Type="Self.crediario" Multiplicity="0..1" />
+    <End Role="contaspagarreceberparcela" Type="Self.contaspagarreceberparcela" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="crediario">
+        <PropertyRef Name="CrediarioId" />
+      </Principal>
+      <Dependent Role="contaspagarreceberparcela">
+        <PropertyRef Name="CREDIARIOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContasPagarReceberParcela_Pedido_PEDIDOID">
+    <End Role="pedido" Type="Self.pedido" Multiplicity="0..1" />
+    <End Role="contaspagarreceberparcela" Type="Self.contaspagarreceberparcela" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pedido">
+        <PropertyRef Name="PedidoId" />
+      </Principal>
+      <Dependent Role="contaspagarreceberparcela">
+        <PropertyRef Name="PEDIDOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContasPagarReceberParcela_Pessoa_PESSOAID">
+    <End Role="pessoa" Type="Self.pessoa" Multiplicity="0..1" />
+    <End Role="contaspagarreceberparcela" Type="Self.contaspagarreceberparcela" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="contaspagarreceberparcela">
+        <PropertyRef Name="PESSOAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Crediario_Pessoa_PESSOAID">
+    <End Role="pessoa" Type="Self.pessoa" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="crediario" Type="Self.crediario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="crediario">
+        <PropertyRef Name="PESSOAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Crediario_Pessoa_VENDEDORID">
+    <End Role="pessoa" Type="Self.pessoa" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="crediario" Type="Self.crediario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="crediario">
+        <PropertyRef Name="VENDEDORID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Produto_Departamento_DEPARTAMENTOID">
+    <End Role="departamento" Type="Self.departamento" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="departamento">
+        <PropertyRef Name="DepartamentoId" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="DEPARTAMENTOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EstoqueProduto_Produto_PRODUTOID">
+    <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+    <End Role="estoqueproduto" Type="Self.estoqueproduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="produto">
+        <PropertyRef Name="ProdutoId" />
+      </Principal>
+      <Dependent Role="estoqueproduto">
+        <PropertyRef Name="PRODUTOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EstoqueProdutoMovimento_Pessoa_PESSOAID">
+    <End Role="pessoa" Type="Self.pessoa" Multiplicity="0..1" />
+    <End Role="estoqueprodutomovimento" Type="Self.estoqueprodutomovimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="estoqueprodutomovimento">
+        <PropertyRef Name="PESSOAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EstoqueProdutoMovimento_Produto_PRODUTOID">
+    <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+    <End Role="estoqueprodutomovimento" Type="Self.estoqueprodutomovimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="produto">
+        <PropertyRef Name="ProdutoId" />
+      </Principal>
+      <Dependent Role="estoqueprodutomovimento">
+        <PropertyRef Name="PRODUTOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Produto_Fabricante_FABRICANTEID">
+    <End Role="fabricante" Type="Self.fabricante" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fabricante">
+        <PropertyRef Name="FabricanteId" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="FABRICANTEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Produto_Grade_GRADEID">
+    <End Role="grade" Type="Self.grade" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="grade">
+        <PropertyRef Name="GradeId" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="GRADEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Produto_Grupo_GRUPOID">
+    <End Role="grupo" Type="Self.grupo" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="grupo">
+        <PropertyRef Name="GrupoId" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="GRUPOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubGrupo_Grupo_GRUPOID">
+    <End Role="grupo" Type="Self.grupo" Multiplicity="0..1" />
+    <End Role="subgrupo" Type="Self.subgrupo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="grupo">
+        <PropertyRef Name="GrupoId" />
+      </Principal>
+      <Dependent Role="subgrupo">
+        <PropertyRef Name="GRUPOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ImagemProduto_Produto_ProdutoId">
+    <End Role="produto" Type="Self.produto" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="imagemproduto" Type="Self.imagemproduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="produto">
+        <PropertyRef Name="ProdutoId" />
+      </Principal>
+      <Dependent Role="imagemproduto">
+        <PropertyRef Name="ProdutoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Produto_Marca_MARCAID">
+    <End Role="marca" Type="Self.marca" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="marca">
+        <PropertyRef Name="MarcaId" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="MARCAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotaFiscal_CartaCorrecao_NotaFiscal_NOTAFISCALID">
+    <End Role="notafiscal" Type="Self.notafiscal" Multiplicity="0..1" />
+    <End Role="notafiscal_cartacorrecao" Type="Self.notafiscal_cartacorrecao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="notafiscal">
+        <PropertyRef Name="NotaFiscalId" />
+      </Principal>
+      <Dependent Role="notafiscal_cartacorrecao">
+        <PropertyRef Name="NOTAFISCALID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotaFiscal_Pessoa_PESSOAID">
+    <End Role="pessoa" Type="Self.pessoa" Multiplicity="0..1" />
+    <End Role="notafiscal" Type="Self.notafiscal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="notafiscal">
+        <PropertyRef Name="PESSOAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotaFiscal_Pessoa_TRANSPORTADORAID">
+    <End Role="pessoa" Type="Self.pessoa" Multiplicity="0..1" />
+    <End Role="notafiscal" Type="Self.notafiscal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="notafiscal">
+        <PropertyRef Name="TRANSPORTADORAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotaFiscal_Pessoa_VENDEDORID">
+    <End Role="pessoa" Type="Self.pessoa" Multiplicity="0..1" />
+    <End Role="notafiscal" Type="Self.notafiscal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="notafiscal">
+        <PropertyRef Name="VENDEDORID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotaFiscalProduto_NotaFiscal_NOTAFISCALID">
+    <End Role="notafiscal" Type="Self.notafiscal" Multiplicity="0..1" />
+    <End Role="notafiscalproduto" Type="Self.notafiscalproduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="notafiscal">
+        <PropertyRef Name="NotaFiscalId" />
+      </Principal>
+      <Dependent Role="notafiscalproduto">
+        <PropertyRef Name="NOTAFISCALID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NotaFiscalProduto_Produto_PRODUTOID">
+    <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+    <End Role="notafiscalproduto" Type="Self.notafiscalproduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="produto">
+        <PropertyRef Name="ProdutoId" />
+      </Principal>
+      <Dependent Role="notafiscalproduto">
+        <PropertyRef Name="PRODUTOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedido_Pessoa_CLIENTEID">
+    <End Role="pessoa" Type="Self.pessoa" Multiplicity="0..1" />
+    <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="pedido">
+        <PropertyRef Name="CLIENTEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pedido_Pessoa_VENDEDORID">
+    <End Role="pessoa" Type="Self.pessoa" Multiplicity="0..1" />
+    <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="pedido">
+        <PropertyRef Name="VENDEDORID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidoProduto_Pedido_PEDIDOID">
+    <End Role="pedido" Type="Self.pedido" Multiplicity="0..1" />
+    <End Role="pedidoproduto" Type="Self.pedidoproduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pedido">
+        <PropertyRef Name="PedidoId" />
+      </Principal>
+      <Dependent Role="pedidoproduto">
+        <PropertyRef Name="PEDIDOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidoProduto_Produto_PRODUTOID">
+    <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+    <End Role="pedidoproduto" Type="Self.pedidoproduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="produto">
+        <PropertyRef Name="ProdutoId" />
+      </Principal>
+      <Dependent Role="pedidoproduto">
+        <PropertyRef Name="PRODUTOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pessoa_Pessoa_TRANSPORTADORAID">
+    <End Role="pessoa" Type="Self.pessoa" Multiplicity="0..1" />
+    <End Role="pessoa1" Type="Self.pessoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="pessoa1">
+        <PropertyRef Name="TRANSPORTADORAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pessoa_Pessoa_VENDEDORID">
+    <End Role="pessoa" Type="Self.pessoa" Multiplicity="0..1" />
+    <End Role="pessoa1" Type="Self.pessoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="pessoa1">
+        <PropertyRef Name="VENDEDORID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Produto_Pessoa_FORNECEDORID">
+    <End Role="pessoa" Type="Self.pessoa" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="FORNECEDORID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SegurancaUsuario_Pessoa_CLIENTEID">
+    <End Role="pessoa" Type="Self.pessoa" Multiplicity="0..1" />
+    <End Role="segurancausuario" Type="Self.segurancausuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="segurancausuario">
+        <PropertyRef Name="CLIENTEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SegurancaUsuario_Pessoa_FUNCIONARIOID">
+    <End Role="pessoa" Type="Self.pessoa" Multiplicity="0..1" />
+    <End Role="segurancausuario" Type="Self.segurancausuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pessoa">
+        <PropertyRef Name="PessoaId" />
+      </Principal>
+      <Dependent Role="segurancausuario">
+        <PropertyRef Name="FUNCIONARIOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Produto_SubGrupo_SubGrupo_SubGrupoId">
+    <End Role="subgrupo" Type="Self.subgrupo" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="subgrupo">
+        <PropertyRef Name="SubGrupoId" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="SubGrupo_SubGrupoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Produto_Unidade_UNIDADEID">
+    <End Role="unidade" Type="Self.unidade" Multiplicity="0..1" />
+    <End Role="produto" Type="Self.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidade">
+        <PropertyRef Name="UnidadeId" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="UNIDADEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransferenciaEstoqueProduto_Produto_PRODUTOID">
+    <End Role="produto" Type="Self.produto" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="transferenciaestoqueproduto" Type="Self.transferenciaestoqueproduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="produto">
+        <PropertyRef Name="ProdutoId" />
+      </Principal>
+      <Dependent Role="transferenciaestoqueproduto">
+        <PropertyRef Name="PRODUTOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegraComissaoColecao_RegraComissao_RegraComissaoId">
+    <End Role="regracomissao" Type="Self.regracomissao" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="regracomissaocolecao" Type="Self.regracomissaocolecao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="regracomissao">
+        <PropertyRef Name="RegraComissaoId" />
+      </Principal>
+      <Dependent Role="regracomissaocolecao">
+        <PropertyRef Name="RegraComissaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegraComissaoFornecedor_RegraComissao_RegraComissaoId">
+    <End Role="regracomissao" Type="Self.regracomissao" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="regracomissaofornecedor" Type="Self.regracomissaofornecedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="regracomissao">
+        <PropertyRef Name="RegraComissaoId" />
+      </Principal>
+      <Dependent Role="regracomissaofornecedor">
+        <PropertyRef Name="RegraComissaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegraComissaoGrupo_RegraComissao_RegraComissaoId">
+    <End Role="regracomissao" Type="Self.regracomissao" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="regracomissaogrupo" Type="Self.regracomissaogrupo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="regracomissao">
+        <PropertyRef Name="RegraComissaoId" />
+      </Principal>
+      <Dependent Role="regracomissaogrupo">
+        <PropertyRef Name="RegraComissaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegraComissaoMarca_RegraComissao_RegraComissaoId">
+    <End Role="regracomissao" Type="Self.regracomissao" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="regracomissaomarca" Type="Self.regracomissaomarca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="regracomissao">
+        <PropertyRef Name="RegraComissaoId" />
+      </Principal>
+      <Dependent Role="regracomissaomarca">
+        <PropertyRef Name="RegraComissaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegraComissaoProduto_RegraComissao_RegraComissaoId">
+    <End Role="regracomissao" Type="Self.regracomissao" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="regracomissaoproduto" Type="Self.regracomissaoproduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="regracomissao">
+        <PropertyRef Name="RegraComissaoId" />
+      </Principal>
+      <Dependent Role="regracomissaoproduto">
+        <PropertyRef Name="RegraComissaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SegurancaPerfilPermissao_SegurancaPerfil_PERFILID">
+    <End Role="segurancaperfil" Type="Self.segurancaperfil" Multiplicity="0..1" />
+    <End Role="segurancaperfilpermissao" Type="Self.segurancaperfilpermissao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="segurancaperfil">
+        <PropertyRef Name="SegurancaPerfilId" />
+      </Principal>
+      <Dependent Role="segurancaperfilpermissao">
+        <PropertyRef Name="PERFILID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SegurancaUsuario_SegurancaPerfil_PERFILID">
+    <End Role="segurancaperfil" Type="Self.segurancaperfil" Multiplicity="0..1" />
+    <End Role="segurancausuario" Type="Self.segurancausuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="segurancaperfil">
+        <PropertyRef Name="SegurancaPerfilId" />
+      </Principal>
+      <Dependent Role="segurancausuario">
+        <PropertyRef Name="PERFILID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SetorProduto_Setor_SETORID">
+    <End Role="setor" Type="Self.setor" Multiplicity="0..1" />
+    <End Role="setorproduto" Type="Self.setorproduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="setor">
+        <PropertyRef Name="SetorId" />
+      </Principal>
+      <Dependent Role="setorproduto">
+        <PropertyRef Name="SETORID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bfe132b4ca864b418cf7252c20c64040">
+    <End Role="transferenciaestoque" Type="Self.transferenciaestoque" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="transferenciaestoqueproduto" Type="Self.transferenciaestoqueproduto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="transferenciaestoque">
+        <PropertyRef Name="TransferenciaEstoqueId" />
+      </Principal>
+      <Dependent Role="transferenciaestoqueproduto">
+        <PropertyRef Name="TRANSFERENCIAESTOQUEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="virgemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__migrationhistory" EntityType="Self.C__migrationhistory" />
+    <EntitySet Name="bairro" EntityType="Self.bairro" />
+    <EntitySet Name="balanco" EntityType="Self.balanco" />
+    <EntitySet Name="balancoproduto" EntityType="Self.balancoproduto" />
+    <EntitySet Name="banco" EntityType="Self.banco" />
+    <EntitySet Name="caixa" EntityType="Self.caixa" />
+    <EntitySet Name="caixamovimento" EntityType="Self.caixamovimento" />
+    <EntitySet Name="cep" EntityType="Self.cep" />
+    <EntitySet Name="cestncm" EntityType="Self.cestncm" />
+    <EntitySet Name="cfopregrasubstituicao" EntityType="Self.cfopregrasubstituicao" />
+    <EntitySet Name="cidade" EntityType="Self.cidade" />
+    <EntitySet Name="classificacaofiscal" EntityType="Self.classificacaofiscal" />
+    <EntitySet Name="colecao" EntityType="Self.colecao" />
+    <EntitySet Name="configuracaoetiqueta" EntityType="Self.configuracaoetiqueta" />
+    <EntitySet Name="configuracaogeral" EntityType="Self.configuracaogeral" />
+    <EntitySet Name="configuracaopagamento" EntityType="Self.configuracaopagamento" />
+    <EntitySet Name="contaspagarreceberparcela" EntityType="Self.contaspagarreceberparcela" />
+    <EntitySet Name="crediario" EntityType="Self.crediario" />
+    <EntitySet Name="departamento" EntityType="Self.departamento" />
+    <EntitySet Name="estoqueproduto" EntityType="Self.estoqueproduto" />
+    <EntitySet Name="estoqueprodutomovimento" EntityType="Self.estoqueprodutomovimento" />
+    <EntitySet Name="fabricante" EntityType="Self.fabricante" />
+    <EntitySet Name="fecpexcecoes" EntityType="Self.fecpexcecoes" />
+    <EntitySet Name="formarecebimento" EntityType="Self.formarecebimento" />
+    <EntitySet Name="grade" EntityType="Self.grade" />
+    <EntitySet Name="grupo" EntityType="Self.grupo" />
+    <EntitySet Name="imagemproduto" EntityType="Self.imagemproduto" />
+    <EntitySet Name="log" EntityType="Self.log" />
+    <EntitySet Name="marca" EntityType="Self.marca" />
+    <EntitySet Name="movimentodecontas" EntityType="Self.movimentodecontas" />
+    <EntitySet Name="notafiscal" EntityType="Self.notafiscal" />
+    <EntitySet Name="notafiscal_cartacorrecao" EntityType="Self.notafiscal_cartacorrecao" />
+    <EntitySet Name="notafiscal_pedido" EntityType="Self.notafiscal_pedido" />
+    <EntitySet Name="notafiscalproduto" EntityType="Self.notafiscalproduto" />
+    <EntitySet Name="pais" EntityType="Self.pais" />
+    <EntitySet Name="pedido" EntityType="Self.pedido" />
+    <EntitySet Name="pedidoproduto" EntityType="Self.pedidoproduto" />
+    <EntitySet Name="pessoa" EntityType="Self.pessoa" />
+    <EntitySet Name="produto" EntityType="Self.produto" />
+    <EntitySet Name="produtokitcomposicao" EntityType="Self.produtokitcomposicao" />
+    <EntitySet Name="referencia" EntityType="Self.referencia" />
+    <EntitySet Name="regracomissao" EntityType="Self.regracomissao" />
+    <EntitySet Name="regracomissaocolecao" EntityType="Self.regracomissaocolecao" />
+    <EntitySet Name="regracomissaofornecedor" EntityType="Self.regracomissaofornecedor" />
+    <EntitySet Name="regracomissaogrupo" EntityType="Self.regracomissaogrupo" />
+    <EntitySet Name="regracomissaomarca" EntityType="Self.regracomissaomarca" />
+    <EntitySet Name="regracomissaoproduto" EntityType="Self.regracomissaoproduto" />
+    <EntitySet Name="segurancaperfil" EntityType="Self.segurancaperfil" />
+    <EntitySet Name="segurancaperfilpermissao" EntityType="Self.segurancaperfilpermissao" />
+    <EntitySet Name="segurancausuario" EntityType="Self.segurancausuario" />
+    <EntitySet Name="setor" EntityType="Self.setor" />
+    <EntitySet Name="setorproduto" EntityType="Self.setorproduto" />
+    <EntitySet Name="sincronizacao" EntityType="Self.sincronizacao" />
+    <EntitySet Name="subgrupo" EntityType="Self.subgrupo" />
+    <EntitySet Name="transferenciaestoque" EntityType="Self.transferenciaestoque" />
+    <EntitySet Name="transferenciaestoqueproduto" EntityType="Self.transferenciaestoqueproduto" />
+    <EntitySet Name="uf" EntityType="Self.uf" />
+    <EntitySet Name="unidade" EntityType="Self.unidade" />
+    <AssociationSet Name="FK_Bairro_Cidade_CIDADEID" Association="Self.FK_Bairro_Cidade_CIDADEID">
+      <End Role="cidade" EntitySet="cidade" />
+      <End Role="bairro" EntitySet="bairro" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cep_Bairro_BAIRROID" Association="Self.FK_Cep_Bairro_BAIRROID">
+      <End Role="bairro" EntitySet="bairro" />
+      <End Role="cep" EntitySet="cep" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BalancoProduto_Balanco_BALANCOID" Association="Self.FK_BalancoProduto_Balanco_BALANCOID">
+      <End Role="balanco" EntitySet="balanco" />
+      <End Role="balancoproduto" EntitySet="balancoproduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BalancoProduto_Produto_PRODUTOID" Association="Self.FK_BalancoProduto_Produto_PRODUTOID">
+      <End Role="produto" EntitySet="produto" />
+      <End Role="balancoproduto" EntitySet="balancoproduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Caixa_SegurancaUsuario_SEGURANCAUSUARIOID" Association="Self.FK_Caixa_SegurancaUsuario_SEGURANCAUSUARIOID">
+      <End Role="segurancausuario" EntitySet="segurancausuario" />
+      <End Role="caixa" EntitySet="caixa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CaixaMovimento_Caixa_CAIXAID" Association="Self.FK_CaixaMovimento_Caixa_CAIXAID">
+      <End Role="caixa" EntitySet="caixa" />
+      <End Role="caixamovimento" EntitySet="caixamovimento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cidade_UF_UFID" Association="Self.FK_Cidade_UF_UFID">
+      <End Role="uf" EntitySet="uf" />
+      <End Role="cidade" EntitySet="cidade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_92d52a78120a4672b95529c34cdb420e" Association="Self.FK_92d52a78120a4672b95529c34cdb420e">
+      <End Role="classificacaofiscal" EntitySet="classificacaofiscal" />
+      <End Role="fecpexcecoes" EntitySet="fecpexcecoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Produto_ClassificacaoFiscal_CLASSIFICACAOFISCALID" Association="Self.FK_Produto_ClassificacaoFiscal_CLASSIFICACAOFISCALID">
+      <End Role="classificacaofiscal" EntitySet="classificacaofiscal" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Produto_Colecao_COLECAOID" Association="Self.FK_Produto_Colecao_COLECAOID">
+      <End Role="colecao" EntitySet="colecao" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContasPagarReceberParcela_Crediario_CREDIARIOID" Association="Self.FK_ContasPagarReceberParcela_Crediario_CREDIARIOID">
+      <End Role="crediario" EntitySet="crediario" />
+      <End Role="contaspagarreceberparcela" EntitySet="contaspagarreceberparcela" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContasPagarReceberParcela_Pedido_PEDIDOID" Association="Self.FK_ContasPagarReceberParcela_Pedido_PEDIDOID">
+      <End Role="pedido" EntitySet="pedido" />
+      <End Role="contaspagarreceberparcela" EntitySet="contaspagarreceberparcela" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContasPagarReceberParcela_Pessoa_PESSOAID" Association="Self.FK_ContasPagarReceberParcela_Pessoa_PESSOAID">
+      <End Role="pessoa" EntitySet="pessoa" />
+      <End Role="contaspagarreceberparcela" EntitySet="contaspagarreceberparcela" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Crediario_Pessoa_PESSOAID" Association="Self.FK_Crediario_Pessoa_PESSOAID">
+      <End Role="pessoa" EntitySet="pessoa" />
+      <End Role="crediario" EntitySet="crediario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Crediario_Pessoa_VENDEDORID" Association="Self.FK_Crediario_Pessoa_VENDEDORID">
+      <End Role="pessoa" EntitySet="pessoa" />
+      <End Role="crediario" EntitySet="crediario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Produto_Departamento_DEPARTAMENTOID" Association="Self.FK_Produto_Departamento_DEPARTAMENTOID">
+      <End Role="departamento" EntitySet="departamento" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EstoqueProduto_Produto_PRODUTOID" Association="Self.FK_EstoqueProduto_Produto_PRODUTOID">
+      <End Role="produto" EntitySet="produto" />
+      <End Role="estoqueproduto" EntitySet="estoqueproduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EstoqueProdutoMovimento_Pessoa_PESSOAID" Association="Self.FK_EstoqueProdutoMovimento_Pessoa_PESSOAID">
+      <End Role="pessoa" EntitySet="pessoa" />
+      <End Role="estoqueprodutomovimento" EntitySet="estoqueprodutomovimento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EstoqueProdutoMovimento_Produto_PRODUTOID" Association="Self.FK_EstoqueProdutoMovimento_Produto_PRODUTOID">
+      <End Role="produto" EntitySet="produto" />
+      <End Role="estoqueprodutomovimento" EntitySet="estoqueprodutomovimento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Produto_Fabricante_FABRICANTEID" Association="Self.FK_Produto_Fabricante_FABRICANTEID">
+      <End Role="fabricante" EntitySet="fabricante" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Produto_Grade_GRADEID" Association="Self.FK_Produto_Grade_GRADEID">
+      <End Role="grade" EntitySet="grade" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Produto_Grupo_GRUPOID" Association="Self.FK_Produto_Grupo_GRUPOID">
+      <End Role="grupo" EntitySet="grupo" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubGrupo_Grupo_GRUPOID" Association="Self.FK_SubGrupo_Grupo_GRUPOID">
+      <End Role="grupo" EntitySet="grupo" />
+      <End Role="subgrupo" EntitySet="subgrupo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ImagemProduto_Produto_ProdutoId" Association="Self.FK_ImagemProduto_Produto_ProdutoId">
+      <End Role="produto" EntitySet="produto" />
+      <End Role="imagemproduto" EntitySet="imagemproduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Produto_Marca_MARCAID" Association="Self.FK_Produto_Marca_MARCAID">
+      <End Role="marca" EntitySet="marca" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotaFiscal_CartaCorrecao_NotaFiscal_NOTAFISCALID" Association="Self.FK_NotaFiscal_CartaCorrecao_NotaFiscal_NOTAFISCALID">
+      <End Role="notafiscal" EntitySet="notafiscal" />
+      <End Role="notafiscal_cartacorrecao" EntitySet="notafiscal_cartacorrecao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotaFiscal_Pessoa_PESSOAID" Association="Self.FK_NotaFiscal_Pessoa_PESSOAID">
+      <End Role="pessoa" EntitySet="pessoa" />
+      <End Role="notafiscal" EntitySet="notafiscal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotaFiscal_Pessoa_TRANSPORTADORAID" Association="Self.FK_NotaFiscal_Pessoa_TRANSPORTADORAID">
+      <End Role="pessoa" EntitySet="pessoa" />
+      <End Role="notafiscal" EntitySet="notafiscal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotaFiscal_Pessoa_VENDEDORID" Association="Self.FK_NotaFiscal_Pessoa_VENDEDORID">
+      <End Role="pessoa" EntitySet="pessoa" />
+      <End Role="notafiscal" EntitySet="notafiscal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotaFiscalProduto_NotaFiscal_NOTAFISCALID" Association="Self.FK_NotaFiscalProduto_NotaFiscal_NOTAFISCALID">
+      <End Role="notafiscal" EntitySet="notafiscal" />
+      <End Role="notafiscalproduto" EntitySet="notafiscalproduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NotaFiscalProduto_Produto_PRODUTOID" Association="Self.FK_NotaFiscalProduto_Produto_PRODUTOID">
+      <End Role="produto" EntitySet="produto" />
+      <End Role="notafiscalproduto" EntitySet="notafiscalproduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedido_Pessoa_CLIENTEID" Association="Self.FK_Pedido_Pessoa_CLIENTEID">
+      <End Role="pessoa" EntitySet="pessoa" />
+      <End Role="pedido" EntitySet="pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pedido_Pessoa_VENDEDORID" Association="Self.FK_Pedido_Pessoa_VENDEDORID">
+      <End Role="pessoa" EntitySet="pessoa" />
+      <End Role="pedido" EntitySet="pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidoProduto_Pedido_PEDIDOID" Association="Self.FK_PedidoProduto_Pedido_PEDIDOID">
+      <End Role="pedido" EntitySet="pedido" />
+      <End Role="pedidoproduto" EntitySet="pedidoproduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidoProduto_Produto_PRODUTOID" Association="Self.FK_PedidoProduto_Produto_PRODUTOID">
+      <End Role="produto" EntitySet="produto" />
+      <End Role="pedidoproduto" EntitySet="pedidoproduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pessoa_Pessoa_TRANSPORTADORAID" Association="Self.FK_Pessoa_Pessoa_TRANSPORTADORAID">
+      <End Role="pessoa" EntitySet="pessoa" />
+      <End Role="pessoa1" EntitySet="pessoa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pessoa_Pessoa_VENDEDORID" Association="Self.FK_Pessoa_Pessoa_VENDEDORID">
+      <End Role="pessoa" EntitySet="pessoa" />
+      <End Role="pessoa1" EntitySet="pessoa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Produto_Pessoa_FORNECEDORID" Association="Self.FK_Produto_Pessoa_FORNECEDORID">
+      <End Role="pessoa" EntitySet="pessoa" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SegurancaUsuario_Pessoa_CLIENTEID" Association="Self.FK_SegurancaUsuario_Pessoa_CLIENTEID">
+      <End Role="pessoa" EntitySet="pessoa" />
+      <End Role="segurancausuario" EntitySet="segurancausuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SegurancaUsuario_Pessoa_FUNCIONARIOID" Association="Self.FK_SegurancaUsuario_Pessoa_FUNCIONARIOID">
+      <End Role="pessoa" EntitySet="pessoa" />
+      <End Role="segurancausuario" EntitySet="segurancausuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Produto_SubGrupo_SubGrupo_SubGrupoId" Association="Self.FK_Produto_SubGrupo_SubGrupo_SubGrupoId">
+      <End Role="subgrupo" EntitySet="subgrupo" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Produto_Unidade_UNIDADEID" Association="Self.FK_Produto_Unidade_UNIDADEID">
+      <End Role="unidade" EntitySet="unidade" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransferenciaEstoqueProduto_Produto_PRODUTOID" Association="Self.FK_TransferenciaEstoqueProduto_Produto_PRODUTOID">
+      <End Role="produto" EntitySet="produto" />
+      <End Role="transferenciaestoqueproduto" EntitySet="transferenciaestoqueproduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegraComissaoColecao_RegraComissao_RegraComissaoId" Association="Self.FK_RegraComissaoColecao_RegraComissao_RegraComissaoId">
+      <End Role="regracomissao" EntitySet="regracomissao" />
+      <End Role="regracomissaocolecao" EntitySet="regracomissaocolecao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegraComissaoFornecedor_RegraComissao_RegraComissaoId" Association="Self.FK_RegraComissaoFornecedor_RegraComissao_RegraComissaoId">
+      <End Role="regracomissao" EntitySet="regracomissao" />
+      <End Role="regracomissaofornecedor" EntitySet="regracomissaofornecedor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegraComissaoGrupo_RegraComissao_RegraComissaoId" Association="Self.FK_RegraComissaoGrupo_RegraComissao_RegraComissaoId">
+      <End Role="regracomissao" EntitySet="regracomissao" />
+      <End Role="regracomissaogrupo" EntitySet="regracomissaogrupo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegraComissaoMarca_RegraComissao_RegraComissaoId" Association="Self.FK_RegraComissaoMarca_RegraComissao_RegraComissaoId">
+      <End Role="regracomissao" EntitySet="regracomissao" />
+      <End Role="regracomissaomarca" EntitySet="regracomissaomarca" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegraComissaoProduto_RegraComissao_RegraComissaoId" Association="Self.FK_RegraComissaoProduto_RegraComissao_RegraComissaoId">
+      <End Role="regracomissao" EntitySet="regracomissao" />
+      <End Role="regracomissaoproduto" EntitySet="regracomissaoproduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SegurancaPerfilPermissao_SegurancaPerfil_PERFILID" Association="Self.FK_SegurancaPerfilPermissao_SegurancaPerfil_PERFILID">
+      <End Role="segurancaperfil" EntitySet="segurancaperfil" />
+      <End Role="segurancaperfilpermissao" EntitySet="segurancaperfilpermissao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SegurancaUsuario_SegurancaPerfil_PERFILID" Association="Self.FK_SegurancaUsuario_SegurancaPerfil_PERFILID">
+      <End Role="segurancaperfil" EntitySet="segurancaperfil" />
+      <End Role="segurancausuario" EntitySet="segurancausuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SetorProduto_Setor_SETORID" Association="Self.FK_SetorProduto_Setor_SETORID">
+      <End Role="setor" EntitySet="setor" />
+      <End Role="setorproduto" EntitySet="setorproduto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bfe132b4ca864b418cf7252c20c64040" Association="Self.FK_bfe132b4ca864b418cf7252c20c64040">
+      <End Role="transferenciaestoque" EntitySet="transferenciaestoque" />
+      <End Role="transferenciaestoqueproduto" EntitySet="transferenciaestoqueproduto" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

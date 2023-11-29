@@ -47,6 +47,35 @@ namespace LILO
 
             }
         }
+
+        private static void cliente()
+        {
+            Origem.LiloEntities origem = new Origem.LiloEntities();
+
+            Destino.virgemEntities destino = new Destino.virgemEntities();
+
+            int i = 1;
+            int count = origem.Cli_Fornec.Count();
+
+            foreach (var antCli in origem.Cli_Fornec.ToList())
+            {
+                Destino.pessoa novoCli = new Destino.pessoa();
+
+                novoCli.ISCLIENTE = true;
+                novoCli.NOMERAZAOSOCIAL = antCli.Nome;
+                novoCli.NOMEFANTASIA = antCli.RazaoSocial;
+                novoCli.TRABALHOCARGO = antCli.Cargo;
+                novoCli.DATAADMISSAO = antCli.DataAdmissao;
+                novoCli.ALTERACAODATA = DateTime.Now;
+                novoCli.ALTERACAOUSUARIO = "IMPORTAÇÃO";
+                novoCli.ATIVO = true;
+                novoCli.CADASTROCOMPLETO = true;
+                novoCli.DESCONTOMAXIMOPERMITIDO = 100;
+                novoCli.CONTRIBUINTE = 0;
+                novoCli.CONSUMIDORFINAL = 1;
+                novoCli.PAIS_ID = 30;
+            }
+        }
     }
 }
  
