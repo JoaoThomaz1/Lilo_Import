@@ -62,10 +62,9 @@ namespace LILO
                 Destino.pessoa novoCli = new Destino.pessoa();
 
                 novoCli.ISCLIENTE = true;
+                novoCli.ISFORNECEDOR = true;
                 novoCli.NOMERAZAOSOCIAL = antCli.Nome;
                 novoCli.NOMEFANTASIA = antCli.RazaoSocial;
-                novoCli.TRABALHOCARGO = antCli.Cargo;
-                novoCli.DATAADMISSAO = antCli.DataAdmissao;
                 novoCli.ALTERACAODATA = DateTime.Now;
                 novoCli.ALTERACAOUSUARIO = "IMPORTAÇÃO";
                 novoCli.ATIVO = true;
@@ -74,6 +73,30 @@ namespace LILO
                 novoCli.CONTRIBUINTE = 0;
                 novoCli.CONSUMIDORFINAL = 1;
                 novoCli.PAIS_ID = 30;
+
+                novoCli.FISJUR = antCli.Pessoa == "Física" ? "F" : "J";
+                novoCli.CPFCNPJ = antCli.CPF_CNPJ;
+                novoCli.RGIE = antCli.RG_InscEst;
+                novoCli.OBSERVACAO = antCli.Observacao;
+                novoCli.LOGRADOURO = antCli.Endereco;
+                novoCli.CEP = antCli.CEP;
+                novoCli.CELULAR = antCli.Celular;
+                novoCli.NUMERO = antCli.Numero;
+                novoCli.DATACADASTRO = antCli.DataCadastro;
+                novoCli.COMPLEMENTO = antCli.Complemento;
+                novoCli.BAIRRO = antCli.Bairro;
+                novoCli.TELEFONE = antCli.Fone1;
+
+                if (novoCli.FISJUR === "J")
+                {
+                    novoCli.CONTRIBUINTE = 1;
+                    novoCli.CONSUMIDORFINAL = 0;
+                }
+
+                destino.pessoa.Add(novoCli);
+                destino.SaveChanges();
+                i++;
+
             }
         }
     }
