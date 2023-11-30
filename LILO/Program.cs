@@ -10,7 +10,9 @@ namespace LILO
     {
         static void Main(string[] args)
         {
-            funcionario();
+            //funcionario();
+            //cliente();
+            cliente2();
 
         }
 
@@ -70,9 +72,11 @@ namespace LILO
                 novoCli.ATIVO = true;
                 novoCli.CADASTROCOMPLETO = true;
                 novoCli.DESCONTOMAXIMOPERMITIDO = 100;
-                novoCli.CONTRIBUINTE = 0;
-                novoCli.CONSUMIDORFINAL = 1;
                 novoCli.PAIS_ID = 30;
+
+                novoCli.CONTRIBUINTE = antCli.RG_InscEst != null? 1 : 0;
+                novoCli.CONSUMIDORFINAL = novoCli.CONTRIBUINTE == 1? 0 : 1;
+
 
                 novoCli.FISJUR = antCli.Pessoa == "Física" ? "F" : "J";
                 novoCli.CPFCNPJ = antCli.CPF_CNPJ;
@@ -87,11 +91,53 @@ namespace LILO
                 novoCli.BAIRRO = antCli.Bairro;
                 novoCli.TELEFONE = antCli.Fone1;
 
-                if (novoCli.FISJUR === "J")
-                {
-                    novoCli.CONTRIBUINTE = 1;
-                    novoCli.CONSUMIDORFINAL = 0;
-                }
+                destino.pessoa.Add(novoCli);
+                destino.SaveChanges();
+                i++;
+
+            }
+        }
+
+        private static void cliente2()
+        {
+            Origem.LiloEntities origem = new Origem.LiloEntities();
+
+            Destino.virgemEntities destino = new Destino.virgemEntities();
+
+            int i = 1;
+            int count = origem.Cli_Fornec2.Count();
+
+            foreach (var antCli in origem.Cli_Fornec2.ToList())
+            {
+                Destino.pessoa novoCli = new Destino.pessoa();
+
+                novoCli.ISCLIENTE = true;
+                novoCli.ISFORNECEDOR = true;
+                novoCli.NOMERAZAOSOCIAL = antCli.Nome;
+                novoCli.NOMEFANTASIA = antCli.RazaoSocial;
+                novoCli.ALTERACAODATA = DateTime.Now;
+                novoCli.ALTERACAOUSUARIO = "IMPORTAÇÃO";
+                novoCli.ATIVO = true;
+                novoCli.CADASTROCOMPLETO = true;
+                novoCli.DESCONTOMAXIMOPERMITIDO = 100;
+                novoCli.PAIS_ID = 30;
+
+                novoCli.CONTRIBUINTE = antCli.RG_InscEst != null ? 1 : 0;
+                novoCli.CONSUMIDORFINAL = novoCli.CONTRIBUINTE == 1 ? 0 : 1;
+
+
+                novoCli.FISJUR = antCli.Pessoa == "Física" ? "F" : "J";
+                novoCli.CPFCNPJ = antCli.CPF_CNPJ;
+                novoCli.RGIE = antCli.RG_InscEst;
+                novoCli.OBSERVACAO = antCli.Observacao;
+                novoCli.LOGRADOURO = antCli.Endereco;
+                novoCli.CEP = antCli.CEP;
+                novoCli.CELULAR = antCli.Celular;
+                novoCli.NUMERO = antCli.Numero;
+                novoCli.DATACADASTRO = antCli.DataCadastro;
+                novoCli.COMPLEMENTO = antCli.Complemento;
+                novoCli.BAIRRO = antCli.Bairro;
+                novoCli.TELEFONE = antCli.Fone1;
 
                 destino.pessoa.Add(novoCli);
                 destino.SaveChanges();
