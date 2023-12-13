@@ -43,15 +43,110 @@ namespace LILO
                 novoProd.CSOSNCST = antProd.CSOSN.Replace("csosn", "");
                 novoProd.ESTOQUEPRODUTO = (decimal)antProd.QtdEstoque;
 
+                var marca = antProd.Marca;
+                var buscaMarca = destino.marca.FirstOrDefault(x => x.NOME == marca);
+                if (buscaMarca != null)
+                {
+                    novoProd.MARCAID = buscaMarca.MarcaId;
+                } else
+                {
+                    Destino.marca novaMarca = new Destino.marca();
+
+                    novaMarca.ALTERACAODATA = DateTime.Now;
+                    novaMarca.ALTERACAOUSUARIO = "IMPORTAÇÃO";
+                    novaMarca.DATACADASTRO = DateTime.Now;
+                    novaMarca.NOME = antProd.Marca;
+
+                    destino.marca.Add(novaMarca);
+                    destino.SaveChanges();
+
+                    novoProd.MARCAID = novaMarca.MarcaId;
+                    destino.SaveChanges();
+
+                }
+                
+                var fornec = antProd.Fornec1;
+                var buscaFornec = destino.pessoa.FirstOrDefault(x => x.NOMERAZAOSOCIAL == fornec);
+                if (buscaFornec != null)
+                {
+                    novoProd.FORNECEDORID = buscaFornec.PessoaId;
+                } else
+                {
+                    Destino.pessoa novoFornecedor = new Destino.pessoa();
+
+                    novoFornecedor.ALTERACAOUSUARIO = "IMPORTAÇÃO";
+                    novoFornecedor.ALTERACAODATA = DateTime.Now;
+                    novoFornecedor.DATACADASTRO = DateTime.Now;
+                    novoFornecedor.NOMERAZAOSOCIAL = antProd.Fornec1;
+                   
+                    destino.pessoa.Add(novoFornecedor);
+                    destino.SaveChanges();
+                    //Ele so vai criar o registro no banco depois do destino.tabela.ADD()
+                    //eso salvar depois do savechanges
+                    //Ai sim a gente consegue ter o acesso na tabela com a informação recem cadastrada !
+                    //Na hora de debugar a gente ve na pratica ali
+
+                    novoProd.FORNECEDORID = novoFornecedor.PessoaId;
+                    destino.SaveChanges();
+
+                }
+
+                var grupo = antProd.Grupo;
+                var buscagrupo = destino.grupo.FirstOrDefault(x => x.NOME == grupo);
+                if(buscagrupo!= null)
+                {
+                    novoProd.GRUPOID = buscagrupo.GrupoId;
+                }
+                else
+                {
+                    Destino.grupo novoGrupo = new Destino.grupo(); 
+                    novoGrupo.ALTERACAODATA = DateTime.Now;
+                    novoGrupo.CADASTROUSUARIO = "IMPORTAÇÃO";
+                    novoGrupo.DATACADASTRO = DateTime.Now;
+                    novoGrupo.NOME = grupo;
+                    destino.grupo.Add(novoGrupo);
+                    destino.SaveChanges();
+                    novoProd.GRUPOID = novoGrupo.GrupoId;
+                    destino.SaveChanges();
+
+                }
+
+
                 destino.produto.Add(novoProd);
                 destino.SaveChanges();
+
+                Destino.referencia novaRef = new Destino.referencia();
+
+                novaRef.ALTERACAODATA = DateTime.Now;
+                novaRef.DATACADASTRO = DateTime.Now;
+                novaRef.ISATIVO = true;// tem 2 ref lembra?Simsimfazedo embaixo ali
+                novaRef.PRODUTOID = novoProd.ProdutoId;
+                novaRef.REFERENCIA1 = antProd.Codigo.ToString();
+                destino.referencia.Add(novaRef);
+                destino.SaveChanges();
+
+                Destino.referencia novaRef2 = new Destino.referencia();
+
+                novaRef2.ALTERACAODATA = DateTime.Now;
+                novaRef2.ISATIVO = true;
+                novaRef2.DATACADASTRO = DateTime.Now;
+                novaRef2.PRODUTOID = novoProd.ProdutoId;
+                novaRef2.REFERENCIA1 = antProd.CodFrabrica.ToString();
+                destino.referencia.Add(novaRef2);
+                destino.SaveChanges();
+
+                Destino.estoqueproduto novoEstoque = new Destino.estoqueproduto();
+
+                novoEstoque.ALTERACAODATA = DateTime.Now;
+                novoEstoque.DATACADASTRO = DateTime.Now;
+                novoEstoque.PRODUTOID = novoProd.ProdutoId;
+                novoEstoque.ESTOQUEATUAL = novoProd.ESTOQUEPRODUTO;
+                destino.estoqueproduto.Add(novoEstoque);
+                destino.SaveChanges();
+
                 i++;
-
-
-
             }
         }
-
 
         private static void funcionario()
         {
