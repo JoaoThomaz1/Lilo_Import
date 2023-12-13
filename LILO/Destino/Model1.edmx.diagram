@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="11bfd8ed6b2c4d558a132d008b4769a6" Name="Diagram1">
+        <EntityTypeShape EntityType="virgemModel.C__migrationhistory" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.bairro" Width="1.5" PointX="10.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.balanco" Width="1.5" PointX="9" PointY="54.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.balancoproduto" Width="1.5" PointX="11.25" PointY="35" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.banco" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.caixa" Width="1.5" PointX="10.25" PointY="67.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.caixamovimento" Width="1.5" PointX="12.5" PointY="68.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.cep" Width="1.5" PointX="12.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.cestncm" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.cfopregrasubstituicao" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.cidade" Width="1.5" PointX="8" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.classificacaofiscal" Width="1.5" PointX="0.75" PointY="37" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.colecao" Width="1.5" PointX="3.75" PointY="43.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.configuracaoetiqueta" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.configuracaogeral" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.configuracaopagamento" Width="1.5" PointX="5.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.contaspagarreceberparcela" Width="1.5" PointX="15.25" PointY="66.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.crediario" Width="1.5" PointX="6" PointY="91.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.departamento" Width="1.5" PointX="3.75" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.estoqueproduto" Width="1.5" PointX="8.25" PointY="40.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.estoqueprodutomovimento" Width="1.5" PointX="8.25" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.fabricante" Width="1.5" PointX="3.75" PointY="50.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.fecpexcecoes" Width="1.5" PointX="3" PointY="37.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.formarecebimento" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.grade" Width="1.5" PointX="3.75" PointY="58.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.grupo" Width="1.5" PointX="3.75" PointY="54.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.imagemproduto" Width="1.5" PointX="8.25" PointY="62.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.log" Width="1.5" PointX="7.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.marca" Width="1.5" PointX="3.75" PointY="71" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.movimentodecontas" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.notafiscal" Width="1.5" PointX="12" PointY="44.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.notafiscal_cartacorrecao" Width="1.5" PointX="14.25" PointY="47.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.notafiscal_pedido" Width="1.5" PointX="14.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.notafiscalproduto" Width="1.5" PointX="14.25" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.pais" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.pedido" Width="1.5" PointX="9" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.pedidoproduto" Width="1.5" PointX="11.25" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.pessoa" Width="1.5" PointX="3.75" PointY="74.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.produto" Width="1.5" PointX="6" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.produtokitcomposicao" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.referencia" Width="1.5" PointX="14.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.regracomissao" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.regracomissaocolecao" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.regracomissaofornecedor" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.regracomissaogrupo" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.regracomissaomarca" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.regracomissaoproduto" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.segurancaperfil" Width="1.5" PointX="5.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.segurancaperfilpermissao" Width="1.5" PointX="8" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.segurancausuario" Width="1.5" PointX="8" PointY="57.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.setor" Width="1.5" PointX="10.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.setorproduto" Width="1.5" PointX="13" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.sincronizacao" Width="1.5" PointX="16.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.subgrupo" Width="1.5" PointX="3.75" PointY="116.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.transferenciaestoque" Width="1.5" PointX="15" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.transferenciaestoqueproduto" Width="1.5" PointX="17.25" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.uf" Width="1.5" PointX="5.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="virgemModel.unidade" Width="1.5" PointX="3.75" PointY="120.5" IsExpanded="true" />
+        <AssociationConnector Association="virgemModel.FK_Bairro_Cidade_CIDADEID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Cep_Bairro_BAIRROID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_BalancoProduto_Balanco_BALANCOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_BalancoProduto_Produto_PRODUTOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Caixa_SegurancaUsuario_SEGURANCAUSUARIOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_CaixaMovimento_Caixa_CAIXAID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Cidade_UF_UFID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_92d52a78120a4672b95529c34cdb420e" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Produto_ClassificacaoFiscal_CLASSIFICACAOFISCALID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Produto_Colecao_COLECAOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_ContasPagarReceberParcela_Crediario_CREDIARIOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_ContasPagarReceberParcela_Pedido_PEDIDOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_ContasPagarReceberParcela_Pessoa_PESSOAID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Crediario_Pessoa_PESSOAID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Crediario_Pessoa_VENDEDORID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Produto_Departamento_DEPARTAMENTOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_EstoqueProduto_Produto_PRODUTOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_EstoqueProdutoMovimento_Pessoa_PESSOAID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_EstoqueProdutoMovimento_Produto_PRODUTOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Produto_Fabricante_FABRICANTEID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Produto_Grade_GRADEID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Produto_Grupo_GRUPOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_SubGrupo_Grupo_GRUPOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_ImagemProduto_Produto_ProdutoId" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Produto_Marca_MARCAID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_NotaFiscal_CartaCorrecao_NotaFiscal_NOTAFISCALID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_NotaFiscal_Pessoa_PESSOAID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_NotaFiscal_Pessoa_TRANSPORTADORAID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_NotaFiscal_Pessoa_VENDEDORID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_NotaFiscalProduto_NotaFiscal_NOTAFISCALID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_NotaFiscalProduto_Produto_PRODUTOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Pedido_Pessoa_CLIENTEID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Pedido_Pessoa_VENDEDORID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_PedidoProduto_Pedido_PEDIDOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_PedidoProduto_Produto_PRODUTOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Pessoa_Pessoa_TRANSPORTADORAID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Pessoa_Pessoa_VENDEDORID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Produto_Pessoa_FORNECEDORID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_SegurancaUsuario_Pessoa_CLIENTEID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_SegurancaUsuario_Pessoa_FUNCIONARIOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Produto_SubGrupo_SubGrupo_SubGrupoId" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_Produto_Unidade_UNIDADEID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_TransferenciaEstoqueProduto_Produto_PRODUTOID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_RegraComissaoColecao_RegraComissao_RegraComissaoId" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_RegraComissaoFornecedor_RegraComissao_RegraComissaoId" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_RegraComissaoGrupo_RegraComissao_RegraComissaoId" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_RegraComissaoMarca_RegraComissao_RegraComissaoId" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_RegraComissaoProduto_RegraComissao_RegraComissaoId" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_SegurancaPerfilPermissao_SegurancaPerfil_PERFILID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_SegurancaUsuario_SegurancaPerfil_PERFILID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_SetorProduto_Setor_SETORID" ManuallyRouted="false" />
+        <AssociationConnector Association="virgemModel.FK_bfe132b4ca864b418cf7252c20c64040" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
