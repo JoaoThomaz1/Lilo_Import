@@ -30,20 +30,22 @@ namespace LILO
             {
                 Destino.produto novoProd = new Destino.produto();
 
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.Write("Produtos - " + i + " / 2216");//qause kdjskjdks
 
 
                 novoProd.DESCRICAO = antProd.Descricao;
                 novoProd.NCM = antProd.NCM;
-                novoProd.VALOR_CUSTO = (decimal)antProd.PrecoCustoR;
-                novoProd.VALOR_VENDA_VAREJO = (decimal)antProd.PrecoVendaVarR;
+                novoProd.VALOR_CUSTO = (decimal)antProd.PrecoCustoR;//Se retornar null acho que buga
+                //novoProd.VALOR_VENDA_VAREJO = antProd.PrecoVendaVarR != null ? Convert.ToDecimal(antProd.PrecoVendaAtacR) : ;
+                novoProd.VALOR_VENDA_VAREJO = Convert.ToDecimal(antProd.PrecoVendaVarR);
                 novoProd.REFERENCIAPADRAO = antProd.CodFrabrica;
                 novoProd.REFERENCIAPRODUTO = antProd.CodBarras;
                 novoProd.ISATIVO = true;
                 novoProd.ALTERACAODATA = DateTime.Now;
                 novoProd.ALTERACAOUSUARIO = "IMPORTAÇÃO";
                 novoProd.CFOP = antProd.CFOP;
-                novoProd.CSOSNCST = antProd.CSOSN.Replace("csosn", "");
+                novoProd.CSOSNCST = antProd.CSOSN != null ? antProd.CSOSN.Replace("csosn", "") : "";
                 novoProd.ESTOQUEPRODUTO = (decimal)antProd.QtdEstoque;
 
                 var marca = antProd.Marca;
@@ -51,29 +53,33 @@ namespace LILO
                 if (buscaMarca != null)
                 {
                     novoProd.MARCAID = buscaMarca.MarcaId;
-                } else
-                {
-                    Destino.marca novaMarca = new Destino.marca();
-
-                    novaMarca.ALTERACAODATA = DateTime.Now;
-                    novaMarca.ALTERACAOUSUARIO = "IMPORTAÇÃO";
-                    novaMarca.DATACADASTRO = DateTime.Now;
-                    novaMarca.NOME = antProd.Marca;
-
-                    destino.marca.Add(novaMarca);
-                    destino.SaveChanges();
-
-                    novoProd.MARCAID = novaMarca.MarcaId;
-                    destino.SaveChanges();
-
                 }
-                
+                else
+                {
+                    if (marca != null)
+                    {
+                        Destino.marca novaMarca = new Destino.marca();
+
+                        novaMarca.ALTERACAODATA = DateTime.Now;
+                        novaMarca.ALTERACAOUSUARIO = "IMPORTAÇÃO";
+                        novaMarca.DATACADASTRO = DateTime.Now;
+                        novaMarca.NOME = antProd.Marca;
+
+                        destino.marca.Add(novaMarca);
+                        destino.SaveChanges();
+
+                        novoProd.MARCAID = novaMarca.MarcaId;
+                        destino.SaveChanges();
+                    }
+                }
+
                 var fornec = antProd.Fornec1;
                 var buscaFornec = destino.pessoa.FirstOrDefault(x => x.NOMERAZAOSOCIAL == fornec);
                 if (buscaFornec != null)
                 {
-                    novoProd.FORNECEDORID = buscaFornec.PessoaId;
-                } else
+                    novoProd.FORNECEDORID = buscaFornec.PessoaId;//Lembra que nao tinha ele ainda cadastrado ? o fornec? n tendi
+                }
+                else
                 {
                     Destino.pessoa novoFornecedor = new Destino.pessoa();
 
@@ -81,7 +87,16 @@ namespace LILO
                     novoFornecedor.ALTERACAODATA = DateTime.Now;
                     novoFornecedor.DATACADASTRO = DateTime.Now;
                     novoFornecedor.NOMERAZAOSOCIAL = antProd.Fornec1;
-                   
+                    novoFornecedor.ISFORNECEDOR = true;
+                    novoFornecedor.CADASTROCOMPLETO = true;
+                    novoFornecedor.FISJUR = "J";
+                    novoFornecedor.RGIE = "ISENTO";
+                    novoFornecedor.CONSUMIDORFINAL = 1;
+                    novoFornecedor.CONTRIBUINTE = 0;
+                    novoFornecedor.PAIS_ID = 30;
+                    novoFornecedor.UF = 14;
+
+
                     destino.pessoa.Add(novoFornecedor);
                     destino.SaveChanges();
                     //Ele so vai criar o registro no banco depois do destino.tabela.ADD()
@@ -96,17 +111,19 @@ namespace LILO
 
                 var grupo = antProd.Grupo;
                 var buscagrupo = destino.grupo.FirstOrDefault(x => x.NOME == grupo);
-                if(buscagrupo!= null)
+                if (buscagrupo != null)
                 {
                     novoProd.GRUPOID = buscagrupo.GrupoId;
                 }
                 else
                 {
-                    Destino.grupo novoGrupo = new Destino.grupo(); 
+                    Destino.grupo novoGrupo = new Destino.grupo();
                     novoGrupo.ALTERACAODATA = DateTime.Now;
                     novoGrupo.CADASTROUSUARIO = "IMPORTAÇÃO";
+                    novoGrupo.ALTERACAOUSUARIO = "IMPORTAÇÃO";
                     novoGrupo.DATACADASTRO = DateTime.Now;
                     novoGrupo.NOME = grupo;
+                    novoGrupo.ISATIVO = true;
                     destino.grupo.Add(novoGrupo);
                     destino.SaveChanges();
                     novoProd.GRUPOID = novoGrupo.GrupoId;
@@ -122,31 +139,40 @@ namespace LILO
 
                 novaRef.ALTERACAODATA = DateTime.Now;
                 novaRef.DATACADASTRO = DateTime.Now;
+                novaRef.ISPADRAO = false;
                 novaRef.ISATIVO = true;// tem 2 ref lembra?Simsimfazedo embaixo ali
                 novaRef.PRODUTOID = novoProd.ProdutoId;
-                novaRef.REFERENCIA1 = antProd.Codigo.ToString();
-                destino.referencia.Add(novaRef);
-                destino.SaveChanges();
+                if (antProd.Codigo != null)
+                {
+                    novaRef.REFERENCIA1 = antProd.Codigo.ToString();
+                    destino.referencia.Add(novaRef);
+                    destino.SaveChanges();
+                }
 
                 Destino.referencia novaRef2 = new Destino.referencia();
 
                 novaRef2.ALTERACAODATA = DateTime.Now;
                 novaRef2.ISATIVO = true;
+                novaRef2.ISPADRAO = true;
                 novaRef2.DATACADASTRO = DateTime.Now;
                 novaRef2.PRODUTOID = novoProd.ProdutoId;
-                novaRef2.REFERENCIA1 = antProd.CodFrabrica.ToString();
-                destino.referencia.Add(novaRef2);
-                destino.SaveChanges();
+                if (antProd.CodFrabrica != null)
+                {
+                    novaRef2.REFERENCIA1 = antProd.CodFrabrica.ToString();
+                    destino.referencia.Add(novaRef2);
+                    destino.SaveChanges();
+                }
+
 
                 Destino.estoqueproduto novoEstoque = new Destino.estoqueproduto();
 
                 novoEstoque.ALTERACAODATA = DateTime.Now;
                 novoEstoque.DATACADASTRO = DateTime.Now;
+                novoEstoque.ALTERACAOUSUARIO = "IMPORTAÇÃO";
                 novoEstoque.PRODUTOID = novoProd.ProdutoId;
                 novoEstoque.ESTOQUEATUAL = novoProd.ESTOQUEPRODUTO;
                 destino.estoqueproduto.Add(novoEstoque);
                 destino.SaveChanges();
-
                 i++;
             }
         }
@@ -202,8 +228,8 @@ namespace LILO
 
                 novoCli.ISCLIENTE = true;
                 novoCli.ISFORNECEDOR = true;
-                novoCli.NOMERAZAOSOCIAL = antCli.Nome;
-                novoCli.NOMEFANTASIA = antCli.RazaoSocial;
+                novoCli.NOMERAZAOSOCIAL = antCli.Nome.Trim();
+                novoCli.NOMEFANTASIA = antCli.RazaoSocial.Trim();
                 novoCli.ALTERACAODATA = DateTime.Now;
                 novoCli.ALTERACAOUSUARIO = "IMPORTAÇÃO";
                 novoCli.ATIVO = true;
@@ -211,17 +237,17 @@ namespace LILO
                 novoCli.DESCONTOMAXIMOPERMITIDO = 100;
                 novoCli.PAIS_ID = 30;
 
-                novoCli.CONTRIBUINTE = antCli.RG_InscEst != null? 1 : 0;
-                novoCli.CONSUMIDORFINAL = novoCli.CONTRIBUINTE == 1? 0 : 1;
+                novoCli.CONTRIBUINTE = antCli.RG_InscEst != null ? 1 : 0;
+                novoCli.CONSUMIDORFINAL = novoCli.CONTRIBUINTE == 1 ? 0 : 1;
 
 
                 novoCli.FISJUR = antCli.Pessoa == "Física" ? "F" : "J";
                 novoCli.CPFCNPJ = antCli.CPF_CNPJ;
-                novoCli.RGIE = antCli.RG_InscEst;
+                novoCli.RGIE = antCli.RG_InscEst == "" || antCli.RG_InscEst == null ? "ISENTO" : antCli.RG_InscEst;
                 novoCli.OBSERVACAO = antCli.Observacao;
                 novoCli.LOGRADOURO = antCli.Endereco;
                 novoCli.CEP = antCli.CEP;
-                novoCli.CELULAR = antCli.Celular;
+                novoCli.CELULAR = antCli.Celular != "" & antCli.Celular != null ? antCli.Celular.Replace(" ", "").Trim() : null;
                 novoCli.NUMERO = antCli.Numero;
                 novoCli.DATACADASTRO = antCli.DataCadastro;
                 novoCli.COMPLEMENTO = antCli.Complemento;
@@ -266,11 +292,11 @@ namespace LILO
 
                 novoCli.FISJUR = antCli.Pessoa == "Física" ? "F" : "J";
                 novoCli.CPFCNPJ = antCli.CPF_CNPJ;
-                novoCli.RGIE = antCli.RG_InscEst;
+                novoCli.RGIE = antCli.RG_InscEst != "" && antCli.RG_InscEst != null ? antCli.RG_InscEst.Replace(" ", "").Trim() : "ISENTO";
                 novoCli.OBSERVACAO = antCli.Observacao;
                 novoCli.LOGRADOURO = antCli.Endereco;
                 novoCli.CEP = antCli.CEP;
-                novoCli.CELULAR = antCli.Celular;
+                novoCli.CELULAR = antCli.Celular != "" & antCli.Celular != null ? antCli.Celular.Replace(" ", "").Trim() : null;
                 novoCli.BAIRRO = antCli.Bairro;
                 novoCli.TELEFONE = antCli.Fone1;
 
@@ -282,4 +308,3 @@ namespace LILO
         }
     }
 }
- 
