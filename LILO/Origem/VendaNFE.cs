@@ -174,10 +174,5 @@ namespace LILO.Origem
         public Nullable<float> Cubico { get; set; }
         public string Campo { get; set; }
         public string IDPedidoExterno { get; set; }
-        public string xPed { get; set; }
-        public Nullable<System.DateTime> HoraSaida { get; set; }
-        public Nullable<System.DateTime> HoraEntrega { get; set; }
-        public Nullable<System.DateTime> TempoEntrega { get; set; }
-        public string StatusEntrega { get; set; }
     }
 }

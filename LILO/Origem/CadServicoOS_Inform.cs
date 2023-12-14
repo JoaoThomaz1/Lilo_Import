@@ -26,12 +26,5 @@ namespace LILO.Origem
         public Nullable<int> CodPeca { get; set; }
         public int ID { get; set; }
         public Nullable<decimal> Comissao { get; set; }
-        public string Placa { get; set; }
-        public Nullable<System.DateTime> Data { get; set; }
-        public string Orcado { get; set; }
-        public string Pago { get; set; }
-        public string Pagar { get; set; }
-        public Nullable<decimal> Saidas { get; set; }
-        public Nullable<decimal> Saldo { get; set; }
     }
 }

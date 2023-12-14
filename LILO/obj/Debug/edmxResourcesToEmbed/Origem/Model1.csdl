@@ -131,7 +131,6 @@
     <Property Name="Credito" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="Debito" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="Saldo" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="Descricao" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Brindes">
     <Key>
@@ -328,12 +327,6 @@
     <Property Name="ValorEstimado" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="StatusFinanceiro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ValorAberto" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="Saldo" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="Entradas" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="Saidas" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="EntradaRecebido" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="TotalSaldo" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="Desconto" Type="Decimal" Precision="19" Scale="4" />
   </EntityType>
   <EntityType Name="Cad_OS_Online">
     <Key>
@@ -662,13 +655,6 @@
     <Property Name="CodPeca" Type="Int32" />
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Comissao" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="Placa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Data" Type="DateTime" Precision="3" />
-    <Property Name="Orcado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Pago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Pagar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Saidas" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="Saldo" Type="Decimal" Precision="19" Scale="4" />
   </EntityType>
   <EntityType Name="CadVet">
     <Key>
@@ -935,9 +921,6 @@
     <Property Name="Registro" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="RegimeApuracao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ValorRestagar" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="FaixaEtaria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Modalidade" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="Objetivo" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Cli_Fornec2">
     <Key>
@@ -1251,10 +1234,6 @@
     <Property Name="StatusCheque" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="ValorRecebido" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ExternalReference" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="IDPagamento" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-    <Property Name="URLFatura" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
-    <Property Name="URLBoleto" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="ContasReceberNFE">
     <Key>
@@ -1843,13 +1822,6 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Grupo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="GrupoPreco">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="GrupoPreco1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
   <EntityType Name="Grupos">
     <Key>
       <PropertyRef Name="ID" />
@@ -1965,7 +1937,6 @@
     <Property Name="Tipo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="IDConta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="TipoConta" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
-    <Property Name="Documento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="LancCaixa">
     <Key>
@@ -2399,7 +2370,6 @@
     <Property Name="Data" Type="DateTime" Precision="3" />
     <Property Name="ECF" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="Parcelas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="QtdImpresso" Type="Int32" />
   </EntityType>
   <EntityType Name="Parametro">
     <Key>
@@ -2509,8 +2479,6 @@
     <Property Name="F8Balcao" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
     <Property Name="DowloadAutomatico" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <Property Name="Tempo" Type="Int32" />
-    <Property Name="ValorLimiteDesconto" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="PorcentagemDesconto" Type="Decimal" Precision="19" Scale="4" />
   </EntityType>
   <EntityType Name="PecaOSCostura">
     <Key>
@@ -3125,16 +3093,6 @@
     <Property Name="ProdutoEmbarrilado" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="CodProcesso" Type="Int32" />
   </EntityType>
-  <EntityType Name="TabEstoqueLojas">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CNPJ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Filial" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="Quant" Type="Double" />
-    <Property Name="IDProd" Type="Int32" />
-  </EntityType>
   <EntityType Name="TabFormas">
     <Key>
       <PropertyRef Name="FormaPGTO" />
@@ -3147,7 +3105,6 @@
     <Property Name="Desconsiderar" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <Property Name="Conta" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="Caixa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="QtdImpresso" Type="Int32" />
   </EntityType>
   <EntityType Name="tabIntegracao">
     <Key>
@@ -3167,83 +3124,6 @@
     <Property Name="XMLInu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="XMLNota" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="TabMDFE">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TipoEmissao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Modal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="UFIni" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-    <Property Name="UFFim" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-    <Property Name="CodMunCarreg" Type="Int32" />
-    <Property Name="MunCarreg" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-    <Property Name="RNTRC" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="CIOT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="VeiculoTracaoCodInt" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="VeiculoTracaoPlaca" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="VeiculoTracaoRenavan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="VeiculoTracaoTara" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="VeiculoTracaoCapacidade" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="VeiculoTracaoCapM3" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="VeiculoTracaoTipoRod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="VeiculoTracaoTipoCarga" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="VeiculoTracaoUF" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-    <Property Name="CondutorNome" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="CondutorCPF" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="VeiculoReboqueCodInt" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="VeiculoReboquePlaca" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="VeiculoReboqueRenavan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="VeiculoReboqueTara" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="VeiculoReboqueCapacidade" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="VeiculoReboqueCapM3" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="VeiculoReboqueTipoRod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="VeiculoReboqueTipoCarga" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="VeiculoReboqueUF" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-    <Property Name="ValePedCNPJForn" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="ValePedCNPJPg" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="ValePedNumCompra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="QtdCTE" Type="Int32" />
-    <Property Name="ValorTotal" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="PesoTotalCarga" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="UnidadeMedidaCarga" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="Observacoes" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="InformacoesFisco" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="NumManifesto" Type="Int32" />
-    <Property Name="QtdNFE" Type="Int32" />
-    <Property Name="CodMunDescarga" Type="Int32" />
-    <Property Name="MunDescarga" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-    <Property Name="NumMDFE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Data" Type="DateTime" Precision="3" />
-    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="LocalXML" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
-    <Property Name="UFPer" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="RespSeguro" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="NomeSeguro" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="SegApolice" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Aver" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="SegCNPJ" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="NotaCompleta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="TabMDFECte">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IDMdfe" Type="Int32" />
-    <Property Name="ChaveCTE" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="TipoUnTransporte" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="PlacaUnTransporte" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Lacre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="NumLacre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="TipoUnCarga" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="IdUnCarga" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="LacreUnCarga" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="ValorCTE" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="ChSegCodBarras" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="CodMunDescarga" Type="Int32" />
-    <Property Name="MunDescarga" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-  </EntityType>
   <EntityType Name="TabMDFEMunic">
     <Key>
       <PropertyRef Name="ID" />
@@ -3254,25 +3134,6 @@
     <Property Name="MunDescarga" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="IDCte" Type="Int32" />
     <Property Name="IDNFe" Type="Int32" />
-  </EntityType>
-  <EntityType Name="TabMDFENFe">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IDMdfe" Type="Int32" />
-    <Property Name="ChaveNFE" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="TipoUnTransporte" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="PlacaUnTransporte" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="Lacre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="NumLacre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="TipoUnCarga" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="IdUnCarga" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="LacreUnCarga" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Name="ValorNFE" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="ChSegCodBarras" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="CodMunDescarga" Type="Int32" />
-    <Property Name="MunDescarga" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="TabMDFESeguro">
     <Key>
@@ -3987,13 +3848,6 @@
     <Property Name="Cubico" Type="Single" />
     <Property Name="Campo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="IDPedidoExterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="VTroco" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Troco" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="xPed" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="HoraSaida" Type="DateTime" Precision="3" />
-    <Property Name="HoraEntrega" Type="DateTime" Precision="3" />
-    <Property Name="TempoEntrega" Type="DateTime" Precision="3" />
-    <Property Name="StatusEntrega" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="VendaDados">
     <Key>
@@ -4054,21 +3908,6 @@
     <Property Name="PesoSacas" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="NumNFE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="UN" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="ValorDesconto" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="BaseICMS" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="ValorICMS" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="ValorIPI" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="AliquotaICMS" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="AliquotaIPI" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="AliquotaPIS" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="ValorPIS" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="AliquotaCOFINS" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="ValorCOFINS" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="Tipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="StatusFicha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="NumFicha" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="ItemPed" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="xPed" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="VendaDados_Cliente">
     <Key>
@@ -4149,18 +3988,6 @@
     <Property Name="PesoSacas" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="NumNFE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="UN" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="ValorDesconto" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="BaseICMS" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="ValorICMS" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="ValorIPI" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="AliquotaICMS" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="AliquotaIPI" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="AliquotaPIS" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="ValorPIS" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="AliquotaCOFINS" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="ValorCOFINS" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="ItemPed" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="xPed" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="VendaNFE">
     <Key>
@@ -4326,11 +4153,6 @@
     <Property Name="Cubico" Type="Single" />
     <Property Name="Campo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="IDPedidoExterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="xPed" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="HoraSaida" Type="DateTime" Precision="3" />
-    <Property Name="HoraEntrega" Type="DateTime" Precision="3" />
-    <Property Name="TempoEntrega" Type="DateTime" Precision="3" />
-    <Property Name="StatusEntrega" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="VendaPeriodo">
     <Key>
@@ -4489,7 +4311,7 @@
     <Property Name="Lote" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Peneira" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Germinacao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Validade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Validade" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Safra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Foto" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="QTDReal" Type="Decimal" Precision="19" Scale="4" />
@@ -4558,11 +4380,6 @@
     <Property Name="dVal" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="vPMC" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="SKU" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="GrupoPreco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Validade2" Type="DateTime" Precision="3" />
-    <Property Name="CodigoVendaSecundario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="IDExterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="URLImagem" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Cad_prod2">
     <Key>
@@ -5204,35 +5021,6 @@
     <Property Name="SUBSTITUIR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Indice" Type="Decimal" Precision="19" Scale="4" />
   </EntityType>
-  <EntityType Name="TabLista">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Data" Type="DateTime" Precision="3" />
-    <Property Name="IDCliente" Type="Int32" />
-    <Property Name="Cliente" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="Pago" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="Pagar" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="ValorTotal" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="X" Type="Single" />
-    <Property Name="C" Type="Single" />
-    <Property Name="XM" Type="Single" />
-    <Property Name="P" Type="Single" />
-    <Property Name="L" Type="Single" />
-  </EntityType>
-  <EntityType Name="TabMultas">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IDVenda" Type="Int32" />
-    <Property Name="Multa" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Name="Valor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="Lancado" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="Data" Type="DateTime" Precision="3" />
-    <Property Name="Local" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
   <EntityType Name="TabOSRH">
     <Key>
       <PropertyRef Name="ID" />
@@ -5302,7 +5090,7 @@
     <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="DataInicio" Type="DateTime" Precision="3" />
   </EntityType>
-  <EntityContainer Name="LiloEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="LiloEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="AberturaCaixa" EntityType="Self.AberturaCaixa" />
     <EntitySet Name="AgrupamentoProd" EntityType="Self.AgrupamentoProd" />
     <EntitySet Name="Ambientes" EntityType="Self.Ambientes" />
@@ -5385,7 +5173,6 @@
     <EntitySet Name="FormaPgto" EntityType="Self.FormaPgto" />
     <EntitySet Name="GrupoContatos" EntityType="Self.GrupoContatos" />
     <EntitySet Name="GrupoPlanoContas" EntityType="Self.GrupoPlanoContas" />
-    <EntitySet Name="GrupoPreco" EntityType="Self.GrupoPreco" />
     <EntitySet Name="Grupos" EntityType="Self.Grupos" />
     <EntitySet Name="GrupoServicos" EntityType="Self.GrupoServicos" />
     <EntitySet Name="GrupoTransportadoras" EntityType="Self.GrupoTransportadoras" />
@@ -5454,14 +5241,10 @@
     <EntitySet Name="TabelaPrecoProdutos" EntityType="Self.TabelaPrecoProdutos" />
     <EntitySet Name="TabelasPreco" EntityType="Self.TabelasPreco" />
     <EntitySet Name="TabEmbarrilar" EntityType="Self.TabEmbarrilar" />
-    <EntitySet Name="TabEstoqueLojas" EntityType="Self.TabEstoqueLojas" />
     <EntitySet Name="TabFormas" EntityType="Self.TabFormas" />
     <EntitySet Name="tabIntegracao" EntityType="Self.tabIntegracao" />
     <EntitySet Name="TabInutilizar" EntityType="Self.TabInutilizar" />
-    <EntitySet Name="TabMDFE" EntityType="Self.TabMDFE" />
-    <EntitySet Name="TabMDFECte" EntityType="Self.TabMDFECte" />
     <EntitySet Name="TabMDFEMunic" EntityType="Self.TabMDFEMunic" />
-    <EntitySet Name="TabMDFENFe" EntityType="Self.TabMDFENFe" />
     <EntitySet Name="TabMDFESeguro" EntityType="Self.TabMDFESeguro" />
     <EntitySet Name="TabMinimo" EntityType="Self.TabMinimo" />
     <EntitySet Name="TabModelagem" EntityType="Self.TabModelagem" />
@@ -5540,8 +5323,6 @@
     <EntitySet Name="PrismaDados" EntityType="Self.PrismaDados" />
     <EntitySet Name="RegistroTransp" EntityType="Self.RegistroTransp" />
     <EntitySet Name="SITUACAO_TRIBUTARIA" EntityType="Self.SITUACAO_TRIBUTARIA" />
-    <EntitySet Name="TabLista" EntityType="Self.TabLista" />
-    <EntitySet Name="TabMultas" EntityType="Self.TabMultas" />
     <EntitySet Name="TabOSRH" EntityType="Self.TabOSRH" />
     <EntitySet Name="TABOSRHCandidatos" EntityType="Self.TABOSRHCandidatos" />
   </EntityContainer>

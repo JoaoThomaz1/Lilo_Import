@@ -22,6 +22,5 @@ namespace LILO.Origem
         public Nullable<System.DateTime> Data { get; set; }
         public string ECF { get; set; }
         public string Parcelas { get; set; }
-        public Nullable<int> QtdImpresso { get; set; }
     }
 }

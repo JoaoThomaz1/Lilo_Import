@@ -60,9 +60,5 @@ namespace LILO.Origem
         public string StatusCheque { get; set; }
         public Nullable<decimal> ValorRecebido { get; set; }
         public int ID { get; set; }
-        public string ExternalReference { get; set; }
-        public string IDPagamento { get; set; }
-        public string URLFatura { get; set; }
-        public string URLBoleto { get; set; }
     }
 }

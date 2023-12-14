@@ -595,9 +595,6 @@
     <Compile Include="Origem\GrupoPlanoContas.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Origem\GrupoPreco.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Origem\Grupos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -844,9 +841,6 @@
     <Compile Include="Origem\TabEmbarrilar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Origem\TabEstoqueLojas.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Origem\TabFormas.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -856,19 +850,7 @@
     <Compile Include="Origem\TabInutilizar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Origem\TabLista.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Origem\TabMDFE.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Origem\TabMDFECte.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Origem\TabMDFEMunic.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Origem\TabMDFENFe.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Origem\TabMDFESeguro.cs">
@@ -881,9 +863,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Origem\TabModelagemRelat.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Origem\TabMultas.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Origem\TabNFRef.cs">

@@ -154,8 +154,5 @@ namespace LILO.Origem
         public string Registro { get; set; }
         public string RegimeApuracao { get; set; }
         public Nullable<decimal> ValorRestagar { get; set; }
-        public string FaixaEtaria { get; set; }
-        public string Modalidade { get; set; }
-        public string Objetivo { get; set; }
     }
 }

@@ -174,7 +174,6 @@ warning 6013: The table/view 'Lilo.dbo.Banco' does not have a primary key define
     <Property Name="Credito" Type="money" />
     <Property Name="Debito" Type="money" />
     <Property Name="Saldo" Type="money" />
-    <Property Name="Descricao" Type="varchar" MaxLength="200" />
   </EntityType>
   <EntityType Name="Brindes">
     <Key>
@@ -371,12 +370,6 @@ warning 6013: The table/view 'Lilo.dbo.Banco' does not have a primary key define
     <Property Name="ValorEstimado" Type="money" />
     <Property Name="StatusFinanceiro" Type="varchar" MaxLength="50" />
     <Property Name="ValorAberto" Type="money" />
-    <Property Name="Saldo" Type="money" />
-    <Property Name="Entradas" Type="money" />
-    <Property Name="Saidas" Type="money" />
-    <Property Name="EntradaRecebido" Type="money" />
-    <Property Name="TotalSaldo" Type="money" />
-    <Property Name="Desconto" Type="money" />
   </EntityType>
   <EntityType Name="Cad_OS_Online">
     <Key>
@@ -527,7 +520,7 @@ warning 6002: The table/view 'Lilo.dbo.Cad_prod' does not have a primary key def
     <Property Name="Lote" Type="varchar" MaxLength="100" />
     <Property Name="Peneira" Type="varchar" MaxLength="100" />
     <Property Name="Germinacao" Type="varchar" MaxLength="100" />
-    <Property Name="Validade" Type="varchar" MaxLength="50" />
+    <Property Name="Validade" Type="varchar" MaxLength="100" />
     <Property Name="Safra" Type="varchar" MaxLength="50" />
     <Property Name="Foto" Type="image" />
     <Property Name="QTDReal" Type="money" />
@@ -596,11 +589,6 @@ warning 6002: The table/view 'Lilo.dbo.Cad_prod' does not have a primary key def
     <Property Name="dVal" Type="varchar" MaxLength="150" />
     <Property Name="vPMC" Type="varchar" MaxLength="150" />
     <Property Name="SKU" Type="varchar" MaxLength="150" />
-    <Property Name="GrupoPreco" Type="varchar" MaxLength="50" />
-    <Property Name="Validade2" Type="datetime" />
-    <Property Name="CodigoVendaSecundario" Type="varchar" MaxLength="50" />
-    <Property Name="IDExterno" Type="varchar" MaxLength="50" />
-    <Property Name="URLImagem" Type="varchar" MaxLength="2500" />
   </EntityType>
   <EntityType Name="Cad_prod_anterior">
     <Key>
@@ -1111,13 +1099,6 @@ warning 6013: The table/view 'Lilo.dbo.CadServicoOS' does not have a primary key
     <Property Name="CodPeca" Type="int" />
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Comissao" Type="money" />
-    <Property Name="Placa" Type="varchar" MaxLength="50" />
-    <Property Name="Data" Type="datetime" />
-    <Property Name="Orcado" Type="varchar" MaxLength="50" />
-    <Property Name="Pago" Type="varchar" MaxLength="50" />
-    <Property Name="Pagar" Type="varchar" MaxLength="50" />
-    <Property Name="Saidas" Type="money" />
-    <Property Name="Saldo" Type="money" />
   </EntityType>
   <EntityType Name="CadVet">
     <Key>
@@ -1446,9 +1427,6 @@ warning 6013: The table/view 'Lilo.dbo.Cheques' does not have a primary key defi
     <Property Name="Registro" Type="varchar" MaxLength="255" />
     <Property Name="RegimeApuracao" Type="varchar" MaxLength="50" />
     <Property Name="ValorRestagar" Type="money" />
-    <Property Name="FaixaEtaria" Type="varchar" MaxLength="50" />
-    <Property Name="Modalidade" Type="varchar" MaxLength="150" />
-    <Property Name="Objetivo" Type="varchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="Cli_Fornec2">
     <Key>
@@ -1810,10 +1788,6 @@ warning 6013: The table/view 'Lilo.dbo.Conta' does not have a primary key define
     <Property Name="StatusCheque" Type="varchar" MaxLength="10" />
     <Property Name="ValorRecebido" Type="money" />
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ExternalReference" Type="varchar" MaxLength="100" />
-    <Property Name="IDPagamento" Type="varchar" MaxLength="500" />
-    <Property Name="URLFatura" Type="varchar" MaxLength="3000" />
-    <Property Name="URLBoleto" Type="varchar" MaxLength="3000" />
   </EntityType>
   <EntityType Name="ContasReceberNFE">
     <Key>
@@ -2731,13 +2705,6 @@ warning 6013: The table/view 'Lilo.dbo.GastosGerais' does not have a primary key
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Grupo" Type="varchar" MaxLength="100" />
   </EntityType>
-  <EntityType Name="GrupoPreco">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="GrupoPreco" Type="varchar" MaxLength="50" />
-  </EntityType>
   <EntityType Name="Grupos">
     <Key>
       <PropertyRef Name="ID" />
@@ -2938,7 +2905,6 @@ warning 6013: The table/view 'Lilo.dbo.LancamentosEstoques' does not have a prim
     <Property Name="Tipo" Type="varchar" MaxLength="30" />
     <Property Name="IDConta" Type="varchar" MaxLength="50" />
     <Property Name="TipoConta" Type="varchar" MaxLength="7" />
-    <Property Name="Documento" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="LancCaixa">
     <Key>
@@ -3593,7 +3559,6 @@ warning 6002: The table/view 'Lilo.dbo.Orcamentos' does not have a primary key d
     <Property Name="Data" Type="datetime" />
     <Property Name="ECF" Type="varchar" MaxLength="10" />
     <Property Name="Parcelas" Type="varchar" MaxLength="50" />
-    <Property Name="QtdImpresso" Type="int" />
   </EntityType>
   <EntityType Name="Parametro">
     <Key>
@@ -3703,8 +3668,6 @@ warning 6002: The table/view 'Lilo.dbo.Orcamentos' does not have a primary key d
     <Property Name="F8Balcao" Type="varchar" MaxLength="3" />
     <Property Name="DowloadAutomatico" Type="varchar" MaxLength="5" />
     <Property Name="Tempo" Type="int" />
-    <Property Name="ValorLimiteDesconto" Type="money" />
-    <Property Name="PorcentagemDesconto" Type="money" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'Lilo.dbo.Parametros' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -4498,16 +4461,6 @@ warning 6013: The table/view 'Lilo.dbo.Sucata' does not have a primary key defin
     <Property Name="ProdutoEmbarrilado" Type="varchar" MaxLength="200" />
     <Property Name="CodProcesso" Type="int" />
   </EntityType>
-  <EntityType Name="TabEstoqueLojas">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CNPJ" Type="varchar" MaxLength="50" />
-    <Property Name="Filial" Type="varchar" MaxLength="150" />
-    <Property Name="Quant" Type="float" />
-    <Property Name="IDProd" Type="int" />
-  </EntityType>
   <EntityType Name="TabFormas">
     <Key>
       <PropertyRef Name="FormaPGTO" />
@@ -4520,7 +4473,6 @@ warning 6013: The table/view 'Lilo.dbo.Sucata' does not have a primary key defin
     <Property Name="Desconsiderar" Type="varchar" MaxLength="5" />
     <Property Name="Conta" Type="varchar" MaxLength="30" />
     <Property Name="Caixa" Type="varchar" MaxLength="30" />
-    <Property Name="QtdImpresso" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6013: The table/view 'Lilo.dbo.TabFranquiasFinanceiro' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
@@ -4550,102 +4502,6 @@ warning 6013: The table/view 'Lilo.dbo.TabFranquiasFinanceiro' does not have a p
     <Property Name="XMLInu" Type="varchar(max)" />
     <Property Name="XMLNota" Type="varchar(max)" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Lilo.dbo.TabLista' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="TabLista">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Data" Type="datetime" />
-    <Property Name="IDCliente" Type="int" />
-    <Property Name="Cliente" Type="varchar" MaxLength="150" />
-    <Property Name="Pago" Type="money" />
-    <Property Name="Pagar" Type="money" />
-    <Property Name="ValorTotal" Type="money" />
-    <Property Name="X" Type="real" />
-    <Property Name="C" Type="real" />
-    <Property Name="XM" Type="real" />
-    <Property Name="P" Type="real" />
-    <Property Name="L" Type="real" />
-  </EntityType>
-  <EntityType Name="TabMDFE">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TipoEmissao" Type="varchar" MaxLength="50" />
-    <Property Name="Modal" Type="varchar" MaxLength="50" />
-    <Property Name="UFIni" Type="varchar" MaxLength="2" />
-    <Property Name="UFFim" Type="varchar" MaxLength="2" />
-    <Property Name="CodMunCarreg" Type="int" />
-    <Property Name="MunCarreg" Type="varchar" MaxLength="80" />
-    <Property Name="RNTRC" Type="varchar" MaxLength="30" />
-    <Property Name="CIOT" Type="varchar" MaxLength="50" />
-    <Property Name="VeiculoTracaoCodInt" Type="varchar" MaxLength="5" />
-    <Property Name="VeiculoTracaoPlaca" Type="varchar" MaxLength="10" />
-    <Property Name="VeiculoTracaoRenavan" Type="varchar" MaxLength="30" />
-    <Property Name="VeiculoTracaoTara" Type="money" />
-    <Property Name="VeiculoTracaoCapacidade" Type="money" />
-    <Property Name="VeiculoTracaoCapM3" Type="money" />
-    <Property Name="VeiculoTracaoTipoRod" Type="varchar" MaxLength="50" />
-    <Property Name="VeiculoTracaoTipoCarga" Type="varchar" MaxLength="50" />
-    <Property Name="VeiculoTracaoUF" Type="varchar" MaxLength="2" />
-    <Property Name="CondutorNome" Type="varchar" MaxLength="60" />
-    <Property Name="CondutorCPF" Type="varchar" MaxLength="30" />
-    <Property Name="VeiculoReboqueCodInt" Type="varchar" MaxLength="5" />
-    <Property Name="VeiculoReboquePlaca" Type="varchar" MaxLength="10" />
-    <Property Name="VeiculoReboqueRenavan" Type="varchar" MaxLength="30" />
-    <Property Name="VeiculoReboqueTara" Type="money" />
-    <Property Name="VeiculoReboqueCapacidade" Type="money" />
-    <Property Name="VeiculoReboqueCapM3" Type="money" />
-    <Property Name="VeiculoReboqueTipoRod" Type="varchar" MaxLength="50" />
-    <Property Name="VeiculoReboqueTipoCarga" Type="varchar" MaxLength="50" />
-    <Property Name="VeiculoReboqueUF" Type="varchar" MaxLength="2" />
-    <Property Name="ValePedCNPJForn" Type="varchar" MaxLength="30" />
-    <Property Name="ValePedCNPJPg" Type="varchar" MaxLength="30" />
-    <Property Name="ValePedNumCompra" Type="varchar" MaxLength="50" />
-    <Property Name="QtdCTE" Type="int" />
-    <Property Name="ValorTotal" Type="money" />
-    <Property Name="PesoTotalCarga" Type="money" />
-    <Property Name="UnidadeMedidaCarga" Type="varchar" MaxLength="30" />
-    <Property Name="Observacoes" Type="varchar" MaxLength="255" />
-    <Property Name="InformacoesFisco" Type="varchar" MaxLength="255" />
-    <Property Name="NumManifesto" Type="int" />
-    <Property Name="QtdNFE" Type="int" />
-    <Property Name="CodMunDescarga" Type="int" />
-    <Property Name="MunDescarga" Type="varchar" MaxLength="80" />
-    <Property Name="NumMDFE" Type="varchar" MaxLength="20" />
-    <Property Name="Data" Type="datetime" />
-    <Property Name="Status" Type="varchar" MaxLength="20" />
-    <Property Name="LocalXML" Type="varchar" MaxLength="250" />
-    <Property Name="UFPer" Type="varchar" MaxLength="200" />
-    <Property Name="RespSeguro" Type="varchar" MaxLength="20" />
-    <Property Name="NomeSeguro" Type="varchar" MaxLength="150" />
-    <Property Name="SegApolice" Type="varchar" MaxLength="20" />
-    <Property Name="Aver" Type="varchar" MaxLength="150" />
-    <Property Name="SegCNPJ" Type="varchar" MaxLength="20" />
-    <Property Name="NotaCompleta" Type="varchar(max)" />
-  </EntityType>
-  <EntityType Name="TabMDFECte">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IDMdfe" Type="int" />
-    <Property Name="ChaveCTE" Type="varchar" MaxLength="60" />
-    <Property Name="TipoUnTransporte" Type="varchar" MaxLength="30" />
-    <Property Name="PlacaUnTransporte" Type="varchar" MaxLength="10" />
-    <Property Name="Lacre" Type="varchar" MaxLength="60" />
-    <Property Name="NumLacre" Type="varchar" MaxLength="60" />
-    <Property Name="TipoUnCarga" Type="varchar" MaxLength="60" />
-    <Property Name="IdUnCarga" Type="varchar" MaxLength="60" />
-    <Property Name="LacreUnCarga" Type="varchar" MaxLength="60" />
-    <Property Name="ValorCTE" Type="money" />
-    <Property Name="ChSegCodBarras" Type="varchar" MaxLength="150" />
-    <Property Name="CodMunDescarga" Type="int" />
-    <Property Name="MunDescarga" Type="varchar" MaxLength="150" />
-  </EntityType>
   <EntityType Name="TabMDFEMunic">
     <Key>
       <PropertyRef Name="ID" />
@@ -4656,25 +4512,6 @@ warning 6002: The table/view 'Lilo.dbo.TabLista' does not have a primary key def
     <Property Name="MunDescarga" Type="varchar" MaxLength="150" />
     <Property Name="IDCte" Type="int" />
     <Property Name="IDNFe" Type="int" />
-  </EntityType>
-  <EntityType Name="TabMDFENFe">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IDMdfe" Type="int" />
-    <Property Name="ChaveNFE" Type="varchar" MaxLength="60" />
-    <Property Name="TipoUnTransporte" Type="varchar" MaxLength="30" />
-    <Property Name="PlacaUnTransporte" Type="varchar" MaxLength="10" />
-    <Property Name="Lacre" Type="varchar" MaxLength="60" />
-    <Property Name="NumLacre" Type="varchar" MaxLength="60" />
-    <Property Name="TipoUnCarga" Type="varchar" MaxLength="60" />
-    <Property Name="IdUnCarga" Type="varchar" MaxLength="60" />
-    <Property Name="LacreUnCarga" Type="varchar" MaxLength="60" />
-    <Property Name="ValorNFE" Type="money" />
-    <Property Name="ChSegCodBarras" Type="varchar" MaxLength="150" />
-    <Property Name="CodMunDescarga" Type="int" />
-    <Property Name="MunDescarga" Type="varchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="TabMDFESeguro">
     <Key>
@@ -4721,20 +4558,6 @@ warning 6013: The table/view 'Lilo.dbo.TabMovimento' does not have a primary key
           <Property Name="Movimento" Type="varchar" MaxLength="300" />
           <Property Name="Data" Type="datetime" />
         </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Lilo.dbo.TabMultas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="TabMultas">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IDVenda" Type="int" />
-    <Property Name="Multa" Type="varchar" MaxLength="150" />
-    <Property Name="Valor" Type="nchar" MaxLength="10" />
-    <Property Name="Lancado" Type="varchar" MaxLength="5" />
-    <Property Name="Data" Type="datetime" />
-    <Property Name="Local" Type="varchar" MaxLength="50" />
-  </EntityType>
   <EntityType Name="TabNFRef">
     <Key>
       <PropertyRef Name="ID" />
@@ -5545,13 +5368,6 @@ warning 6013: The table/view 'Lilo.dbo.UltimoRecape' does not have a primary key
     <Property Name="Cubico" Type="real" />
     <Property Name="Campo" Type="varchar" MaxLength="50" />
     <Property Name="IDPedidoExterno" Type="varchar" MaxLength="50" />
-    <Property Name="VTroco" Type="varchar(max)" />
-    <Property Name="Troco" Type="varchar(max)" />
-    <Property Name="xPed" Type="varchar" MaxLength="150" />
-    <Property Name="HoraSaida" Type="datetime" />
-    <Property Name="HoraEntrega" Type="datetime" />
-    <Property Name="TempoEntrega" Type="datetime" />
-    <Property Name="StatusEntrega" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="VendaDados">
     <Key>
@@ -5612,21 +5428,6 @@ warning 6013: The table/view 'Lilo.dbo.UltimoRecape' does not have a primary key
     <Property Name="PesoSacas" Type="money" />
     <Property Name="NumNFE" Type="varchar" MaxLength="20" />
     <Property Name="UN" Type="varchar" MaxLength="5" />
-    <Property Name="ValorDesconto" Type="money" />
-    <Property Name="BaseICMS" Type="money" />
-    <Property Name="ValorICMS" Type="money" />
-    <Property Name="ValorIPI" Type="money" />
-    <Property Name="AliquotaICMS" Type="money" />
-    <Property Name="AliquotaIPI" Type="money" />
-    <Property Name="AliquotaPIS" Type="money" />
-    <Property Name="ValorPIS" Type="money" />
-    <Property Name="AliquotaCOFINS" Type="money" />
-    <Property Name="ValorCOFINS" Type="money" />
-    <Property Name="Tipo" Type="varchar" MaxLength="10" />
-    <Property Name="StatusFicha" Type="varchar" MaxLength="50" />
-    <Property Name="NumFicha" Type="varchar" MaxLength="30" />
-    <Property Name="ItemPed" Type="varchar" MaxLength="30" />
-    <Property Name="xPed" Type="varchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="VendaDados_Cliente">
     <Key>
@@ -5707,18 +5508,6 @@ warning 6013: The table/view 'Lilo.dbo.UltimoRecape' does not have a primary key
     <Property Name="PesoSacas" Type="money" />
     <Property Name="NumNFE" Type="varchar" MaxLength="20" />
     <Property Name="UN" Type="varchar" MaxLength="5" />
-    <Property Name="ValorDesconto" Type="money" />
-    <Property Name="BaseICMS" Type="money" />
-    <Property Name="ValorICMS" Type="money" />
-    <Property Name="ValorIPI" Type="money" />
-    <Property Name="AliquotaICMS" Type="money" />
-    <Property Name="AliquotaIPI" Type="money" />
-    <Property Name="AliquotaPIS" Type="money" />
-    <Property Name="ValorPIS" Type="money" />
-    <Property Name="AliquotaCOFINS" Type="money" />
-    <Property Name="ValorCOFINS" Type="money" />
-    <Property Name="ItemPed" Type="varchar" MaxLength="30" />
-    <Property Name="xPed" Type="varchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="VendaNFE">
     <Key>
@@ -5884,11 +5673,6 @@ warning 6013: The table/view 'Lilo.dbo.UltimoRecape' does not have a primary key
     <Property Name="Cubico" Type="real" />
     <Property Name="Campo" Type="varchar" MaxLength="50" />
     <Property Name="IDPedidoExterno" Type="varchar" MaxLength="50" />
-    <Property Name="xPed" Type="varchar" MaxLength="150" />
-    <Property Name="HoraSaida" Type="datetime" />
-    <Property Name="HoraEntrega" Type="datetime" />
-    <Property Name="TempoEntrega" Type="datetime" />
-    <Property Name="StatusEntrega" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="VendaPeriodo">
     <Key>
@@ -6108,7 +5892,6 @@ warning 6013: The table/view 'Lilo.dbo.VidasPneus' does not have a primary key d
     <EntitySet Name="FormaPgto" EntityType="Self.FormaPgto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GrupoContatos" EntityType="Self.GrupoContatos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GrupoPlanoContas" EntityType="Self.GrupoPlanoContas" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="GrupoPreco" EntityType="Self.GrupoPreco" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Grupos" EntityType="Self.Grupos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GrupoServicos" EntityType="Self.GrupoServicos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GrupoTransportadoras" EntityType="Self.GrupoTransportadoras" Schema="dbo" store:Type="Tables" />
@@ -6177,14 +5960,10 @@ warning 6013: The table/view 'Lilo.dbo.VidasPneus' does not have a primary key d
     <EntitySet Name="TabelaPrecoProdutos" EntityType="Self.TabelaPrecoProdutos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TabelasPreco" EntityType="Self.TabelasPreco" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TabEmbarrilar" EntityType="Self.TabEmbarrilar" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TabEstoqueLojas" EntityType="Self.TabEstoqueLojas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TabFormas" EntityType="Self.TabFormas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tabIntegracao" EntityType="Self.tabIntegracao" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TabInutilizar" EntityType="Self.TabInutilizar" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TabMDFE" EntityType="Self.TabMDFE" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TabMDFECte" EntityType="Self.TabMDFECte" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TabMDFEMunic" EntityType="Self.TabMDFEMunic" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TabMDFENFe" EntityType="Self.TabMDFENFe" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TabMDFESeguro" EntityType="Self.TabMDFESeguro" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TabMinimo" EntityType="Self.TabMinimo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TabModelagem" EntityType="Self.TabModelagem" Schema="dbo" store:Type="Tables" />
@@ -6435,12 +6214,7 @@ warning 6013: The table/view 'Lilo.dbo.VidasPneus' does not have a primary key d
     [Cad_prod].[dFab] AS [dFab], 
     [Cad_prod].[dVal] AS [dVal], 
     [Cad_prod].[vPMC] AS [vPMC], 
-    [Cad_prod].[SKU] AS [SKU], 
-    [Cad_prod].[GrupoPreco] AS [GrupoPreco], 
-    [Cad_prod].[Validade2] AS [Validade2], 
-    [Cad_prod].[CodigoVendaSecundario] AS [CodigoVendaSecundario], 
-    [Cad_prod].[IDExterno] AS [IDExterno], 
-    [Cad_prod].[URLImagem] AS [URLImagem]
+    [Cad_prod].[SKU] AS [SKU]
     FROM [dbo].[Cad_prod] AS [Cad_prod]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="Cad_prod2" EntityType="Self.Cad_prod2" store:Type="Tables" store:Schema="dbo">
@@ -7054,33 +6828,6 @@ warning 6013: The table/view 'Lilo.dbo.VidasPneus' does not have a primary key d
     [SITUACAO_TRIBUTARIA].[SUBSTITUIR] AS [SUBSTITUIR], 
     [SITUACAO_TRIBUTARIA].[Indice] AS [Indice]
     FROM [dbo].[SITUACAO_TRIBUTARIA] AS [SITUACAO_TRIBUTARIA]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="TabLista" EntityType="Self.TabLista" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TabLista].[ID] AS [ID], 
-    [TabLista].[Data] AS [Data], 
-    [TabLista].[IDCliente] AS [IDCliente], 
-    [TabLista].[Cliente] AS [Cliente], 
-    [TabLista].[Pago] AS [Pago], 
-    [TabLista].[Pagar] AS [Pagar], 
-    [TabLista].[ValorTotal] AS [ValorTotal], 
-    [TabLista].[X] AS [X], 
-    [TabLista].[C] AS [C], 
-    [TabLista].[XM] AS [XM], 
-    [TabLista].[P] AS [P], 
-    [TabLista].[L] AS [L]
-    FROM [dbo].[TabLista] AS [TabLista]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="TabMultas" EntityType="Self.TabMultas" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TabMultas].[ID] AS [ID], 
-    [TabMultas].[IDVenda] AS [IDVenda], 
-    [TabMultas].[Multa] AS [Multa], 
-    [TabMultas].[Valor] AS [Valor], 
-    [TabMultas].[Lancado] AS [Lancado], 
-    [TabMultas].[Data] AS [Data], 
-    [TabMultas].[Local] AS [Local]
-    FROM [dbo].[TabMultas] AS [TabMultas]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="TabOSRH" EntityType="Self.TabOSRH" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 

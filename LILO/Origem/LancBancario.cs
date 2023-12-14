@@ -32,6 +32,5 @@ namespace LILO.Origem
         public string Tipo { get; set; }
         public string IDConta { get; set; }
         public string TipoConta { get; set; }
-        public string Documento { get; set; }
     }
 }

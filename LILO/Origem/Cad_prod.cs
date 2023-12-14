@@ -197,10 +197,5 @@ namespace LILO.Origem
         public string dVal { get; set; }
         public string vPMC { get; set; }
         public string SKU { get; set; }
-        public string GrupoPreco { get; set; }
-        public Nullable<System.DateTime> Validade2 { get; set; }
-        public string CodigoVendaSecundario { get; set; }
-        public string IDExterno { get; set; }
-        public string URLImagem { get; set; }
     }
 }

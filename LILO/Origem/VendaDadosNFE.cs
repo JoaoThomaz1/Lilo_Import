@@ -69,17 +69,5 @@ namespace LILO.Origem
         public Nullable<decimal> PesoSacas { get; set; }
         public string NumNFE { get; set; }
         public string UN { get; set; }
-        public Nullable<decimal> ValorDesconto { get; set; }
-        public Nullable<decimal> BaseICMS { get; set; }
-        public Nullable<decimal> ValorICMS { get; set; }
-        public Nullable<decimal> ValorIPI { get; set; }
-        public Nullable<decimal> AliquotaICMS { get; set; }
-        public Nullable<decimal> AliquotaIPI { get; set; }
-        public Nullable<decimal> AliquotaPIS { get; set; }
-        public Nullable<decimal> ValorPIS { get; set; }
-        public Nullable<decimal> AliquotaCOFINS { get; set; }
-        public Nullable<decimal> ValorCOFINS { get; set; }
-        public string ItemPed { get; set; }
-        public string xPed { get; set; }
     }
 }

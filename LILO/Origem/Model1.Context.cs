@@ -13,10 +13,10 @@ namespace LILO.Origem
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class LiloEntities : DbContext
+    public partial class LiloEntities1 : DbContext
     {
-        public LiloEntities()
-            : base("name=LiloEntities")
+        public LiloEntities1()
+            : base("name=LiloEntities1")
         {
         }
     
@@ -107,7 +107,6 @@ namespace LILO.Origem
         public virtual DbSet<FormaPgto> FormaPgto { get; set; }
         public virtual DbSet<GrupoContatos> GrupoContatos { get; set; }
         public virtual DbSet<GrupoPlanoContas> GrupoPlanoContas { get; set; }
-        public virtual DbSet<GrupoPreco> GrupoPreco { get; set; }
         public virtual DbSet<Grupos> Grupos { get; set; }
         public virtual DbSet<GrupoServicos> GrupoServicos { get; set; }
         public virtual DbSet<GrupoTransportadoras> GrupoTransportadoras { get; set; }
@@ -176,14 +175,10 @@ namespace LILO.Origem
         public virtual DbSet<TabelaPrecoProdutos> TabelaPrecoProdutos { get; set; }
         public virtual DbSet<TabelasPreco> TabelasPreco { get; set; }
         public virtual DbSet<TabEmbarrilar> TabEmbarrilar { get; set; }
-        public virtual DbSet<TabEstoqueLojas> TabEstoqueLojas { get; set; }
         public virtual DbSet<TabFormas> TabFormas { get; set; }
         public virtual DbSet<tabIntegracao> tabIntegracao { get; set; }
         public virtual DbSet<TabInutilizar> TabInutilizar { get; set; }
-        public virtual DbSet<TabMDFE> TabMDFE { get; set; }
-        public virtual DbSet<TabMDFECte> TabMDFECte { get; set; }
         public virtual DbSet<TabMDFEMunic> TabMDFEMunic { get; set; }
-        public virtual DbSet<TabMDFENFe> TabMDFENFe { get; set; }
         public virtual DbSet<TabMDFESeguro> TabMDFESeguro { get; set; }
         public virtual DbSet<TabMinimo> TabMinimo { get; set; }
         public virtual DbSet<TabModelagem> TabModelagem { get; set; }
@@ -262,8 +257,6 @@ namespace LILO.Origem
         public virtual DbSet<PrismaDados> PrismaDados { get; set; }
         public virtual DbSet<RegistroTransp> RegistroTransp { get; set; }
         public virtual DbSet<SITUACAO_TRIBUTARIA> SITUACAO_TRIBUTARIA { get; set; }
-        public virtual DbSet<TabLista> TabLista { get; set; }
-        public virtual DbSet<TabMultas> TabMultas { get; set; }
         public virtual DbSet<TabOSRH> TabOSRH { get; set; }
         public virtual DbSet<TABOSRHCandidatos> TABOSRHCandidatos { get; set; }
     }

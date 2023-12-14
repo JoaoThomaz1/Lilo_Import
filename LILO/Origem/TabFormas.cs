@@ -22,6 +22,5 @@ namespace LILO.Origem
         public string Desconsiderar { get; set; }
         public string Conta { get; set; }
         public string Caixa { get; set; }
-        public Nullable<int> QtdImpresso { get; set; }
     }
 }

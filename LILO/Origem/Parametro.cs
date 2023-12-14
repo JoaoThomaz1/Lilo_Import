@@ -118,7 +118,5 @@ namespace LILO.Origem
         public string F8Balcao { get; set; }
         public string DowloadAutomatico { get; set; }
         public Nullable<int> Tempo { get; set; }
-        public Nullable<decimal> ValorLimiteDesconto { get; set; }
-        public Nullable<decimal> PorcentagemDesconto { get; set; }
     }
 }

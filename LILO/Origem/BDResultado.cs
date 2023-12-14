@@ -19,6 +19,5 @@ namespace LILO.Origem
         public Nullable<decimal> Credito { get; set; }
         public Nullable<decimal> Debito { get; set; }
         public Nullable<decimal> Saldo { get; set; }
-        public string Descricao { get; set; }
     }
 }

@@ -80,11 +80,5 @@ namespace LILO.Origem
         public Nullable<decimal> ValorEstimado { get; set; }
         public string StatusFinanceiro { get; set; }
         public Nullable<decimal> ValorAberto { get; set; }
-        public Nullable<decimal> Saldo { get; set; }
-        public Nullable<decimal> Entradas { get; set; }
-        public Nullable<decimal> Saidas { get; set; }
-        public Nullable<decimal> EntradaRecebido { get; set; }
-        public Nullable<decimal> TotalSaldo { get; set; }
-        public Nullable<decimal> Desconto { get; set; }
     }
 }

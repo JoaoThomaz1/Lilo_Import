@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="LiloModelStoreContainer" CdmEntityContainer="LiloEntities">
+  <EntityContainerMapping StorageEntityContainer="LiloModelStoreContainer" CdmEntityContainer="LiloEntities1">
     <EntitySetMapping Name="AberturaCaixa">
       <EntityTypeMapping TypeName="LiloModel.AberturaCaixa">
         <MappingFragment StoreEntitySet="AberturaCaixa">
@@ -140,7 +140,6 @@
           <ScalarProperty Name="Credito" ColumnName="Credito" />
           <ScalarProperty Name="Debito" ColumnName="Debito" />
           <ScalarProperty Name="Saldo" ColumnName="Saldo" />
-          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -342,12 +341,6 @@
           <ScalarProperty Name="ValorEstimado" ColumnName="ValorEstimado" />
           <ScalarProperty Name="StatusFinanceiro" ColumnName="StatusFinanceiro" />
           <ScalarProperty Name="ValorAberto" ColumnName="ValorAberto" />
-          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
-          <ScalarProperty Name="Entradas" ColumnName="Entradas" />
-          <ScalarProperty Name="Saidas" ColumnName="Saidas" />
-          <ScalarProperty Name="EntradaRecebido" ColumnName="EntradaRecebido" />
-          <ScalarProperty Name="TotalSaldo" ColumnName="TotalSaldo" />
-          <ScalarProperty Name="Desconto" ColumnName="Desconto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -685,13 +678,6 @@
           <ScalarProperty Name="CodPeca" ColumnName="CodPeca" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Comissao" ColumnName="Comissao" />
-          <ScalarProperty Name="Placa" ColumnName="Placa" />
-          <ScalarProperty Name="Data" ColumnName="Data" />
-          <ScalarProperty Name="Orcado" ColumnName="Orcado" />
-          <ScalarProperty Name="Pago" ColumnName="Pago" />
-          <ScalarProperty Name="Pagar" ColumnName="Pagar" />
-          <ScalarProperty Name="Saidas" ColumnName="Saidas" />
-          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -967,9 +953,6 @@
           <ScalarProperty Name="Registro" ColumnName="Registro" />
           <ScalarProperty Name="RegimeApuracao" ColumnName="RegimeApuracao" />
           <ScalarProperty Name="ValorRestagar" ColumnName="ValorRestagar" />
-          <ScalarProperty Name="FaixaEtaria" ColumnName="FaixaEtaria" />
-          <ScalarProperty Name="Modalidade" ColumnName="Modalidade" />
-          <ScalarProperty Name="Objetivo" ColumnName="Objetivo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1296,10 +1279,6 @@
           <ScalarProperty Name="StatusCheque" ColumnName="StatusCheque" />
           <ScalarProperty Name="ValorRecebido" ColumnName="ValorRecebido" />
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ExternalReference" ColumnName="ExternalReference" />
-          <ScalarProperty Name="IDPagamento" ColumnName="IDPagamento" />
-          <ScalarProperty Name="URLFatura" ColumnName="URLFatura" />
-          <ScalarProperty Name="URLBoleto" ColumnName="URLBoleto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1926,14 +1905,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="GrupoPreco">
-      <EntityTypeMapping TypeName="LiloModel.GrupoPreco">
-        <MappingFragment StoreEntitySet="GrupoPreco">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="GrupoPreco1" ColumnName="GrupoPreco" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Grupos">
       <EntityTypeMapping TypeName="LiloModel.Grupos">
         <MappingFragment StoreEntitySet="Grupos">
@@ -2055,7 +2026,6 @@
           <ScalarProperty Name="Tipo" ColumnName="Tipo" />
           <ScalarProperty Name="IDConta" ColumnName="IDConta" />
           <ScalarProperty Name="TipoConta" ColumnName="TipoConta" />
-          <ScalarProperty Name="Documento" ColumnName="Documento" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -2508,7 +2478,6 @@
           <ScalarProperty Name="Data" ColumnName="Data" />
           <ScalarProperty Name="ECF" ColumnName="ECF" />
           <ScalarProperty Name="Parcelas" ColumnName="Parcelas" />
-          <ScalarProperty Name="QtdImpresso" ColumnName="QtdImpresso" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -2619,8 +2588,6 @@
           <ScalarProperty Name="F8Balcao" ColumnName="F8Balcao" />
           <ScalarProperty Name="DowloadAutomatico" ColumnName="DowloadAutomatico" />
           <ScalarProperty Name="Tempo" ColumnName="Tempo" />
-          <ScalarProperty Name="ValorLimiteDesconto" ColumnName="ValorLimiteDesconto" />
-          <ScalarProperty Name="PorcentagemDesconto" ColumnName="PorcentagemDesconto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -3277,17 +3244,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TabEstoqueLojas">
-      <EntityTypeMapping TypeName="LiloModel.TabEstoqueLojas">
-        <MappingFragment StoreEntitySet="TabEstoqueLojas">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
-          <ScalarProperty Name="Filial" ColumnName="Filial" />
-          <ScalarProperty Name="Quant" ColumnName="Quant" />
-          <ScalarProperty Name="IDProd" ColumnName="IDProd" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TabFormas">
       <EntityTypeMapping TypeName="LiloModel.TabFormas">
         <MappingFragment StoreEntitySet="TabFormas">
@@ -3299,7 +3255,6 @@
           <ScalarProperty Name="Desconsiderar" ColumnName="Desconsiderar" />
           <ScalarProperty Name="Conta" ColumnName="Conta" />
           <ScalarProperty Name="Caixa" ColumnName="Caixa" />
-          <ScalarProperty Name="QtdImpresso" ColumnName="QtdImpresso" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -3323,85 +3278,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TabMDFE">
-      <EntityTypeMapping TypeName="LiloModel.TabMDFE">
-        <MappingFragment StoreEntitySet="TabMDFE">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="TipoEmissao" ColumnName="TipoEmissao" />
-          <ScalarProperty Name="Modal" ColumnName="Modal" />
-          <ScalarProperty Name="UFIni" ColumnName="UFIni" />
-          <ScalarProperty Name="UFFim" ColumnName="UFFim" />
-          <ScalarProperty Name="CodMunCarreg" ColumnName="CodMunCarreg" />
-          <ScalarProperty Name="MunCarreg" ColumnName="MunCarreg" />
-          <ScalarProperty Name="RNTRC" ColumnName="RNTRC" />
-          <ScalarProperty Name="CIOT" ColumnName="CIOT" />
-          <ScalarProperty Name="VeiculoTracaoCodInt" ColumnName="VeiculoTracaoCodInt" />
-          <ScalarProperty Name="VeiculoTracaoPlaca" ColumnName="VeiculoTracaoPlaca" />
-          <ScalarProperty Name="VeiculoTracaoRenavan" ColumnName="VeiculoTracaoRenavan" />
-          <ScalarProperty Name="VeiculoTracaoTara" ColumnName="VeiculoTracaoTara" />
-          <ScalarProperty Name="VeiculoTracaoCapacidade" ColumnName="VeiculoTracaoCapacidade" />
-          <ScalarProperty Name="VeiculoTracaoCapM3" ColumnName="VeiculoTracaoCapM3" />
-          <ScalarProperty Name="VeiculoTracaoTipoRod" ColumnName="VeiculoTracaoTipoRod" />
-          <ScalarProperty Name="VeiculoTracaoTipoCarga" ColumnName="VeiculoTracaoTipoCarga" />
-          <ScalarProperty Name="VeiculoTracaoUF" ColumnName="VeiculoTracaoUF" />
-          <ScalarProperty Name="CondutorNome" ColumnName="CondutorNome" />
-          <ScalarProperty Name="CondutorCPF" ColumnName="CondutorCPF" />
-          <ScalarProperty Name="VeiculoReboqueCodInt" ColumnName="VeiculoReboqueCodInt" />
-          <ScalarProperty Name="VeiculoReboquePlaca" ColumnName="VeiculoReboquePlaca" />
-          <ScalarProperty Name="VeiculoReboqueRenavan" ColumnName="VeiculoReboqueRenavan" />
-          <ScalarProperty Name="VeiculoReboqueTara" ColumnName="VeiculoReboqueTara" />
-          <ScalarProperty Name="VeiculoReboqueCapacidade" ColumnName="VeiculoReboqueCapacidade" />
-          <ScalarProperty Name="VeiculoReboqueCapM3" ColumnName="VeiculoReboqueCapM3" />
-          <ScalarProperty Name="VeiculoReboqueTipoRod" ColumnName="VeiculoReboqueTipoRod" />
-          <ScalarProperty Name="VeiculoReboqueTipoCarga" ColumnName="VeiculoReboqueTipoCarga" />
-          <ScalarProperty Name="VeiculoReboqueUF" ColumnName="VeiculoReboqueUF" />
-          <ScalarProperty Name="ValePedCNPJForn" ColumnName="ValePedCNPJForn" />
-          <ScalarProperty Name="ValePedCNPJPg" ColumnName="ValePedCNPJPg" />
-          <ScalarProperty Name="ValePedNumCompra" ColumnName="ValePedNumCompra" />
-          <ScalarProperty Name="QtdCTE" ColumnName="QtdCTE" />
-          <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
-          <ScalarProperty Name="PesoTotalCarga" ColumnName="PesoTotalCarga" />
-          <ScalarProperty Name="UnidadeMedidaCarga" ColumnName="UnidadeMedidaCarga" />
-          <ScalarProperty Name="Observacoes" ColumnName="Observacoes" />
-          <ScalarProperty Name="InformacoesFisco" ColumnName="InformacoesFisco" />
-          <ScalarProperty Name="NumManifesto" ColumnName="NumManifesto" />
-          <ScalarProperty Name="QtdNFE" ColumnName="QtdNFE" />
-          <ScalarProperty Name="CodMunDescarga" ColumnName="CodMunDescarga" />
-          <ScalarProperty Name="MunDescarga" ColumnName="MunDescarga" />
-          <ScalarProperty Name="NumMDFE" ColumnName="NumMDFE" />
-          <ScalarProperty Name="Data" ColumnName="Data" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="LocalXML" ColumnName="LocalXML" />
-          <ScalarProperty Name="UFPer" ColumnName="UFPer" />
-          <ScalarProperty Name="RespSeguro" ColumnName="RespSeguro" />
-          <ScalarProperty Name="NomeSeguro" ColumnName="NomeSeguro" />
-          <ScalarProperty Name="SegApolice" ColumnName="SegApolice" />
-          <ScalarProperty Name="Aver" ColumnName="Aver" />
-          <ScalarProperty Name="SegCNPJ" ColumnName="SegCNPJ" />
-          <ScalarProperty Name="NotaCompleta" ColumnName="NotaCompleta" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TabMDFECte">
-      <EntityTypeMapping TypeName="LiloModel.TabMDFECte">
-        <MappingFragment StoreEntitySet="TabMDFECte">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="IDMdfe" ColumnName="IDMdfe" />
-          <ScalarProperty Name="ChaveCTE" ColumnName="ChaveCTE" />
-          <ScalarProperty Name="TipoUnTransporte" ColumnName="TipoUnTransporte" />
-          <ScalarProperty Name="PlacaUnTransporte" ColumnName="PlacaUnTransporte" />
-          <ScalarProperty Name="Lacre" ColumnName="Lacre" />
-          <ScalarProperty Name="NumLacre" ColumnName="NumLacre" />
-          <ScalarProperty Name="TipoUnCarga" ColumnName="TipoUnCarga" />
-          <ScalarProperty Name="IdUnCarga" ColumnName="IdUnCarga" />
-          <ScalarProperty Name="LacreUnCarga" ColumnName="LacreUnCarga" />
-          <ScalarProperty Name="ValorCTE" ColumnName="ValorCTE" />
-          <ScalarProperty Name="ChSegCodBarras" ColumnName="ChSegCodBarras" />
-          <ScalarProperty Name="CodMunDescarga" ColumnName="CodMunDescarga" />
-          <ScalarProperty Name="MunDescarga" ColumnName="MunDescarga" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TabMDFEMunic">
       <EntityTypeMapping TypeName="LiloModel.TabMDFEMunic">
         <MappingFragment StoreEntitySet="TabMDFEMunic">
@@ -3411,26 +3287,6 @@
           <ScalarProperty Name="MunDescarga" ColumnName="MunDescarga" />
           <ScalarProperty Name="IDCte" ColumnName="IDCte" />
           <ScalarProperty Name="IDNFe" ColumnName="IDNFe" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TabMDFENFe">
-      <EntityTypeMapping TypeName="LiloModel.TabMDFENFe">
-        <MappingFragment StoreEntitySet="TabMDFENFe">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="IDMdfe" ColumnName="IDMdfe" />
-          <ScalarProperty Name="ChaveNFE" ColumnName="ChaveNFE" />
-          <ScalarProperty Name="TipoUnTransporte" ColumnName="TipoUnTransporte" />
-          <ScalarProperty Name="PlacaUnTransporte" ColumnName="PlacaUnTransporte" />
-          <ScalarProperty Name="Lacre" ColumnName="Lacre" />
-          <ScalarProperty Name="NumLacre" ColumnName="NumLacre" />
-          <ScalarProperty Name="TipoUnCarga" ColumnName="TipoUnCarga" />
-          <ScalarProperty Name="IdUnCarga" ColumnName="IdUnCarga" />
-          <ScalarProperty Name="LacreUnCarga" ColumnName="LacreUnCarga" />
-          <ScalarProperty Name="ValorNFE" ColumnName="ValorNFE" />
-          <ScalarProperty Name="ChSegCodBarras" ColumnName="ChSegCodBarras" />
-          <ScalarProperty Name="CodMunDescarga" ColumnName="CodMunDescarga" />
-          <ScalarProperty Name="MunDescarga" ColumnName="MunDescarga" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -4191,13 +4047,6 @@
           <ScalarProperty Name="Cubico" ColumnName="Cubico" />
           <ScalarProperty Name="Campo" ColumnName="Campo" />
           <ScalarProperty Name="IDPedidoExterno" ColumnName="IDPedidoExterno" />
-          <ScalarProperty Name="VTroco" ColumnName="VTroco" />
-          <ScalarProperty Name="Troco" ColumnName="Troco" />
-          <ScalarProperty Name="xPed" ColumnName="xPed" />
-          <ScalarProperty Name="HoraSaida" ColumnName="HoraSaida" />
-          <ScalarProperty Name="HoraEntrega" ColumnName="HoraEntrega" />
-          <ScalarProperty Name="TempoEntrega" ColumnName="TempoEntrega" />
-          <ScalarProperty Name="StatusEntrega" ColumnName="StatusEntrega" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -4259,21 +4108,6 @@
           <ScalarProperty Name="PesoSacas" ColumnName="PesoSacas" />
           <ScalarProperty Name="NumNFE" ColumnName="NumNFE" />
           <ScalarProperty Name="UN" ColumnName="UN" />
-          <ScalarProperty Name="ValorDesconto" ColumnName="ValorDesconto" />
-          <ScalarProperty Name="BaseICMS" ColumnName="BaseICMS" />
-          <ScalarProperty Name="ValorICMS" ColumnName="ValorICMS" />
-          <ScalarProperty Name="ValorIPI" ColumnName="ValorIPI" />
-          <ScalarProperty Name="AliquotaICMS" ColumnName="AliquotaICMS" />
-          <ScalarProperty Name="AliquotaIPI" ColumnName="AliquotaIPI" />
-          <ScalarProperty Name="AliquotaPIS" ColumnName="AliquotaPIS" />
-          <ScalarProperty Name="ValorPIS" ColumnName="ValorPIS" />
-          <ScalarProperty Name="AliquotaCOFINS" ColumnName="AliquotaCOFINS" />
-          <ScalarProperty Name="ValorCOFINS" ColumnName="ValorCOFINS" />
-          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
-          <ScalarProperty Name="StatusFicha" ColumnName="StatusFicha" />
-          <ScalarProperty Name="NumFicha" ColumnName="NumFicha" />
-          <ScalarProperty Name="ItemPed" ColumnName="ItemPed" />
-          <ScalarProperty Name="xPed" ColumnName="xPed" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -4356,18 +4190,6 @@
           <ScalarProperty Name="PesoSacas" ColumnName="PesoSacas" />
           <ScalarProperty Name="NumNFE" ColumnName="NumNFE" />
           <ScalarProperty Name="UN" ColumnName="UN" />
-          <ScalarProperty Name="ValorDesconto" ColumnName="ValorDesconto" />
-          <ScalarProperty Name="BaseICMS" ColumnName="BaseICMS" />
-          <ScalarProperty Name="ValorICMS" ColumnName="ValorICMS" />
-          <ScalarProperty Name="ValorIPI" ColumnName="ValorIPI" />
-          <ScalarProperty Name="AliquotaICMS" ColumnName="AliquotaICMS" />
-          <ScalarProperty Name="AliquotaIPI" ColumnName="AliquotaIPI" />
-          <ScalarProperty Name="AliquotaPIS" ColumnName="AliquotaPIS" />
-          <ScalarProperty Name="ValorPIS" ColumnName="ValorPIS" />
-          <ScalarProperty Name="AliquotaCOFINS" ColumnName="AliquotaCOFINS" />
-          <ScalarProperty Name="ValorCOFINS" ColumnName="ValorCOFINS" />
-          <ScalarProperty Name="ItemPed" ColumnName="ItemPed" />
-          <ScalarProperty Name="xPed" ColumnName="xPed" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -4534,11 +4356,6 @@
           <ScalarProperty Name="Cubico" ColumnName="Cubico" />
           <ScalarProperty Name="Campo" ColumnName="Campo" />
           <ScalarProperty Name="IDPedidoExterno" ColumnName="IDPedidoExterno" />
-          <ScalarProperty Name="xPed" ColumnName="xPed" />
-          <ScalarProperty Name="HoraSaida" ColumnName="HoraSaida" />
-          <ScalarProperty Name="HoraEntrega" ColumnName="HoraEntrega" />
-          <ScalarProperty Name="TempoEntrega" ColumnName="TempoEntrega" />
-          <ScalarProperty Name="StatusEntrega" ColumnName="StatusEntrega" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -4769,11 +4586,6 @@
           <ScalarProperty Name="dVal" ColumnName="dVal" />
           <ScalarProperty Name="vPMC" ColumnName="vPMC" />
           <ScalarProperty Name="SKU" ColumnName="SKU" />
-          <ScalarProperty Name="GrupoPreco" ColumnName="GrupoPreco" />
-          <ScalarProperty Name="Validade2" ColumnName="Validade2" />
-          <ScalarProperty Name="CodigoVendaSecundario" ColumnName="CodigoVendaSecundario" />
-          <ScalarProperty Name="IDExterno" ColumnName="IDExterno" />
-          <ScalarProperty Name="URLImagem" ColumnName="URLImagem" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -5434,37 +5246,6 @@
           <ScalarProperty Name="COD_ST" ColumnName="COD_ST" />
           <ScalarProperty Name="SUBSTITUIR" ColumnName="SUBSTITUIR" />
           <ScalarProperty Name="Indice" ColumnName="Indice" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TabLista">
-      <EntityTypeMapping TypeName="LiloModel.TabLista">
-        <MappingFragment StoreEntitySet="TabLista">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Data" ColumnName="Data" />
-          <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
-          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
-          <ScalarProperty Name="Pago" ColumnName="Pago" />
-          <ScalarProperty Name="Pagar" ColumnName="Pagar" />
-          <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
-          <ScalarProperty Name="X" ColumnName="X" />
-          <ScalarProperty Name="C" ColumnName="C" />
-          <ScalarProperty Name="XM" ColumnName="XM" />
-          <ScalarProperty Name="P" ColumnName="P" />
-          <ScalarProperty Name="L" ColumnName="L" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TabMultas">
-      <EntityTypeMapping TypeName="LiloModel.TabMultas">
-        <MappingFragment StoreEntitySet="TabMultas">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="IDVenda" ColumnName="IDVenda" />
-          <ScalarProperty Name="Multa" ColumnName="Multa" />
-          <ScalarProperty Name="Valor" ColumnName="Valor" />
-          <ScalarProperty Name="Lancado" ColumnName="Lancado" />
-          <ScalarProperty Name="Data" ColumnName="Data" />
-          <ScalarProperty Name="Local" ColumnName="Local" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

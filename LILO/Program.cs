@@ -19,7 +19,7 @@ namespace LILO
 
         private static void produto()
         {
-            Origem.LiloEntities origem = new Origem.LiloEntities();
+            Origem.LiloEntities1 origem = new Origem.LiloEntities1();
 
             Destino.virgemEntities destino = new Destino.virgemEntities();
 
@@ -29,6 +29,9 @@ namespace LILO
             foreach (var antProd in origem.Cad_prod.ToList())
             {
                 Destino.produto novoProd = new Destino.produto();
+
+                Console.Write("Produtos - " + i + " / 2216");//qause kdjskjdks
+
 
                 novoProd.DESCRICAO = antProd.Descricao;
                 novoProd.NCM = antProd.NCM;
@@ -150,7 +153,7 @@ namespace LILO
 
         private static void funcionario()
         {
-            Origem.LiloEntities origem = new Origem.LiloEntities();
+            Origem.LiloEntities1 origem = new Origem.LiloEntities1();
 
             Destino.virgemEntities destino = new Destino.virgemEntities();
 
@@ -159,6 +162,7 @@ namespace LILO
 
             foreach (var antFun in origem.Cad_Func.ToList())
             {
+                Console.WriteLine("Funcionarios " + i + " / " + count);
                 Destino.pessoa novoFun = new Destino.pessoa();
 
                 novoFun.ISFUNCIONARIO = true;
@@ -184,7 +188,7 @@ namespace LILO
 
         private static void cliente()
         {
-            Origem.LiloEntities origem = new Origem.LiloEntities();
+            Origem.LiloEntities1 origem = new Origem.LiloEntities1();
 
             Destino.virgemEntities destino = new Destino.virgemEntities();
 
@@ -193,6 +197,7 @@ namespace LILO
 
             foreach (var antCli in origem.Cli_Fornec.ToList())
             {
+                Console.WriteLine("Clientes " + i + " / " + count);
                 Destino.pessoa novoCli = new Destino.pessoa();
 
                 novoCli.ISCLIENTE = true;
@@ -232,7 +237,7 @@ namespace LILO
 
         private static void cliente2()
         {
-            Origem.LiloEntities origem = new Origem.LiloEntities();
+            Origem.LiloEntities1 origem = new Origem.LiloEntities1();
 
             Destino.virgemEntities destino = new Destino.virgemEntities();
 
@@ -243,6 +248,7 @@ namespace LILO
             {
                 Destino.pessoa novoCli = new Destino.pessoa();
 
+                Console.WriteLine("Clientes2 " + i + " / " + count);
                 novoCli.ISCLIENTE = true;
                 novoCli.ISFORNECEDOR = true;
                 novoCli.NOMERAZAOSOCIAL = antCli.Nome;
